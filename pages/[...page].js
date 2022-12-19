@@ -702,6 +702,98 @@ Builder.registerComponent(
     ],
   }
 );
+Builder.registerComponent(
+  dynamic(() => import("@/components/IntroducingSonicsmooth")),
+  {
+    name: "IntroducingSonicSmoothSection",
+    inputs: [
+      {
+        name: "product_image",
+        type: "file",
+        allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+        required: true,
+      },
+      {
+        name: "title",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "description",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "sub_description",
+        type: "longText",
+        required: true,
+      },
+
+      {
+        name: "introduction_card_first",
+        type: "list",
+        subFields: [
+          {
+            name: "icon",
+            type: "file",
+            allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+            required: true,
+          },
+          {
+            name: "title",
+            type: "longText",
+            required: true,
+          },
+          {
+            name: "description",
+            type: "longText",
+            required: true,
+          },
+        ],
+      },
+      {
+        name: "introduction_card_second",
+        type: "list",
+        subFields: [
+          {
+            name: "icon",
+            type: "file",
+            allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+            required: true,
+          },
+          {
+            name: "title",
+            type: "longText",
+            required: true,
+          },
+          {
+            name: "description",
+            type: "longText",
+            required: true,
+          },
+        ],
+      },
+
+      {
+        name: "text_on_button",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "money_description",
+        type: "longText",
+        required: true,
+      },
+    ],
+  }
+);
+Builder.registerComponent(
+  dynamic(() => import("@/components/ClientTestimonials")),
+  {
+    name: "ClientTestimonialsSection",
+    inputs: [],
+  }
+);
 
 // --------- register Component -------------  //
 
@@ -773,5 +865,13 @@ Builder.register(
   {
     name: "Sales Benefits Section",
     items: [{ item: "SalesBenefitsSection" }],
+  },
+  {
+    name: "Introducing Sonic Smooth Section",
+    items: [{ item: "IntroducingSonicSmoothSection" }],
+  },
+  {
+    name: "Client Testimonials Section",
+    items: [{ item: "ClientTestimonialsSection" }],
   }
 );

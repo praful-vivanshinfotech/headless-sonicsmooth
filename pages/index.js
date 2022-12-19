@@ -505,7 +505,6 @@ export default function Home() {
         </div>
       </div>
       {/* SONIC TECHNOLOGY */}
-
       <div className="container mx-auto pt-[50px] lg:pt-[70px] pb-10">
         <p className="font-post-grotesk text-center font-600 text-15 lg:text-18 leading-5 uppercase text-gray-100 mb-[6px]">
           SONIC TECHNOLOGY
@@ -524,7 +523,6 @@ export default function Home() {
           </p>
         </div>
       </div>
-
       <div className="grid lg:grid-cols-2 grid-cols-1">
         <div className="bg-primary-300">
           <div className="flex justify-center h-full">
@@ -649,70 +647,8 @@ export default function Home() {
           </div>
         </div>
       </div>
-
-      <div className="container mx-auto ">
-        <div className="pt-20">
-          <div className="text-center pb-[60px]">
-            <p className="font-500 leading-5 font-post-grotesk pb-2">
-              How to use
-            </p>
-            <h2 className="uppercase font-cambon font-400 lg:text-40 text-30 lg:leading-[51px] pb-5 leading-9 text-primary-100">
-              3 Steps to Instant Glowing Skin
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
-            <div className="relative ">
-              <img src="/images/guide-1.png" className="md:mx-0 mx-auto" />
-              <div className="flex justify-start items-center gap-x-2">
-                <p className="text-[76px] font-400 font-cambon leading-[100px] text-primary-100 ">
-                  01
-                </p>
-                <p
-                  className="font-pot-grotesk font-500 text-16 leading-6 text-gray-100
-        "
-                >
-                  Thoroughly cleanse your face and pat dry.
-                </p>
-              </div>
-            </div>
-            <div className="relative guide-arrow-1 guide-arrow-2 ">
-              {" "}
-              <img src="/images/guide-2.png" className=" md:mx-0 mx-auto" />
-              <div className="flex justify-start items-center gap-x-2 ">
-                <p className="text-[76px] font-400 font-cambon leading-[100px] text-primary-100 ">
-                  02
-                </p>
-                <p
-                  className="font-pot-grotesk font-500 text-16 leading-6 text-gray-100
-        "
-                >
-                  Attach a new safety tip & choose your desired speed. Glide
-                  Sonicsmooth across the contours of face while holding your
-                  skin taught.
-                </p>
-              </div>
-            </div>
-            <div className=" ">
-              <img src="/images/guide-3.png" className="md:mx-0 mx-auto" />
-              <div className="flex justify-start items-center gap-x-2 ">
-                <p className="text-[76px] font-400 font-cambon leading-[100px] text-primary-100 ">
-                  03
-                </p>
-                <p
-                  className="font-pot-grotesk font-500 text-16 leading-6 text-gray-100
-        "
-                >
-                  Apply your favorite serum to soothe, calm, & hydrate your
-                  skin.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* customers */}
-      <div className="container mx-auto">
+      <div className="container mx-auto py-20">
         <div className="text-center">
           <p className="font-post-grotesk font-500 text-15 lg:text-16 leading-5 text-gray-100 pb-2">
             WHY OUR CUSTOMERS KEEP COMING BACK
@@ -793,6 +729,9 @@ export default function Home() {
             </div>
           </div>
         </div>
+      </div>
+      {/* how to use */}
+      <div className="container mx-auto py-20">
         <div className="pt-20">
           <div className="text-center pb-[60px]">
             <p className="font-500 leading-5 font-post-grotesk pb-2">
@@ -802,31 +741,31 @@ export default function Home() {
               3 Steps to Instant Glowing Skin
             </h2>
           </div>
-          <div className="grid grid-cols-3 gap-x-3">
-            <div>
-              <img src="/images/guide-1.png" />
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+            <div className="relative ">
+              <img src="/images/guide-1.png" className="md:mx-0 mx-auto" />
               <div className="flex justify-start items-center gap-x-2">
                 <p className="text-[76px] font-400 font-cambon leading-[100px] text-primary-100 ">
                   01
                 </p>
                 <p
                   className="font-pot-grotesk font-500 text-16 leading-6 text-gray-100
-            "
+        "
                 >
                   Thoroughly cleanse your face and pat dry.
                 </p>
               </div>
             </div>
-            <div className="relative guide-arrow-1 guide-arrow-2  ">
+            <div className="relative guide-arrow-1 guide-arrow-2 ">
               {" "}
-              <img src="/images/guide-2.png" />
-              <div className="flex justify-start items-center gap-x-2">
+              <img src="/images/guide-2.png" className=" md:mx-0 mx-auto" />
+              <div className="flex justify-start items-center gap-x-2 ">
                 <p className="text-[76px] font-400 font-cambon leading-[100px] text-primary-100 ">
                   02
                 </p>
                 <p
                   className="font-pot-grotesk font-500 text-16 leading-6 text-gray-100
-            "
+        "
                 >
                   Attach a new safety tip & choose your desired speed. Glide
                   Sonicsmooth across the contours of face while holding your
@@ -834,20 +773,201 @@ export default function Home() {
                 </p>
               </div>
             </div>
-            <div className="">
-              <img src="/images/guide-3.png" />
-              <div className="flex justify-start items-center gap-x-2">
+            <div className=" ">
+              <img src="/images/guide-3.png" className="md:mx-0 mx-auto" />
+              <div className="flex justify-start items-center gap-x-2 ">
                 <p className="text-[76px] font-400 font-cambon leading-[100px] text-primary-100 ">
                   03
                 </p>
                 <p
                   className="font-pot-grotesk font-500 text-16 leading-6 text-gray-100
-            "
+        "
                 >
                   Apply your favorite serum to soothe, calm, & hydrate your
                   skin.
                 </p>
               </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* social-media */}
+      <div className="bg-primary-300 py-9 lg:py-[70px]">
+        <div className="container mx-auto md:px-0 px-4">
+          <div className="pb-10 lg:pb-[70px]">
+            <div className="pb-12">
+              <p className="font-post-grotesk font-500 text-16 text-gray-100 leading-5 pb-1 text-center">
+                #1 SMOOTH SKIN SOLUTION
+              </p>
+              <h2 className="md:max-w-[75%] mx-auto font-cambon font-400 lg:text-40 text-30 lg:leading-[51px] leading-9 text-primary-100 pb-5 text-center">
+                Award-Winning & Influencer’ Favorite – The Beauty Industry Can’t
+                Get Enough of Sonicsmooth!
+              </h2>
+              <p className="font-post-grotesk font-500 text-16 lg:text-18 first-letter:leading-6 text-gray-100 text-center">
+                Sonicsmooth has been recognized for effectively helping women
+                get the smoothest skin of their lives.
+              </p>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 ">
+              {" "}
+              <div className="relative solution-line flex flex-col gap-y-3 px-[50px]">
+                <img
+                  src="/images/svg/allure.svg"
+                  className="mx-auto w-[227px]"
+                />
+                <p className="font-post-grotesk font-400 text-16 text-center leading-6 mt-auto">
+                  Sonicsmooth is the winner of the 2018 Allure’s Readers’ Choice
+                  Best Tool Breakthrough Award.
+                </p>
+              </div>{" "}
+              <div className="relative solution-line flex flex-col gap-y-3 px-[50px]">
+                <img src="/images/svg/dibs.svg" className="mx-auto" />
+                <p className="font-post-grotesk font-400 text-16 text-center leading-6">
+                  Sonicsmooth won the 2018 YAHOO Lifestyle Diversity In Beauty
+                  Award.
+                </p>
+              </div>{" "}
+              <div className="flex flex-col gap-y-3 px-[50px]">
+                <img src="/images/svg/beauty-mag.svg" className="mx-auto" />
+                <p className="font-post-grotesk font-400 text-16 text-center leading-6">
+                  Sonicsmooth has been selected in BeautyMag’s 2021 Top Beauty
+                  Picks.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="">
+            <p className="font-700 text-15 lg:text-18 leading-7 text-center text-primary-100 font-post-grotesk pb-2">
+              Followed by over 400,000 beautiful people on Instagram
+            </p>
+            <Link href="#">
+              <p className="md:max-w-[75%] mx-auto font-cambon font-400 lg:text-40 text-30 lg:leading-[51px] leading-9 text-primary-100 pb-5 text-center">
+                @michaeltoddbeauty
+              </p>
+            </Link>
+            <div className="pt-7 lg:pt-10 pb-9 lg:pb-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 md:gap-x-[26px]">
+                <div className="bg-white ">
+                  <img src="/images/customer-7.png" className="w-full" />
+                  <div className="px-3 py-4">
+                    <div className="flex justify-between items-center">
+                      <div className="flex justify-center items-start gap-x-4">
+                        <img src="/images/customer-7-1.png" />
+                        <div>
+                          <Link href="#">
+                            <h5 className="font-400 text-16 leading-5 text-primary-100 font-post-grotesk pb-2">
+                              @heidiledford
+                            </h5>
+                          </Link>
+                          <p className="font-400 text-14 leading-5 text-gray-100/50 font-post-grotesk">
+                            Nov 06,2020
+                          </p>
+                        </div>
+                      </div>
+                      <div>
+                        <Link href="#">
+                          <img
+                            src="/images/svg/instagram.svg"
+                            className="w-6 h-6"
+                          />
+                        </Link>
+                      </div>
+                    </div>
+                    <div>
+                      <p className="font-400 text-16 leading-6 font-post-grotesk text-gray-100 pt-2">
+                        If you know me, you know I shave my face on a regular
+                        basis. Believe...{" "}
+                        <span className="font-500 text-16 hover:underline leading-6 font-post-grotesk text-primary-100">
+                          Read more
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white ">
+                  <img src="/images/customer-8.png" className="w-full" />
+                  <div className="px-3 py-4">
+                    <div className="flex justify-between items-center">
+                      <div className="flex justify-center items-start gap-x-4">
+                        <img src="/images/customer-8-1.png" />
+                        <div>
+                          <Link href="#">
+                            <h5 className="font-400 text-16 leading-5 text-primary-100 font-post-grotesk pb-2">
+                              @lexigarcia96
+                            </h5>
+                          </Link>
+                          <p className="font-400 text-14 leading-5 text-gray-100/50 font-post-grotesk">
+                            Nov 06,2020
+                          </p>
+                        </div>
+                      </div>
+                      <div>
+                        <Link href="#">
+                          <img
+                            src="/images/svg/instagram.svg"
+                            className="w-6 h-6"
+                          />
+                        </Link>
+                      </div>
+                    </div>
+                    <div>
+                      <p className="font-400 text-16 leading-6 font-post-grotesk text-gray-100 pt-2">
+                        Say hello 👋🏼 to my new favorite beauty tool from
+                        @michaeltoddbeauty ! This makeup.....
+                        <span className="font-500 text-16 hover:underline leading-6 font-post-grotesk text-primary-100">
+                          Read more
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+                <div className="bg-white ">
+                  <img src="/images/customer-9.png" className="w-full" />
+                  <div className="px-3 py-4">
+                    <div className="flex justify-between items-center">
+                      <div className="flex justify-center items-start gap-x-4">
+                        <img src="/images/customer-9-1.png" />
+                        <div>
+                          <Link href="#">
+                            <h5 className="font-400 text-16 leading-5 text-primary-100 font-post-grotesk pb-2">
+                              @perkiperkins85
+                            </h5>
+                          </Link>
+                          <p className="font-400 text-14 leading-5 text-gray-100/50 font-post-grotesk">
+                            Nov 06,2020
+                          </p>
+                        </div>
+                      </div>
+                      <div>
+                        <Link href="#">
+                          <img
+                            src="/images/svg/instagram.svg"
+                            className="w-6 h-6"
+                          />
+                        </Link>
+                      </div>
+                    </div>
+                    <div>
+                      <p className="font-400 text-16 leading-6 font-post-grotesk text-gray-100 pt-2">
+                        A bit of a personal question, but do you shave, wax or
+                        use...
+                        <span className="font-500 text-16 hover:underline leading-6 font-post-grotesk text-primary-100">
+                          Read more
+                        </span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="flex flex-col justify-center items-center">
+              <button className="btn-primary mx-auto">
+                Try it now & save 20%
+              </button>
+              <p className="text-black font-400 font-post-grotesk text-16 leading-5 text-center pt-2">
+                30-Day Money-Back Guarantee
+              </p>
             </div>
           </div>
         </div>
@@ -894,6 +1014,146 @@ export default function Home() {
           </div>
         </div>
       </div>
+
+      {/* product */}
+
+      <div className="container mx-auto lg:px-0 px-2">
+        <div className="grid grid-cols-12 gap-y-12">
+          <div className="col-span-12 lg:col-span-6 relative">
+            <div className="relative">
+              <div className="flex justify-center items-start gap-x-4 ">
+                <div className="flex flex-col gap-y-4">
+                  <img
+                    src="/images/product-33.jpg"
+                    className="w-16 h-16 md:block hidden"
+                  />
+                  <img
+                    src="/images/product-33.jpg"
+                    className="w-16 h-16 md:block hidden"
+                  />
+                  <img
+                    src="/images/product-34.jpg"
+                    className="w-16 h-16 md:block hidden"
+                  />
+                  <img
+                    src="/images/product-35.jpg"
+                    className="w-16 h-16 md:block hidden"
+                  />
+                </div>
+                <div className="relative">
+                  <div>
+                    <img src="/images/product-36.jpg" />
+                  </div>
+                  <div className="absolute top-0 left-0 md:block hidden">
+                    <img src="/images/svg/dibs.svg" className="mx-auto" />
+                  </div>
+                </div>
+              </div>
+              <div className="bg-secondary-300 py-2 px-4 absolute sm:top-0 sm:right-10 ">
+                <p className="font-pst-grotesk font-400 text-14 leading-5 text-white text-center">
+                  20% OFF CODE: GLOW20
+                </p>
+              </div>
+            </div>
+          </div>
+          <div className="col-span-12 lg:col-span-6">
+            <div>
+              <h2 className="font-cambon font-400 lg:text-40 text-30 lg:leading-[51px] leading-9 text-primary-100 pb-3">
+                Sonicsmooth
+              </h2>
+              <p className="font-400 text-16 leading-5 text-secondary-200 pb-3 font-post-grotesk">
+                2-IN-1 SONIC DERMAPLANING SYSTEM
+              </p>
+              <div className="flex justify-start items-center gap-x-5 border-b border-gray-400 pb-4">
+                <img src="/images/svg/five-star.svg" />
+                <p className="text-gray-100 text-14  font-post-grotesk">
+                  4.8 (2,293)
+                </p>
+              </div>
+              <div className="py-3 border-b border-gray-400">
+                <div className="">
+                  <p className="text-secondary-300 font-400 text-24 leading-8 pb-2">
+                    $95.20{" "}
+                    <span className="line-through decoration-secondary-100/60 text-gray-100/60">
+                      {" "}
+                      $119.00
+                    </span>
+                  </p>
+                  <Link href="#">
+                    <p>or 4 payments of $29.75 with afterpay</p>
+                  </Link>
+                </div>
+              </div>
+              <div className="py-4 border-b border-gray-400">
+                <p className="font-post-grotesk font-400 text-16 leading-5 text-gray-100">
+                  Instantly reveal younger, smoother, softer, more radiant skin
+                  with Michael Todd Beauty’s award-winning, at-home sonic
+                  dermaplaning system. Sonicsmooth is dermatologist approved for
+                  quick, easy, and painless dead skin and peach fuzz removal.
+                </p>
+                <ul className="list-disc pl-5 mt-2 text-gray-100">
+                  <li className="pb-3">
+                    Preps skin for better skincare absorption
+                  </li>
+                  <li className="pb-3">
+                    {" "}
+                    Removes build-up on top layer of skin
+                  </li>
+                  <li className="pb-3"> Flawless makeup application</li>
+                </ul>
+              </div>
+              <div className="py-4 border-b border-gray-400 mb-6">
+                <p className="font-post-gretosk text-16 leading-5 text-gray-100 font-400">
+                  Color: Lavender Lust
+                </p>
+                <div className="flex flex-wrap gap-x-4 pt-2">
+                  <div className=" border border-black p-1 rounded-full">
+                    <div className="bg-primary-100 w-7 h-7 rounded-full bg-center bg-cover"></div>
+                  </div>
+                  <div className=" border border-black p-1 rounded-full">
+                    <div className="bg-primary-200 w-7 h-7 rounded-full bg-center bg-cover"></div>
+                  </div>
+                  <div className=" border border-black p-1 rounded-full">
+                    <div className="bg-primary-300 w-7 h-7 rounded-full bg-center bg-cover"></div>
+                  </div>
+                </div>
+                <div className="flex items-center gap-x-5 py-4">
+                  <div className="border border-gray-100 w-24 md:w-[135px] p-3">
+                    <div className="flex justify-between items-center">
+                      <p className="cursor-pointer">-</p>
+                      <p className="">1</p>
+                      <p className="cursor-pointer">+</p>
+                    </div>
+                  </div>
+                  <div className="w-full">
+                    <button className="btn-primary w-full sm:w-[378px]">
+                      Add To Cart
+                    </button>
+                  </div>
+                </div>
+                <div>
+                  <img src="/images/payment-method.png" className="" />
+                </div>
+                <div className="py-3">
+                  <div className="flex justify-start items-center gap-x-2">
+                    <img src="/images/svg/calendar.svg" />
+                    <p className="font-400 text-14 font-post-grotesk hover:underline">
+                      30-Day Money-Back Guarantee
+                    </p>
+                  </div>
+                  <div className="flex justify-start items-center gap-x-2 pt-3">
+                    <img src="/images/svg/shield.svg" />
+                    <p className="font-400 text-14 font-post-grotesk hover:underline">
+                      3 Year Warranty
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* allure */}
       <div className="bg-primary-200 py-14">
         <div className="container mx-auto ">
@@ -948,6 +1208,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+
       {/* faq */}
       <div className="container mx-auto md:px-0 px-4 py-10 lg:py-24">
         <h2 className="pb-[30px] lg:pb-10 font-cambon text-center font-400 lg:text-40 text-30 lg:leading-[51px] leading-9 text-primary-100">
@@ -1124,6 +1385,7 @@ export default function Home() {
           </div>
         </div>
       </div>
+
       {/* footer */}
       <div className="container mx-auto md:px-0 px-4">
         <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-y-6 md:py-14 py-10">

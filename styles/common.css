@@ -8,7 +8,7 @@
   @apply after:content-[""] after:bg-[url("/images/line.png")] after:bg-no-repeat after:bg-contain after:absolute after:top-1/2 sm:after:right-0 after:-right-[2px] lg:after:w-2 after:w-[5px] after:min-h-[122px] after:-translate-y-1/2;
 }
 .warranty-line {
-  @apply before:content-[""] before:bg-[url("/images/warranty-line.png")] before:bg-no-repeat before:bg-contain before:absolute sm:before:top-1/2 before:top-[54%]  lg:before:-right-[2px] lg:before:w-2 before:w-[175px] lg:before:min-h-[220px] before:min-h-[175px] lg:before:-translate-y-1/2 lg:before:rotate-0 before:rotate-[270deg] lg:before:my-auto before:my-0 before:mx-auto;
+  @apply before:content-[""] before:bg-[url("/images/warranty-line.png")] before:bg-no-repeat before:bg-contain before:absolute sm:before:top-1/2 lg:before:top-[80%] before:-bottom-6  lg:before:-right-[2px] lg:before:w-2 before:w-[175px] lg:before:min-h-[220px] before:min-h-[175px] lg:before:-translate-y-1/2 lg:before:rotate-0 before:rotate-[270deg] lg:before:my-auto before:my-0 before:mx-auto;
 }
 .guide-arrow-1 {
   @apply before:content-[""] before:bg-[url("/images/step-aero1.png")] before:bg-no-repeat before:w-[113px] before:h-[61px] before:bg-contain before:absolute 2xl:before:-left-[9rem] xl:before:-left-[7rem] md:before:-left-[4rem] before:-left-[33px] lg:before:top-[40%] md:before:top-[30%] before:-top-[30px] md:before:rotate-0 before:rotate-90 md:before:-translate-y-1/2;

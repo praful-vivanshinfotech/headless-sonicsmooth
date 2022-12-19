@@ -58,16 +58,19 @@ module.exports = {
           400: "#522D6D",
           500: "#cec2ef",
           600: "#F5F0FB",
-          700:"#F5EFFB"
+          700: "#F5EFFB",
         },
         secondary: {
           DEFAULT: "#39a037",
           100: "#5F5F6A",
+          200: "#666666",
+          300: "#B51A2F",
         },
         gray: {
           100: "#212529",
           200: "#EFEFEF",
           300: "#EBEBEB",
+          400: "#DCDCDC",
         },
       },
     },

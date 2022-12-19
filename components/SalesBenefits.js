@@ -9,7 +9,6 @@ const SalesBenefits = ({
   text_on_button,
   money_description,
 }) => {
-  console.log(product_benefits);
   return (
     <div className="bg-primary-500">
       <div className="grid lg:grid-cols-2 grid-cols-1">

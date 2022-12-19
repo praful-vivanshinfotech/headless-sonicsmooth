@@ -3,7 +3,7 @@ import React from "react";
 const HowToUse = ({ title, step_details }) => {
   return (
     <div className="container mx-auto ">
-      <div className="pt-20">
+      <div className="py-20">
         <div className="text-center pb-[60px]">
           <p className="font-500 leading-5 font-post-grotesk pb-2">
             How to use
@@ -12,7 +12,7 @@ const HowToUse = ({ title, step_details }) => {
             {title}
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 px-4">
           {step_details &&
             step_details.map((step, index) => (
               <div
@@ -24,11 +24,11 @@ const HowToUse = ({ title, step_details }) => {
                 }`}
               >
                 <img src={step.image} className="md:mx-0 mx-auto" />
-                <div className="flex justify-start items-center gap-x-2">
+                <div className="flex justify-start items-start gap-x-2">
                   <p className="text-[76px] font-400 font-cambon leading-[100px] text-primary-100">
                     0{index + 1}
                   </p>
-                  <p className="font-pot-grotesk font-500 text-16 leading-6 text-gray-100">
+                  <p className="font-pot-grotesk pt-6 font-post-grotesk font-500 text-16 leading-6 text-gray-100">
                     {step.description}
                   </p>
                 </div>

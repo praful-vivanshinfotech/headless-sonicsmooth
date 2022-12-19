@@ -25,14 +25,14 @@ const SkinConcern = ({
               </video>
             </div>
           </div>
-          <div className="lg:col-span-8 col-span-12">
+          <div className="lg:col-span-8 col-span-12 text-gray-100">
             <h2 className="text-30 leading-10 text-primary-100 pb-[30px] font-cambon">
               {title}
             </h2>
             <p className="text-16 md:text-18 pb-5 font-post-grotesk md:max-w-[86%] leading-7">
               {description_1}
             </p>
-            <div className="bg-primary-300 py-2 pr-14 pl-10 w-fit mb-5 relative md:-skew-x-[45deg] -skew-x-[10deg]">
+            <div className="bg-primary-300 py-2 pr-11 pl-7 w-fit mb-5 relative md:-skew-x-[45deg] -skew-x-[10deg]">
               <p className="italic font-400 text-16 md:text-18 text-primary-100 md:max-w-[100%] md:skew-x-[45deg] skew-x-[10deg] leading-6">
                 {description_2}
               </p>
@@ -53,7 +53,7 @@ const SkinConcern = ({
               </div>
             </div>
             <div className="relative before:bg-transparent lg:before:bg-primary-400 before:w-0 lg:before:w-[5px] before:absolute before:top-0 before:left-0 before:h-full before:bottom-0 lg:before:content-['*'] font-post-grotesk lg:max-w-[80%] ">
-              <p className="font-700 text-16 lg:text-18 pl-4 mb-5 leading-6">
+              <p className="font-700 text-16 lg:text-18 lg:pl-4 mb-5 leading-6">
                 {description_4}
               </p>
             </div>

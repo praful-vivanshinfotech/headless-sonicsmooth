@@ -78,8 +78,8 @@ const Footer = ({ about, menu, social_icon, email }) => {
                 Questions?
               </p>
               <Link href={`mailto:${email}`}>
-                <p className="font-400 text-16 leading-7 text-primary-100 flex md:flex-row flex-col">
-                  <span className="block text-center">Email:  </span>
+                <p className="font-400 text-16 leading-7 text-primary-100 text-center sm:text-left ">
+                  <span className=" text-center">Email:  </span>
                   <span className="hover:underline sm:pl-2">{email}</span>
                 </p>
               </Link>
