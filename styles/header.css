@@ -1,0 +1,70 @@
+#toggle-icon,
+#nav-icon2,
+#nav-icon3,
+#nav-icon4 {
+  @apply w-4 h-4 relative cursor-pointer;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+#toggle-icon span,
+#nav-icon3 span,
+#nav-icon4 span {
+  @apply block absolute h-[2px] w-full bg-primary opacity-100 rounded-lg left-0;
+  -webkit-transform: rotate(0deg);
+  -moz-transform: rotate(0deg);
+  -o-transform: rotate(0deg);
+  transform: rotate(0deg);
+  -webkit-transition: 0.25s ease-in-out;
+  -moz-transition: 0.25s ease-in-out;
+  -o-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+
+#toggle-icon span:nth-child(1) {
+  @apply top-0
+}
+#toggle-icon span:nth-child(2) {
+  @apply top-[6px]
+}
+#toggle-icon span:nth-child(3) {
+  @apply top-3
+}
+#toggle-icon.open span:nth-child(1) {
+@apply top-[6px];
+  -webkit-transform: rotate(135deg);
+  -moz-transform: rotate(135deg);
+  -o-transform: rotate(135deg);
+  transform: rotate(135deg);
+}
+#toggle-icon.open span:nth-child(2) {
+  @apply opacity-0 -left-[60px];
+}
+#toggle-icon.open span:nth-child(3) {
+  @apply top-[6px];
+  -webkit-transform: rotate(-135deg);
+  -moz-transform: rotate(-135deg);
+  -o-transform: rotate(-135deg);
+  transform: rotate(-135deg);
+}
+.header .nav-list {
+  @apply w-auto h-auto flex justify-center items-center;
+}
+.header .nav-list .overlay {
+  @apply absolute bg-[#f9fbff80] rounded opacity-0;
+  transition: all 0.5s;
+}
+.header .nav-list .overlay.active {
+  @apply opacity-100;
+}
+.menu-open {
+  @apply overflow-hidden
+}
+.menu-open .navbar-default {
+  @apply h-[calc(100vh+70px)] overflow-y-auto;
+}

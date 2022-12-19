@@ -1,0 +1,6 @@
+html {
+  -webkit-tap-highlight-color: transparent;
+}
+* {
+  transition: all 0.5s;
+}

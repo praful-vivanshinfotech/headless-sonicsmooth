@@ -1,0 +1,112 @@
+@font-face {
+  font-family: "Cambon";
+  src: url("/fonts/Cambon-Regular.woff2") format("woff2"),
+    url("/fonts/Cambon-Regular.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cambon";
+  src: url("/fonts/Cambon-Regular.woff2") format("woff2"),
+    url("/fonts/Cambon-Regular.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cambon";
+  src: url("/fonts/Cambon-Regular.woff2") format("woff2"),
+    url("/fonts/Cambon-Regular.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cambon";
+  src: url("/fonts/Cambon-Regular.woff2") format("woff2"),
+    url("/fonts/Cambon-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cambon";
+  src: url("/fonts/Cambon-Regular.woff2") format("woff2"),
+    url("/fonts/Cambon-Regular.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cambon";
+  src: url("/fonts/Cambon-Regular.woff2") format("woff2"),
+    url("/fonts/Cambon-Regular.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Cambon";
+  src: url("/fonts/Cambon-Regular.woff2") format("woff2"),
+    url("/fonts/Cambon-Regular.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Post Grotesk";
+  src: url("/fonts/PostGrotesk-Book.woff2") format("woff2"),
+    url("/fonts/PostGrotesk-Book.woff") format("woff");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Post Grotesk";
+  src: url("/fonts/PostGrotesk-Book.woff2") format("woff2"),
+    url("/fonts/PostGrotesk-Book.woff") format("woff");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Post Grotesk";
+  src: url("/fonts/PostGrotesk-Book.woff2") format("woff2"),
+    url("/fonts/PostGrotesk-Book.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Post Grotesk";
+  src: url("/fonts/PostGrotesk-Book.woff2") format("woff2"),
+    url("/fonts/PostGrotesk-Book.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Post Grotesk";
+  src: url("/fonts/PostGrotesk-Book.woff2") format("woff2"),
+    url("/fonts/PostGrotesk-Book.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Post Grotesk";
+  src: url("/fonts/PostGrotesk-Book.woff2") format("woff2"),
+    url("/fonts/PostGrotesk-Book.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Post Grotesk";
+  src: url("/fonts/PostGrotesk-Book.woff2") format("woff2"),
+    url("/fonts/PostGrotesk-Book.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
