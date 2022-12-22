@@ -1,4 +1,3 @@
-import AfterPayModal from "@/components/afterPayModal";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -1386,7 +1385,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-      <AfterPayModal/>
+
       {/* footer */}
       <div className="container mx-auto md:px-0 px-4">
         <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-y-6 md:py-14 py-10">
