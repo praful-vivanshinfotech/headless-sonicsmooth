@@ -19,3 +19,31 @@
 .solution-line {
   @apply before:content-[""] before:bg-[url("/images/warranty-line.png")] before:bg-no-repeat before:bg-contain before:absolute before:-bottom-2 before:right-0 before:w-1 before:min-h-[94px];
 }
+.solution-line2 {
+  @apply md:after:hidden after:content-[""] after:bg-[url("/images/warranty-line.png")] after:bg-no-repeat after:bg-contain after:absolute after:-bottom-2 after:left-0 after:w-1 after:min-h-[94px];
+}
+.solution-line-last {
+  @apply md:before:hidden before:content-[""] before:bg-[url("/images/warranty-line.png")] before:bg-no-repeat before:bg-contain before:absolute before:-bottom-2 before:right-0 before:w-1 before:min-h-[94px];
+}
+.solution-line2-last {
+  @apply md:after:hidden after:content-[""] after:bg-[url("/images/warranty-line.png")] after:bg-no-repeat after:bg-contain after:absolute after:-bottom-2 after:left-0 after:w-1 after:min-h-[94px];
+}
+/* @media (min-width: 320px) and (max-width: 768px) {
+  .solution-line2 {
+    display: block;
+  }
+}
+@media (min-width: 768px) {
+  .solution-line2 {
+    display: none;
+  }
+} */
+span.react-read-more-read-less-more {
+  @apply font-500 underline text-16 hover:underline leading-6 font-post-grotesk text-primary-100;
+}
+span.react-read-more-read-less-less {
+  @apply font-500 underline text-16 hover:underline leading-6 font-post-grotesk text-primary-100;
+}
+.children > div {
+  @apply font-400 text-16 leading-6 font-post-grotesk text-gray-100 pt-2;
+}

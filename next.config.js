@@ -7,6 +7,18 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  async redirects() {
+    return [
+      {
+        source: "/",
+        destination: "/sonicsmooth",
+        permanent: true,
+      },
+    ];
+  },
+  images: {
+    domains: ["cdn.builder.io", "cdn.shopify.com"],
+  },
   webpack(config) {
     config.module.rules.push({
       test: /\.svg$/i,

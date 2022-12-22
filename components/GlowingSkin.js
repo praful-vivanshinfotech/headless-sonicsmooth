@@ -5,18 +5,18 @@ const GlowingSkin = ({
   skin_image,
   description,
   button_text,
-  guarantee_time,
+  guarantee_time
 }) => {
   return (
-    <div className="container mx-auto md:px-0 px-4 xl:mt-[260px] pt-[50px] lg:pt-[70px] pb-10">
-      <h5 className="uppercase text-center font-500 text-[15px] md:text-18 leading-5 text-gray-100 pb-6 mb-1">
+    <div className="container mx-auto md:px-0 px-4 xl:mt-[260px] py-10 lg:py-20">
+      <h5 className="uppercase font-post-grotesk text-center font-500 text-[15px] md:text-16 leading-5 text-gray-100 pb-6 mb-1">
         Before & after
       </h5>
       <h5 className="text-28 md:text-[40px] leading-[35px] lg:leading-[51px] text-center text-primary-100 font-cambon pb-[30px]">
         {title}
       </h5>
       <div className="text-center pb-10 m-auto max-w-[100%] xl:max-w-[75%] md:max-w-[70%] font-post-grotesk">
-        <p className="text-15 md:text-18 leading-5 text-gray-100">
+        <p className="text-15 md:text-16 leading-5 text-gray-100">
           {description}
         </p>
       </div>
@@ -36,7 +36,7 @@ const GlowingSkin = ({
             {button_text}
           </button>
         </div>
-        <p className="text-center text-18 font-400 text-gray-100 pt-4 font-post-grotesk">
+        <p className="text-center text-16 font-400 text-gray-100 pt-4 font-post-grotesk">
           {guarantee_time}
         </p>
       </div>

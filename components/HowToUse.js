@@ -3,7 +3,7 @@ import React from "react";
 const HowToUse = ({ title, step_details }) => {
   return (
     <div className="container mx-auto ">
-      <div className="py-20">
+      <div className="px-4">
         <div className="text-center pb-[60px]">
           <p className="font-500 leading-5 font-post-grotesk pb-2">
             How to use
@@ -12,7 +12,7 @@ const HowToUse = ({ title, step_details }) => {
             {title}
           </h2>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 px-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 ">
           {step_details &&
             step_details.map((step, index) => (
               <div

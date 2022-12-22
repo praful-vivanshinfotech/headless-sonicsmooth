@@ -1,0 +1,64 @@
+[data-star] {
+  text-align: left;
+  font-style: normal;
+  display: inline-block;
+  position: relative;
+  unicode-bidi: bidi-override;
+}
+[data-star]::before {
+  display: block;
+  content: "★★★★★" !important;
+  color: #ddd;
+}
+[data-star]::after {
+  white-space: nowrap;
+  position: absolute;
+  top: 0;
+  left: 0;
+  content: "★★★★★" !important;
+  width: 0;
+  color: orange;
+  overflow: hidden;
+  height: 100%;
+}
+
+[data-star^="0.5"]::after,
+[data-star^=".5"]::after {
+  width: 10%;
+}
+
+[data-star^="1"]::after {
+  width: 20%;
+}
+
+[data-star^="1.5"]::after {
+  width: 30%;
+}
+
+[data-star^="2"]::after {
+  width: 40%;
+}
+
+[data-star^="2.5"]::after {
+  width: 50%;
+}
+
+[data-star^="3"]::after {
+  width: 60%;
+}
+
+[data-star^="3.5"]::after {
+  width: 70%;
+}
+
+[data-star^="4"]::after {
+  width: 80%;
+}
+
+[data-star^="4.5"]::after {
+  width: 90%;
+}
+
+[data-star^="5"]::after {
+  width: 100%;
+}

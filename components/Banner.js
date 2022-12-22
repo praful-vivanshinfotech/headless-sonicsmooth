@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -8,7 +9,7 @@ const Banner = (props) => {
         <div>
           <div className="flex lg:flex-col flex-col-reverse gap-y-4">
             <div className="font-post-grotesk flex justify-center lg:justify-start items-center gap-x-3 mb-1">
-              <img src="/svg/rating-star.svg" />
+              <i className="after:text-yellow text-22" data-star="4.5"></i>
               <p className="md:text-16 text-[13px] text-gray-100 leading-5">
                 {props.rating_content}
               </p>
@@ -81,7 +82,13 @@ const Banner = (props) => {
         <div className="lg:block hidden ">
           <div className="grid grid-cols-1">
             <div className="relative h-[500px]">
-              <img src={props.banner_image} className="w-full h-full" />
+              <Image
+                width={300}
+                height={300}
+                src={props.banner_image}
+                className="w-full h-full"
+                alt=""
+              />
             </div>
           </div>
         </div>

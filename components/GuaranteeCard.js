@@ -2,11 +2,14 @@ import React from "react";
 
 const GuaranteeCard = ({ card }) => {
   return (
-    <div className="container mx-auto py-20">
+    <div className="container mx-auto ">
       <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto gap-y-12 max-w-7xl px-4">
         {card &&
           card.map((card, index, arr) => (
-            <div key={`card-${index}`} className={"relative"+((index===0)?" lg:pr-12":" lg:pl-12")}>
+            <div
+              key={`card-${index}`}
+              className={"relative" + (index === 0 ? " lg:pr-12" : " lg:pl-12")}
+            >
               <div
                 className={`flex lg:flex-row flex-col justify-center items-center gap-x-10 ${
                   arr.length - 1 === index + 1 ? "warranty-line" : ""

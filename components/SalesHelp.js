@@ -13,11 +13,11 @@ const SalesHelp = ({ title, description, mail_id, sub_description }) => {
             {description}
           </p>
           <Link href={`mailto:${mail_id}`}>
-            <p className="font-400 text-16 lg:text-18 leading-6 lg:leading-7 text-primary-300 pb-4 hover:underline">
+            <p className="font-400 font-post-grotesk text-16 lg:text-18 leading-6 lg:leading-7 text-primary-300 pb-4 hover:underline">
               {mail_id}
             </p>
           </Link>
-          <p className="font-400 text-16 lg:text-18 leading-7 text-primary-300">
+          <p className="font-400 text-16 lg:text-18 leading-7 text-primary-300 font-post-grotesk">
             {sub_description}
           </p>
         </div>

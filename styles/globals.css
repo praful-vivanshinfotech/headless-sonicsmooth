@@ -4,6 +4,9 @@
 @import "./base.css";
 @import "./header.css";
 @import "./common.css";
+@import "./slick.css";
 @import "./button.css";
 @import "./accordion.css";
+@import "./ratingstar.css";
+@import "./modal.css";
 @import "tailwindcss/utilities";

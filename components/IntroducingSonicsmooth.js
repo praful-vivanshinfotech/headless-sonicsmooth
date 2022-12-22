@@ -1,5 +1,5 @@
 import React from "react";
-
+import Accordion from "./accrodian/Accordion";
 const IntroducingSonicSmooth = ({
   title,
   description,
@@ -11,8 +11,8 @@ const IntroducingSonicSmooth = ({
   text_on_button,
 }) => {
   return (
-    <div className="bg-primary-700">
-      <div className="container mx-auto py-14">
+    <div className="bg-primary-700 md:px-0 px-4">
+      <div className="container mx-auto py-8 lg:py-14">
         <div>
           <p className="font-500 mb-1 font-post-grotesk text-center">
             INTRODUCING
@@ -26,58 +26,124 @@ const IntroducingSonicSmooth = ({
           <p className="text-16 font-post-grotesk max-w-[760px] mx-auto text-center">
             {sub_description && sub_description}
           </p>
-          <div className="flex gap-x-12 justify-center">
+          <div className="flex lg:flex-row flex-col gap-x-12 justify-center">
             <div className="flex flex-col justify-center pt-5">
               {introduction_card_first &&
                 introduction_card_first.map((card, index) => (
-                  <div
-                    key={`card-1-${index}`}
-                    className={`flex justify-end items-start mb-8 gap-x-4 ${
-                      index % 2 ? "" : "-mr-12"
-                    }`}
-                  >
-                    <div>
-                      <p className="text-20 font-cambon mb-2 text-primary-100 text-right">
-                        {card.title}
-                      </p>
-                      <p className="text-16 text-gray-100 text-right font-post-grotesk max-w-[265px]">
-                        {card.description}
-                      </p>
+                  <div key={`card-1-${index}`}>
+                    <div className="lg:block hidden">
+                      <div
+                        className={`flex justify-end items-start mb-8 gap-x-4 ${
+                          index % 2 ? "" : "-mr-12 "
+                        }`}
+                      >
+                        <div>
+                          <p className="text-20 font-cambon mb-2 text-primary-100 text-right">
+                            {card.title}
+                          </p>
+                          <p className="text-16 text-gray-100 text-right font-post-grotesk max-w-[265px]">
+                            {card.description}
+                          </p>
+                        </div>
+                        <div>
+                          <img src={card.icon} alt="" />
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <img src={card.icon} alt="" />
+                    <div className="lg:hidden block ">
+                      <Accordion
+                        className="p-4 mb-4 bg-white"
+                        accordion_heading={
+                          <div className="pb-2">{card.title}</div>
+                        }
+                        accordion_content={
+                          <div className="flex justify-center items-center gap-x-2 ">
+                            <img
+                              src={card.icon}
+                              className="w-[66px] h-[66px]"
+                            />
+                            <div className="font-400 leading-5 text-gray-100 text-15">
+                              {card.description}
+                            </div>
+                          </div>
+                        }
+                      />
                     </div>
                   </div>
                 ))}
             </div>
-            <div className="xl:-mb-[260px] flex flex-col items-center">
-              <div className="mb-7">
-                <img src={product_image && product_image} alt="" />
+            <div className="lg:block hidden">
+              <div className="xl:-mb-[260px] flex flex-col items-center font-post-grotesk">
+                <div className="mb-7">
+                  <img src={product_image && product_image} alt="" />
+                </div>
+                <a className="btn-primary mb-2 mx-auto" href="#">
+                  {text_on_button && text_on_button}
+                </a>
+                <p className="text-center">{money_description}</p>
               </div>
-              <a className="btn-primary mb-2 mx-auto" href="#">
-                {text_on_button && text_on_button}
-              </a>
-              <p className="text-center">{money_description}</p>
             </div>
-            <div className="flex flex-col justify-center pt-5">
+            <div className="flex  flex-col justify-center lg:pt-5">
               {introduction_card_second &&
                 introduction_card_second.map((card, index) => (
-                  <div
-                    key={`card_second${index}`}
-                    className={`flex justify-start items-start mb-8 gap-x-4 ${
-                      index % 2 ? "" : "-ml-12"
-                    }`}
-                  >
-                    <div>
-                      <img src={card.icon} alt="" />
+                  <div key={`card_second-${index}`}>
+                    <div className="lg:block hidden">
+                      <div
+                        className={`flex justify-start items-start mb-8 gap-x-4 ${
+                          index % 2 ? "" : "-ml-12"
+                        }`}
+                      >
+                        <div>
+                          <img src={card.icon} alt="" />
+                        </div>
+                        <div>
+                          <p className="text-20 font-cambon mb-2 text-primary-100 ">
+                            {card.title}
+                          </p>
+                          <p className="text-16 text-gray-100  font-post-grotesk max-w-[265px]">
+                            {card.description}
+                          </p>
+                         {(index + 1 == introduction_card_second.length && <p className="font-500 text-primary-100 font-post-grotesk">-Dendy Engelman, MD</p> )}
+
+                        </div>
+                      </div>
                     </div>
-                    <div>
-                      <p className="text-20 font-cambon mb-2 text-primary-100 ">
-                        {card.title}
-                      </p>
-                      <p className="text-16 text-gray-100  font-post-grotesk max-w-[265px]">
-                        {card.description}
-                      </p>
+                    <div className="lg:hidden block ">
+                      <Accordion
+                        className="p-4 mb-4 bg-white"
+                        accordion_heading={
+                          <div className="pb-2">{card.title}</div>
+                        }
+                        accordion_content={
+                          <div className="flex justify-center items-center gap-x-2 ">
+                            <img
+                              src={card.icon}
+                              className="w-[66px] h-[66px]"
+                            />
+                            <div className="font-400 leading-5 text-gray-100 text-15">
+                              {card.description}
+                            </div>
+                          </div>
+                        }
+                      />
+                    </div>
+                    <div className={`  ${index+1  == introduction_card_second.length  ? "lg:hidden block" : "hidden"}`}>
+                      <div
+                        className={"flex justify-start items-start mb-8 gap-x-4"}
+                      >
+                        <div>
+                          <img src={card.icon} alt="" />
+                        </div>
+                        <div>
+                          <p className="text-20 font-cambon mb-2 text-primary-100 ">
+                            {card.title}
+                          </p>
+                          <p className="text-16 text-gray-100  font-post-grotesk max-w-[265px]">
+                            {card.description}
+                          </p>
+                         {(index + 1 == introduction_card_second.length && <p className="font-500 text-primary-100 font-post-grotesk">-Dendy Engelman, MD</p> )}
+                        </div>
+                      </div>
                     </div>
                   </div>
                 ))}

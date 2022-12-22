@@ -1,0 +1,96 @@
+.slick-dots li.slick-active button:before {
+  opacity: 1 !important;
+  background-color: #200340 !important;
+}
+.slick-dots li button:before {
+  @apply !text-[10px];
+  opacity: 1 !important;
+  width: 10px !important;
+  height: 10px !important;
+  content: "" !important;
+  border-radius: 100%;
+  border: 1px solid #200340;
+}
+.slick-dots li {
+  width: 10px !important;
+  height: 10px !important;
+}
+.slick-dots li button {
+  width: 10px !important;
+  height: 10px !important;
+}
+/* sales insta -------------*/
+.sales-instagram .slick-initialized .slick-slide:first-child {
+  @apply !mt-12 xl:!mt-0;
+}
+.slick-prev {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  transform: translate(0, -50%);
+  cursor: pointer;
+  color: transparent;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.slick-prev:before {
+  font-family: "slick";
+  font-size: 20px;
+  line-height: 1;
+  opacity: 0.75;
+  color: transparent !important;
+  -webkit-font-smoothing: antialiased;
+  background-image: url(/svg/icon-left.svg);
+
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.slick-next {
+  font-size: 0;
+  line-height: 0;
+  position: absolute;
+  top: 50%;
+  display: block;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  transform: translate(0, -50%);
+  cursor: pointer;
+  color: transparent;
+  border: none;
+  outline: none;
+  background: transparent;
+}
+.slick-next:before {
+  font-family: "slick";
+  font-size: 20px;
+  line-height: 1;
+  opacity: 0.75;
+  color: transparent !important;
+  background-image: url(/svg/icon-right.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.swiper-pagination-bullet {
+  border: 1px solid #23004e;
+  background: #ffffff !important;
+  width: 10px !important;
+  height: 10px !important;
+  opacity: 1 !important;
+}
+.swiper-pagination-bullet-active {
+  background: #23004e !important;
+}
+.swiper-pagination {
+  bottom: 0px !important;
+}
+.swiper-vertical .swiper-slide-thumb-active div {
+  @apply border-2 border-primary-100;
+}

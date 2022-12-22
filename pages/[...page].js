@@ -8,8 +8,10 @@ import {
   Builder,
   useIsPreviewing,
 } from "@builder.io/react";
+import { getShopifyProducts } from "@/lib/shopify";
 builder.init(process.env.NEXT_PUBLIC_BUILDER_KEY);
 import dynamic from "next/dynamic";
+import { ProductContext } from "@/context/productContext";
 export async function getStaticProps({ params }) {
   const page = await builder
     .get("page", {
@@ -18,9 +20,13 @@ export async function getStaticProps({ params }) {
       },
     })
     .toPromise();
+  const products = page?.data?.sku
+    ? await getShopifyProducts(page?.data?.sku)
+    : "";
   return {
     props: {
       page: page || null,
+      products: products || null,
     },
     revalidate: 1,
   };
@@ -36,7 +42,7 @@ export async function getStaticPaths() {
     fallback: true,
   };
 }
-export default function Page({ page }) {
+export default function Page({ page, products }) {
   const router = useRouter();
   const isPreviewing = useIsPreviewing();
   if (router.isFallback) {
@@ -51,7 +57,9 @@ export default function Page({ page }) {
         <title>{page?.data.title}</title>
         <meta name="description" content={page?.data.description} />
       </Head>
-      <BuilderComponent model="page" content={page} />
+      <ProductContext.Provider value={products}>
+        <BuilderComponent model="page" content={page} />
+      </ProductContext.Provider>
     </>
   );
 }
@@ -615,6 +623,42 @@ Builder.registerComponent(
         type: "longText",
         required: true,
       },
+      {
+        name: "heading",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "customer_review_title",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "product_reviews",
+        type: "list",
+        subFields: [
+          {
+            name: "ratings",
+            type: "longText",
+            required: true,
+          },
+          {
+            name: "one_word_reviews",
+            type: "longText",
+            required: true,
+          },
+          {
+            name: "customer_reviews",
+            type: "longText",
+            required: true,
+          },
+          {
+            name: "customer_name",
+            type: "longText",
+            required: true,
+          },
+        ],
+      },
     ],
   }
 );
@@ -791,7 +835,222 @@ Builder.registerComponent(
   dynamic(() => import("@/components/ClientTestimonials")),
   {
     name: "ClientTestimonialsSection",
-    inputs: [],
+    inputs: [
+      {
+        name: "sub_title",
+        type: "string",
+        required: true,
+      },
+      {
+        name: "title",
+        type: "string",
+        required: true,
+      },
+      {
+        name: "rating",
+        type: "string",
+        required: true,
+      },
+      {
+        name: "testimonials_card",
+        type: "list",
+        subFields: [
+          {
+            name: "client_image",
+            type: "file",
+            allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+            required: true,
+          },
+          {
+            name: "star",
+            type: "longText",
+            required: true,
+          },
+          {
+            name: "comment",
+            type: "longText",
+            required: true,
+          },
+          {
+            name: "description",
+            type: "longText",
+            required: true,
+          },
+          {
+            name: "client_name",
+            type: "longText",
+            required: true,
+          },
+        ],
+      },
+    ],
+  }
+);
+Builder.registerComponent(
+  dynamic(() => import("@/components/Product"), { ssr: true }),
+  {
+    name: "ProductSection",
+    inputs: [
+      {
+        name: "offer_title",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "award_image",
+        type: "file",
+        allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+        required: true,
+      },
+      {
+        name: "subtitle",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "rating_star",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "rating_user",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "after_pay_content",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "after_pay_image",
+        type: "file",
+        allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+        required: true,
+      },
+      {
+        name: "payment_method_image",
+        type: "file",
+        allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+        required: true,
+      },
+      {
+        name: "product_guarantee_description",
+        type: "list",
+        subFields: [
+          {
+            name: "icon",
+            type: "file",
+            allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+            required: true,
+          },
+          {
+            name: "description",
+            type: "longText",
+            required: true,
+          },
+        ],
+      },
+    ],
+  }
+);
+Builder.registerComponent(
+  dynamic(() => import("@/components/SalesInstagram")),
+  {
+    name: "ReviewSection",
+    inputs: [
+      {
+        name: "sub_title",
+        type: "string",
+        required: true,
+      },
+      {
+        name: "title",
+        type: "string",
+        required: true,
+      },
+      {
+        name: "rating",
+        type: "string",
+        required: true,
+      },
+      {
+        name: "award_card",
+        type: "list",
+        subFields: [
+          {
+            name: "award_image",
+            type: "file",
+            allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+            required: true,
+          },
+          {
+            name: "award_description",
+            type: "longText",
+            required: true,
+          },
+        ],
+      },
+      {
+        name: "sales_insta_subtitle",
+        type: "string",
+        required: true,
+      },
+      {
+        name: "sales_insta_profile",
+        type: "string",
+        required: true,
+      },
+      {
+        name: "insta_post_card",
+        type: "list",
+        subFields: [
+          {
+            name: "post_image",
+            type: "file",
+            allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+            required: true,
+          },
+          {
+            name: "profile_image",
+            type: "file",
+            allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+            required: true,
+          },
+          {
+            name: "profile_id",
+            type: "longText",
+            required: true,
+          },
+          {
+            name: "post_date",
+            type: "longText",
+            required: true,
+          },
+          {
+            name: "insta_icon",
+            type: "file",
+            allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+            required: true,
+          },
+          {
+            name: "post_description",
+            type: "longText",
+            required: true,
+          },
+        ],
+      },
+      {
+        name: "button",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "Guarantee",
+        type: "longText",
+        required: true,
+      },
+    ],
   }
 );
 
@@ -873,5 +1132,13 @@ Builder.register(
   {
     name: "Client Testimonials Section",
     items: [{ item: "ClientTestimonialsSection" }],
+  },
+  {
+    name: "Product Section",
+    items: [{ item: "ProductSection" }],
+  },
+  {
+    name: "Review Section",
+    items: [{ item: "ReviewSection" }],
   }
 );

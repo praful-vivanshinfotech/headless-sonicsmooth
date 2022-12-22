@@ -43,6 +43,7 @@ module.exports = {
       30: rem(30),
       32: rem(32),
       36: rem(36),
+      40: rem(40),
       42: rem(42),
       48: rem(48),
       68: rem(68),
@@ -50,6 +51,7 @@ module.exports = {
     },
     extend: {
       colors: {
+        yellow: "#FED624",
         primary: {
           DEFAULT: "#200340",
           100: "#23004e",

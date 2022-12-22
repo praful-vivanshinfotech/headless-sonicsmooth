@@ -8,12 +8,12 @@ const SonicTechnology = ({
   sonic_smooth_section_image,
   other_product_section_image,
   sonic_smooth_section,
-  other_products_section,
+  other_products_section
 }) => {
   return (
     <>
-      <div className="container mx-auto pt-[50px] lg:pt-[70px] px-4 pb-10">
-        <p className="font-post-grotesk text-center font-600 text-15 lg:text-18 leading-5 uppercase text-gray-100 mb-[6px]">
+      <div className="container mx-auto px-4 pb-10">
+        <p className="font-post-grotesk text-center font-600 text-15 lg:text-16 leading-5 uppercase text-gray-100 mb-[6px]">
           SONIC TECHNOLOGY
         </p>
         <div className="md:max-w-[60%] m-auto">
@@ -27,7 +27,7 @@ const SonicTechnology = ({
           </p>
         </div>
       </div>
-      <div className="grid lg:grid-cols-2 grid-cols-1">
+      <div className="grid lg:grid-cols-2 grid-cols-1 pb-10 lg:pb-20">
         <div className="bg-primary-300">
           <div className="flex justify-center h-full">
             <div className="pt-0 sm:pt-20 max-w-[350px] w-full h-auto sm:h-full flex flex-[60%] justify-end !items-end">
@@ -114,7 +114,7 @@ const SonicTechnology = ({
                           src={item.icon}
                           className="w-4 md:w-6 lg:w-8 h-4 md:h-6 lg:h-8"
                         />
-                        <p className="font-400 font-post-grotesk text-16 sm:text-18 lg:text-20 leading-5 lg:leading-7 text-primary-100">
+                        <p className="font-400 font-post-grotesk text-[15px] sm:text-18 lg:text-20 leading-5 lg:leading-7 text-primary-100">
                           {item.description}
                         </p>
                       </li>

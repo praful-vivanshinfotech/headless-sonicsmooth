@@ -50,7 +50,7 @@ const Header = ({ header_menu, logo }) => {
                         <div className="lg:block hidden py-4 lg:py-0">
                           <Link
                             href={`#${header.link}`}
-                            className="lg:ml-3 !my-4 btn-primary w-full lg:w-auto"
+                            className="lg:ml-3 !text-16 !my-4 btn-primary w-full lg:w-auto"
                           >
                             {header.title}
                           </Link>

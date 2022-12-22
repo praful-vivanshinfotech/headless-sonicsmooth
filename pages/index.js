@@ -1,3 +1,4 @@
+import AfterPayModal from "@/components/afterPayModal";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
@@ -731,8 +732,8 @@ export default function Home() {
         </div>
       </div>
       {/* how to use */}
-      <div className="container mx-auto py-20">
-        <div className="pt-20">
+      <div className="container mx-auto ">
+        <div className="">
           <div className="text-center pb-[60px]">
             <p className="font-500 leading-5 font-post-grotesk pb-2">
               How to use
@@ -793,7 +794,7 @@ export default function Home() {
       </div>
 
       {/* social-media */}
-      <div className="bg-primary-300 py-9 lg:py-[70px]">
+      <div className="bg-primary-300 py-9 lg:py-[70px] mb-[30px] lg:mb-20 mt-[88px] lg:mt-[100px]">
         <div className="container mx-auto md:px-0 px-4">
           <div className="pb-10 lg:pb-[70px]">
             <div className="pb-12">
@@ -974,7 +975,7 @@ export default function Home() {
       </div>
 
       {/* gurantee */}
-      <div className="container mx-auto py-20">
+      <div className="container mx-auto">
         <div className="flex lg:flex-row flex-col justify-center items-center gap-y-12">
           <div className="lg:pr-12 relative">
             <div className="flex lg:flex-row flex-col justify-center items-center gap-x-10 warranty-line">
@@ -1017,7 +1018,7 @@ export default function Home() {
 
       {/* product */}
 
-      <div className="container mx-auto lg:px-0 px-2">
+      <div className="container mx-auto  mt-[72px] lg:mt-20 lg:mb-6 lg:px-0 px-2">
         <div className="grid grid-cols-12 gap-y-12">
           <div className="col-span-12 lg:col-span-6 relative">
             <div className="relative">
@@ -1155,7 +1156,7 @@ export default function Home() {
       </div>
 
       {/* allure */}
-      <div className="bg-primary-200 py-14">
+      <div className="bg-primary-200 py-12 lg:py-14">
         <div className="container mx-auto ">
           <div className="grid grid-cols-12 gap-y-10">
             <div className="lg:col-span-4 md:col-span-12 col-span-6 lg:max-w-[282px] sm:border-0 sm:pr-0 pr-3 border-r border-primary-100/40">
@@ -1210,7 +1211,7 @@ export default function Home() {
       </div>
 
       {/* faq */}
-      <div className="container mx-auto md:px-0 px-4 py-10 lg:py-24">
+      <div className="container mx-auto md:px-0 px-4 py-10 lg:pt-[84px] lg:pb-20">
         <h2 className="pb-[30px] lg:pb-10 font-cambon text-center font-400 lg:text-40 text-30 lg:leading-[51px] leading-9 text-primary-100">
           Frequently Asked Questions
         </h2>
@@ -1385,7 +1386,7 @@ export default function Home() {
           </div>
         </div>
       </div>
-
+      <AfterPayModal/>
       {/* footer */}
       <div className="container mx-auto md:px-0 px-4">
         <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 gap-y-6 md:py-14 py-10">

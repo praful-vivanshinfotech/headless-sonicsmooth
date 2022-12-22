@@ -3,7 +3,11 @@ import { useRef } from "react";
 
 import IconPlus from "../../public/images/svg/icon-add.svg";
 
-const Accordion = ({ accordion_content, accordion_heading }) => {
+const Accordion = ({
+  accordion_content,
+  accordion_heading,
+  className = ""
+}) => {
   const [clicked, setClicked] = useState(false);
   const contentEl = useRef();
 
@@ -13,9 +17,9 @@ const Accordion = ({ accordion_content, accordion_heading }) => {
 
   return (
     <div
-      className={`font-400 text-18 lg:text-20 font-cambon leading-6 lg:leading-7 text-primary-100 border-b border-gray-300 pb-4 ${
+      className={`font-400 text-18 lg:text-20 font-cambon leading-6 lg:leading-7 text-primary-100 border-b  border-gray-300 py-[14px] ${
         clicked ? "active" : ""
-      }`}
+      } ${className} `}
     >
       <div
         className="flex justify-between items-center cursor-pointer"
