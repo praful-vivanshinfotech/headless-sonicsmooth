@@ -1,3 +1,4 @@
+import { ScrollToDiv } from "@/helper/Scroll";
 import Image from "next/image";
 import React from "react";
 
@@ -11,6 +12,7 @@ const SalesBenefits = ({
   text_on_button,
   money_description,
   section_id,
+  button_link,
 }) => {
   return (
     <div id={section_id && section_id.trim()} className="bg-primary-500 ">
@@ -41,8 +43,8 @@ const SalesBenefits = ({
                 key={`product_benefits${index}`}
                 className="flex justify-start items-center gap-x-2 pb-2"
               >
-                <img alt="" src={product_benefits.icon} className="w-5 h-5" />
-                <p className="font-400 text-16 leading-5 text-gray-100 font-post-grotesk">
+                <img src={product_benefits.icon} className="w-5 h-5" />
+                <p className="font-400 text-14 sm:text-16 leading-5 text-gray-100 font-post-grotesk">
                   {product_benefits.benefits}
                 </p>
               </li>
@@ -52,7 +54,11 @@ const SalesBenefits = ({
             <p className="pt-4 pb-8 text-primary-100 font-post-grotesk font-700 text-18 leading-6">
               {sub_description && sub_description}
             </p>
-            <button className="btn-primary max-w-[280px]">
+            <button
+              onClick={ScrollToDiv}
+              data-scroll-to={button_link ? button_link?.trim() : "__next"}
+              className="btn-primary max-w-[280px]"
+            >
               {text_on_button && text_on_button}
             </button>
             <p className="pt-4 text-black font-400 text-16 leading-5 font-post-grotesk">

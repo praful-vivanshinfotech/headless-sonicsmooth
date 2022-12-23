@@ -2,3 +2,9 @@ html {
   -webkit-tap-highlight-color: transparent;
   scroll-behavior: smooth;
 }
+.container {
+  max-width: 1292px !important;
+}
+.container-sm {
+  max-width: 1212px !important;
+}

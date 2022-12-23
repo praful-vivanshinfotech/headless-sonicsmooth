@@ -1,7 +1,7 @@
+import { ScrollToDiv } from "@/helper/Scroll";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-
 const Banner = (props) => {
   return (
     <div id={props?.section_id} className="container mx-auto px-4">
@@ -58,8 +58,14 @@ const Banner = (props) => {
               <p className="sm:text-18 font-bold font-post-grotesk text-primary-100 pb-5">
                 {props.banner_sub_title}
               </p>
-              <Link href="#" className="">
-                <button className="btn-primary mb-4 w-full sm:max-w-[406px]">
+
+              <Link href="#!" onClick={ScrollToDiv} className="">
+                <button
+                  data-scroll-to={
+                    props?.button_link ? props?.button_link?.trim() : "__next"
+                  }
+                  className="btn-primary mb-4 w-full sm:max-w-[406px]"
+                >
                   {props.text_on_button}
                 </button>
               </Link>
@@ -76,7 +82,7 @@ const Banner = (props) => {
           <div className="flex lg:mt-9 justify-center items-center gap-x-4 lg:gap-x-6 w-full md:max-w-[454px] font-post-grotesk">
             <img alt="" src={props.review_author} className="w-20 h-20" />
             <div className="">
-              <p className="text-16 pb-3 text-gray-100 font-400">
+              <p className="text-[15px] sm:text-16 pb-3 text-gray-100 font-400">
                 {props.review_content}
               </p>
               <div className="flex justify-start items-center gap-x-6">

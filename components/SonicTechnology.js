@@ -20,16 +20,16 @@ const SonicTechnology = ({
         id={section_id && section_id.trim()}
         className="container mx-auto px-4 pb-10"
       >
-        <p className="font-post-grotesk text-center font-600 text-15 lg:text-16 leading-5 uppercase text-gray-100 mb-[6px]">
+        <p className="font-post-grotesk text-center font-600 text-[15px] lg:text-16 leading-5 uppercase text-gray-100 mb-[6px]">
           SONIC TECHNOLOGY
         </p>
-        <div className="md:max-w-[60%] m-auto">
-          <h2 className="mb-7 text-30 leading-9 lg:leading-[51px] text-center text-primary-100 font-cambon">
+        <div className="md:max-w-[940px] m-auto">
+          <h2 className="mb-7 text-28 sm:text-40 leading-9 lg:leading-[51px] text-center text-primary-100 font-cambon">
             {title}
           </h2>
         </div>
         <div className="md:max-w-[45%] m-auto ">
-          <p className="text-center font-500 text-15 font-post-grotesk lg:text-18 leading-6 text-gray-100 ">
+          <p className="text-center font-500 text-16 font-post-grotesk sm:text-18 leading-6 text-gray-100 ">
             {description}
           </p>
         </div>

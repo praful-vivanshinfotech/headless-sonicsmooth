@@ -3,7 +3,7 @@ import React from "react";
 
 const GuaranteeCard = ({ card, section_id }) => {
   return (
-    <div id={section_id && section_id.trim()} className="container mx-auto ">
+    <div id={section_id && section_id.trim()} className="container-sm mx-auto ">
       <div className="grid grid-cols-1 lg:grid-cols-2 mx-auto gap-y-12 max-w-7xl px-4">
         {card &&
           card.map((card, index, arr) => (
@@ -30,7 +30,7 @@ const GuaranteeCard = ({ card, section_id }) => {
                   <h5 className="lg:text-20 text-18 leading-6 font-cambon text-primary-100 pb-2 lg:text-start text-center">
                     {card.description}
                   </h5>
-                  <p className="text-15 lg:text-16 lg:text-start font-post-grotesk text-center">
+                  <p className="text-[15px] lg:text-16 lg:text-start font-post-grotesk text-center">
                     {card.sub_description}
                   </p>
                 </div>

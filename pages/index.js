@@ -847,7 +847,7 @@ export default function Home() {
               </p>
             </Link>
             <div className="pt-7 lg:pt-10 pb-9 lg:pb-12">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 md:gap-x-[26px]">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 md:gap-x-[27px]">
                 <div className="bg-white ">
                   <img src="/images/customer-7.png" className="w-full" />
                   <div className="px-3 py-4">

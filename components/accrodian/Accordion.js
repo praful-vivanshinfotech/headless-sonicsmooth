@@ -1,12 +1,11 @@
-import { useState } from "react";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 
 import IconPlus from "../../public/images/svg/icon-add.svg";
 
 const Accordion = ({
   accordion_content,
   accordion_heading,
-  className = ""
+  className = "",
 }) => {
   const [clicked, setClicked] = useState(false);
   const contentEl = useRef();
@@ -17,7 +16,7 @@ const Accordion = ({
 
   return (
     <div
-      className={`font-400 text-18 lg:text-20 font-cambon leading-6 lg:leading-7 text-primary-100 border-b  border-gray-300 py-[14px] ${
+      className={`font-400 text-20 font-cambon leading-6 lg:leading-7 text-primary-100 border-b  border-gray-300 py-[14px] ${
         clicked ? "active" : ""
       } ${className} `}
     >

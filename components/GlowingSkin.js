@@ -1,3 +1,4 @@
+import { ScrollToDiv } from "@/helper/Scroll";
 import Image from "next/image";
 import React from "react";
 
@@ -8,11 +9,12 @@ const GlowingSkin = ({
   button_text,
   guarantee_time,
   section_id,
+  button_link,
 }) => {
   return (
     <div
       id={section_id && section_id.trim()}
-      className="container mx-auto md:px-0 px-4 xl:mt-[260px] py-10 lg:py-20"
+      className="container-sm mx-auto md:px-0 px-4 xl:mt-[260px] py-10 lg:py-20"
     >
       <h5 className="uppercase font-post-grotesk text-center font-500 text-[15px] md:text-16 leading-5 text-gray-100 pb-6 mb-1">
         Before & after
@@ -21,7 +23,7 @@ const GlowingSkin = ({
         {title}
       </h5>
       <div className="text-center pb-10 m-auto max-w-[100%] xl:max-w-[75%] md:max-w-[70%] font-post-grotesk">
-        <p className="text-15 md:text-16 leading-5 text-gray-100">
+        <p className="text-[15px] md:text-16 leading-5 text-gray-100">
           {description}
         </p>
       </div>
@@ -44,11 +46,15 @@ const GlowingSkin = ({
       </div>
       <div className="lg:mt-10 mt-[35px]">
         <div className="flex justify-center items-center">
-          <button className="uppercase btn-primary px-[50px] ">
+          <button
+            onClick={ScrollToDiv}
+            data-scroll-to={button_link ? button_link?.trim() : "__next"}
+            className="uppercase btn-primary px-[50px] "
+          >
             {button_text}
           </button>
         </div>
-        <p className="text-center text-16 font-400 text-gray-100 pt-4 font-post-grotesk">
+        <p className="text-center text-[15px] sm:text-16 font-400 text-gray-100 pt-4 font-post-grotesk">
           {guarantee_time}
         </p>
       </div>

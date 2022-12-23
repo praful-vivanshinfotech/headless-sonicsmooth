@@ -1,6 +1,8 @@
+import { ScrollToDiv } from "@/helper/Scroll";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
+
 const Header = ({ header_menu }) => {
   const [toggleNavBar, setToggleNavBar] = useState(false);
 
@@ -9,29 +11,11 @@ const Header = ({ header_menu }) => {
     document.body.classList.toggle("menu-open");
   };
 
-  const scrollToTerm = (event) => {
+  const scrollSection = (event) => {
     if (screen.width < 1024) {
       navbarToggle();
     }
-
-    if (typeof window !== "undefined") {
-      window.scrollTo({
-        top: elementPosition(
-          document.getElementById(event.target.dataset.scrollTo)
-        ),
-        behavior: "smooth",
-      });
-    }
-  };
-
-  const elementPosition = (obj) => {
-    let currentTop = 0;
-    if (obj.offsetParent) {
-      do {
-        currentTop += obj.offsetTop;
-      } while ((obj = obj.offsetParent));
-      return [currentTop - 50];
-    }
+    ScrollToDiv(event);
   };
 
   return (
@@ -77,7 +61,7 @@ const Header = ({ header_menu }) => {
                         <div className="lg:block hidden py-4 lg:py-0">
                           <Link
                             href="#!"
-                            onClick={scrollToTerm}
+                            onClick={scrollSection}
                             data-scroll-to={header?.section_id.trim()}
                             className="lg:ml-3 !text-16 !my-4 btn-primary w-full lg:w-auto"
                           >
@@ -87,7 +71,7 @@ const Header = ({ header_menu }) => {
 
                         <Link
                           href="#!"
-                          onClick={scrollToTerm}
+                          onClick={scrollSection}
                           data-scroll-to={header?.section_id.trim()}
                           className="lg:hidden block !py-4 lg:ml-3 btn-primary min-w-full sm:min-w-[300px] lg:min-w-auto mx-auto"
                         >
@@ -97,7 +81,7 @@ const Header = ({ header_menu }) => {
                     ) : (
                       <Link
                         href="#!"
-                        onClick={scrollToTerm}
+                        onClick={scrollSection}
                         data-scroll-to={header?.section_id.trim()}
                         className="text-primary-100  font-400 text-16 uppercase"
                       >

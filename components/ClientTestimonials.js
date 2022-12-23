@@ -11,10 +11,10 @@ const ClientTestimonials = ({
   return (
     <div
       id={section_id && section_id.trim()}
-      className="container mx-auto pb-10 lg:pb-20 px-4"
+      className="container-sm mx-auto pb-10 lg:pb-20 px-4"
     >
       <div className="text-center">
-        <p className="font-post-grotesk font-500 text-15 lg:text-16 leading-5 text-gray-100 pb-2">
+        <p className="font-post-grotesk font-500 text-[15px] lg:text-16 leading-5 text-gray-100 pb-2">
           {sub_title}
         </p>
         <h2 className=" font-cambon font-400 lg:text-40 text-30 lg:leading-[51px] pb-5 leading-9 text-primary-100">
@@ -41,7 +41,7 @@ const ClientTestimonials = ({
                       : " Michael Todd Beauty"
                   }
                   src={testimonials.client_image}
-                  className="w-24 h-24 mx-auto"
+                  className="w-[100px] h-[100px] mx-auto"
                 />
 
                 <i
@@ -52,10 +52,10 @@ const ClientTestimonials = ({
                 <p className="font-cambon font-400 text-18 lg:text-20 text-primary-100 leading-6 lg:leading-7 pb-2">
                   {testimonials.comment}
                 </p>
-                <p className="font-post-grotesk text-gray-100 font-400 text-15 lg:text-16 leading-5 lg:leading-6">
+                <p className="font-post-grotesk text-gray-100 font-400 text-[15px] sm:text-16 leading-5 lg:leading-6">
                   {testimonials.description}
                 </p>
-                <p className="font-500 text-16 leading-5 text-primary-100 pt-6 lg:pb-2 font-post-grotesk">
+                <p className="font-500 text-[15px] sm:text-16 leading-5 text-primary-100 pt-6 lg:pb-2 font-post-grotesk">
                   {testimonials.client_name}
                 </p>
               </div>

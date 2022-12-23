@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
@@ -12,52 +13,59 @@ const BringingTheSpa = ({
 }) => {
   return (
     <div id={section_id && section_id.trim()} className="bg-primary-300">
-      <div className="container">
+      <div className="container-sm mx-auto">
         <div className="lg:pt-[70px] py-[35px] lg:pb-[60px] md:px-0 px-4">
           <h2 className=" text-center  font-cambon font-400 lg:text-40 text-30 lg:leading-[51px] leading-9 text-primary-100 pb-8">
             {title}
           </h2>
-          <p className="font-400 font-post-grotesk lg:text-16 text-15 leading-6 text-gray-100 text-center lg:max-w-[68%] mx-auto">
+          <p className="font-400 font-post-grotesk lg:text-16 text-[15px] leading-6 text-gray-100 text-center lg:max-w-[68%] mx-auto">
             {description}
           </p>
-          <video className="pt-14 mx-auto" autoPlay="autoplay" loop muted>
+          <video
+            className="pt-14 mx-auto max-w-[600px]"
+            autoPlay="autoplay"
+            loop
+            muted
+          >
             <source src={video_url} type="video/mp4"></source>
           </video>
         </div>
         <div className=" border-t border-gray-100/20 "></div>
         <div className="py-[35px] lg:py-[60px]">
           <div className="pb-[30px] lg:pb-[67px] px-4 sm:px-0">
-            <h3 className="font-500 text-center text-gray-100 lg:text-16 text-15 leading-5 font-post-grotesk pb-2">
+            <h3 className="font-500 text-center text-gray-100 lg:text-16 text-[15px] leading-5 font-post-grotesk pb-2">
               {heading}
             </h3>
             <h2 className=" text-center  font-cambon font-400 lg:text-40 text-30 lg:leading-[51px] leading-9 text-primary-100">
               {customer_review_title}
             </h2>
           </div>
-          <div className="flex gap-y-6 justify-around md:px-0 px-4">
+          <div className="flex gap-y-6 items-stretch justify-around md:px-0 px-4">
             {product_reviews.slice(0, 2).map((review, index) => (
               <div
                 key={`product_reviews-${index}`}
-                className="w-12/12 lg:w-12/5 text-center lg:text-left max-w-[500px] border-b sm:pl-6 pb-6 border-primary-100/10 items-stretch h-full"
+                className="w-12/12 lg:w-12/5 flex flex-col text-center lg:text-left max-w-[500px] border-b sm:pl-6 pb-6 border-primary-100/10"
               >
                 <img
-                  alt=""
                   src="/images/svg/five-star.svg"
                   className="pb-2 mx-auto lg:mx-0"
+                  alt="rating star"
+                  width={96}
+                  height={16}
                 />
-                <p className="font-400 text-18 lg:text-20 font-cambon text-primary-100 leading-6 pb-3">
+                <p className="font-400 text-18 sm:text-20 font-cambon text-primary-100 leading-6 pb-3">
                   {review.one_word_reviews}
                 </p>
-                <p className="font-400 lg:text-16 text-15 leading-6 text-gray-100 pb-4 font-post-grotesk">
+                <p className="font-400 sm:text-16 text-[15px] leading-6 text-gray-100 pb-4 font-post-grotesk">
                   {review.customer_reviews}
                 </p>
-                <div className="flex justify-center lg:justify-start items-center gap-x-2 ">
-                  <p className="font-500 lg:text-16 text-15 leading-5 font-post-grotesk">
+                <div className="flex justify-center lg:justify-start items-center gap-x-2 mt-auto">
+                  <p className="font-500 sm:text-16 text-[15px] leading-5 font-post-grotesk">
                     {review.customer_name}
                   </p>
                   <div className="flex justify-center items-center gap-x-1">
-                    <img alt="" src="/images/verified.png" />
-                    <p className="text-secondary font-700 text-15 leading-5 font-post-grotesk">
+                    <img src="/images/verified.png" />
+                    <p className="text-secondary font-700 text-[15px] leading-5 font-post-grotesk">
                       Verified Buyer
                     </p>
                   </div>

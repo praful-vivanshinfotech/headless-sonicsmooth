@@ -1,10 +1,8 @@
+import { ScrollToDiv } from "@/helper/Scroll";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useRef } from "react";
 import ReactReadMoreReadLess from "react-read-more-read-less";
-import Slider from "react-slick";
-import "slick-carousel/slick/slick-theme.css";
-import "slick-carousel/slick/slick.css";
 import { Navigation } from "swiper";
 import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -21,6 +19,7 @@ const SalesInstagram = ({
   insta_post_card,
   button,
   Guarantee,
+  button_link,
   section_id,
 }) => {
   const prevRef = useRef(null);
@@ -31,10 +30,10 @@ const SalesInstagram = ({
       id={section_id && section_id.trim()}
       className="bg-primary-300 py-9 lg:py-[70px] mb-[30px] lg:mb-20 mt-[88px] lg:mt-[100px] sales-instagram"
     >
-      <div className="container mx-auto md:px-0 px-4">
+      <div className="container-sm mx-auto md:px-0 px-4">
         <div className="pb-10 lg:pb-[70px]">
           <div className="pb-12">
-            <p className="font-post-grotesk font-500 text-16 text-gray-100 leading-5 pb-1 text-center">
+            <p className="font-post-grotesk font-500 text-[15px] sm:text-16 text-gray-100 leading-5 pb-1 text-center">
               {sub_title}
             </p>
             <h2 className="md:max-w-[75%] mx-auto font-cambon font-400 lg:text-40 text-30 lg:leading-[51px] leading-9 text-primary-100 pb-5 text-center">
@@ -104,7 +103,7 @@ const SalesInstagram = ({
           </div>
         </div>
         <div className="">
-          <p className="font-700 text-15 lg:text-18 leading-7 text-center text-primary-100 font-post-grotesk pb-2">
+          <p className="font-700 text-[15px] lg:text-18 leading-7 text-center text-primary-100 font-post-grotesk pb-2">
             {sales_insta_subtitle}
           </p>
           <Link href="#">
@@ -133,7 +132,7 @@ const SalesInstagram = ({
                         <img alt="" src={insta_post.profile_image} />
                         <div>
                           <Link href="#">
-                            <h5 className="font-400 text-16 leading-5 text-primary-100 font-post-grotesk pb-2">
+                            <h5 className="font-400 text-[15px] sm:text-16 leading-5 text-primary-100 font-post-grotesk pb-2">
                               {insta_post.profile_id}
                             </h5>
                           </Link>
@@ -152,7 +151,7 @@ const SalesInstagram = ({
                         </Link>
                       </div>
                     </div>
-                    <div>
+                    <div className="text-[15px] sm:text-16">
                       <ReactReadMoreReadLess
                         charLimit={60}
                         Lines={1}
@@ -168,8 +167,14 @@ const SalesInstagram = ({
             </div>
           </div>
           <div className="flex flex-col justify-center items-center">
-            <button className="btn-primary mx-auto">{button}</button>
-            <p className="text-black font-400 font-post-grotesk text-16 leading-5 text-center pt-2">
+            <button
+              onClick={ScrollToDiv}
+              data-scroll-to={button_link ? button_link?.trim() : "__next"}
+              className="uppercase btn-primary px-[50px]"
+            >
+              {button}
+            </button>
+            <p className="text-black font-400 font-post-grotesk text-[15px] sm:text-16 leading-5 text-center pt-">
               {Guarantee}
             </p>
           </div>

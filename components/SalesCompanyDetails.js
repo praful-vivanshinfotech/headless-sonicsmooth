@@ -12,12 +12,12 @@ const SalesCompanyDetails = ({ sales_card, description, logo, section_id }) => {
       id={section_id && section_id.trim()}
       className="bg-primary-200 py-12 lg:py-14 px-4"
     >
-      <div className="container mx-auto ">
+      <div className="container-sm mx-auto ">
         <div className="grid grid-cols-12 items-center">
           <div className="col-span-6 md:col-span-4">
             <div className=" lg:max-w-[282px] md:border-0 sm:pr-0 pr-3 border-r border-primary-100/40">
               <img alt="" src={logo} className="pb-3" />
-              <p className="font-500 text-16 leading-6 text-primary-100 font-post-grotesk">
+              <p className="font-500 text-[15px] sm:text-16 leading-6 text-primary-100 font-post-grotesk">
                 {description}
               </p>
             </div>

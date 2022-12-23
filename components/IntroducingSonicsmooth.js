@@ -1,3 +1,4 @@
+import { ScrollToDiv } from "@/helper/Scroll";
 import Image from "next/image";
 import React from "react";
 import Accordion from "./accrodian/Accordion";
@@ -12,6 +13,7 @@ const IntroducingSonicSmooth = ({
   money_description,
   text_on_button,
   section_id,
+  button_link,
   introduction_card_last_client_name,
 }) => {
   return (
@@ -21,16 +23,16 @@ const IntroducingSonicSmooth = ({
     >
       <div className="container mx-auto py-8 lg:py-14">
         <div>
-          <p className="font-500 mb-1 font-post-grotesk text-center">
+          <p className="font-500 text-[15px]  sm:text-16 mb-1 font-post-grotesk text-center">
             INTRODUCING
           </p>
           <h3 className="!font-500 text-primary-100 text-28 md:!text-[40px] font-cambon mb-5 text-center">
             {title && title}
           </h3>
-          <p className="text-18 font-500 font-post-grotesk max-w-[640px] mx-auto mb-7 text-center">
+          <p className="text-16 sm:text-18 font-500 font-post-grotesk max-w-[640px] mx-auto mb-7 text-center">
             {description && description}
           </p>
-          <p className="text-16 font-post-grotesk max-w-[760px] mx-auto text-center">
+          <p className="text-[15px] sm:text-16 font-post-grotesk max-w-[760px] mx-auto text-center">
             {sub_description && sub_description}
           </p>
           <div className="flex lg:flex-row flex-col gap-x-12 justify-center">
@@ -45,15 +47,16 @@ const IntroducingSonicSmooth = ({
                         }`}
                       >
                         <div>
-                          <p className="text-20 font-cambon mb-2 text-primary-100 text-right">
+                          <p className="text-18 sm:text-20 font-cambon mb-2 text-primary-100 text-right">
                             {card.title}
                           </p>
-                          <p className="text-16 text-gray-100 text-right font-post-grotesk max-w-[265px]">
+                          <p className="text-[15px] sm:text-16 text-gray-100 text-right font-post-grotesk max-w-[265px]">
                             {card.description}
                           </p>
                         </div>
                         <div>
                           <Image
+                            className="w-[93px] h-[93px]"
                             width={93}
                             height={93}
                             alt="sonic smooth"
@@ -79,7 +82,7 @@ const IntroducingSonicSmooth = ({
                               src={card.icon}
                               className="w-[66px] h-[66px]"
                             />
-                            <div className="font-400 leading-5 text-gray-100 text-15">
+                            <div className="font-400 leading-5 text-gray-100 text-[15px]">
                               {card.description}
                             </div>
                           </div>
@@ -103,9 +106,14 @@ const IntroducingSonicSmooth = ({
                     src={product_image && product_image}
                   />
                 </div>
-                <a className="btn-primary mb-2 mx-auto" href="#">
+                <butto
+                  onClick={ScrollToDiv}
+                  data-scroll-to={button_link ? button_link?.trim() : "__next"}
+                  className="uppercase btn-primary px-[50px] z-20"
+                  href="#"
+                >
                   {text_on_button && text_on_button}
-                </a>
+                </butto>
                 <p className="text-center">{money_description}</p>
               </div>
             </div>
@@ -130,7 +138,7 @@ const IntroducingSonicSmooth = ({
                             {card.description}
                           </p>
                           {index + 1 == introduction_card_second.length && (
-                            <p className="font-500 text-primary-100 font-post-grotesk">
+                            <p className="text-[15px] sm:text-16 font-500 text-primary-100 font-post-grotesk">
                               {introduction_card_last_client_name}
                             </p>
                           )}
@@ -150,7 +158,7 @@ const IntroducingSonicSmooth = ({
                               src={card.icon}
                               className="w-[66px] h-[66px]"
                             />
-                            <div className="font-400 leading-5 text-gray-100 text-15">
+                            <div className="font-400 leading-5 text-gray-100 text-[15px]">
                               {card.description}
                             </div>
                           </div>

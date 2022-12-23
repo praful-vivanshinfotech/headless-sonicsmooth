@@ -115,6 +115,10 @@ Builder.registerComponent(
         type: "longText",
       },
       {
+        name: "button_link",
+        type: "longText",
+      },
+      {
         name: "shipping",
         type: "longText",
       },
@@ -437,6 +441,11 @@ Builder.registerComponent(
       },
       {
         name: "button_text",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "button_link",
         type: "longText",
         required: true,
       },
@@ -827,6 +836,11 @@ Builder.registerComponent(
         required: true,
       },
       {
+        name: "button_link",
+        type: "longText",
+        required: true,
+      },
+      {
         name: "money_description",
         type: "longText",
         required: true,
@@ -923,6 +937,12 @@ Builder.registerComponent(
         type: "longText",
         required: true,
       },
+      {
+        name: "button_link",
+        type: "longText",
+        required: true,
+      },
+
       {
         name: "money_description",
         type: "longText",
@@ -1167,6 +1187,11 @@ Builder.registerComponent(
       },
       {
         name: "button",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "button_link",
         type: "longText",
         required: true,
       },

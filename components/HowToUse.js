@@ -3,10 +3,10 @@ import React from "react";
 
 const HowToUse = ({ title, step_details, section_id }) => {
   return (
-    <div id={section_id && section_id.trim()} className="container mx-auto ">
+    <div id={section_id && section_id.trim()} className="container-sm mx-auto ">
       <div className="px-4">
         <div className="text-center pb-[60px]">
-          <p className="font-500 leading-5 font-post-grotesk pb-2">
+          <p className="font-500 text-[15px] sm:text-16 leading-5 font-post-grotesk pb-2 uppercase">
             How to use
           </p>
           <h2 className=" font-cambon font-400 lg:text-40 text-30 lg:leading-[51px] pb-5 leading-9 text-primary-100">
@@ -39,7 +39,7 @@ const HowToUse = ({ title, step_details, section_id }) => {
                   <p className="text-[76px] font-400 font-cambon leading-[100px] text-primary-100">
                     0{index + 1}
                   </p>
-                  <p className="font-pot-grotesk pt-6 font-post-grotesk font-500 text-16 leading-6 text-gray-100">
+                  <p className="font-pot-grotesk pt-6 font-post-grotesk font-500 text-[15px] sm:text-16 leading-6 text-gray-100">
                     {step.description}
                   </p>
                 </div>
