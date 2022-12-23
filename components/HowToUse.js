@@ -1,14 +1,15 @@
+import Image from "next/image";
 import React from "react";
 
-const HowToUse = ({ title, step_details }) => {
+const HowToUse = ({ title, step_details, section_id }) => {
   return (
-    <div className="container mx-auto ">
+    <div id={section_id && section_id.trim()} className="container mx-auto ">
       <div className="px-4">
         <div className="text-center pb-[60px]">
           <p className="font-500 leading-5 font-post-grotesk pb-2">
             How to use
           </p>
-          <h2 className="uppercase font-cambon font-400 lg:text-40 text-30 lg:leading-[51px] pb-5 leading-9 text-primary-100">
+          <h2 className=" font-cambon font-400 lg:text-40 text-30 lg:leading-[51px] pb-5 leading-9 text-primary-100">
             {title}
           </h2>
         </div>
@@ -23,7 +24,17 @@ const HowToUse = ({ title, step_details }) => {
                     : ""
                 }`}
               >
-                <img src={step.image} className="md:mx-0 mx-auto" />
+                <Image
+                  width={335}
+                  height={360}
+                  alt={
+                    step.image_alt_name
+                      ? step.image_alt_name
+                      : "Michael Todd Beauty"
+                  }
+                  src={step.image}
+                  className="md:mx-0 mx-auto w-full"
+                />
                 <div className="flex justify-start items-start gap-x-2">
                   <p className="text-[76px] font-400 font-cambon leading-[100px] text-primary-100">
                     0{index + 1}

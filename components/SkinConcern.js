@@ -7,11 +7,15 @@ const SkinConcern = ({
   description_2,
   description_3,
   description_4,
-  description_5
+  description_5,
+  section_id,
 }) => {
   return (
     <>
-      <div className="container mx-auto my-10 lg:my-20 md:px-0 px-4">
+      <div
+        id={section_id && section_id.trim()}
+        className="container mx-auto my-10 lg:my-20 md:px-0 px-4"
+      >
         <div className="grid grid-cols-12 md:gap-x-10">
           <div className="lg:col-span-4 col-span-12 lg:block hidden relative pt-[90%]">
             <div className="">
@@ -26,7 +30,7 @@ const SkinConcern = ({
             </div>
           </div>
           <div className="lg:col-span-8 col-span-12 text-gray-100">
-            <h2 className="text-30 leading-10 text-primary-100 pb-[30px] font-cambon">
+            <h2 className="text-7 sm:text-40 leading-10 text-primary-100 pb-[40px] leading-[51px] font-cambon">
               {title}
             </h2>
             <p className="text-16  pb-5 font-post-grotesk md:max-w-[86%] leading-7">

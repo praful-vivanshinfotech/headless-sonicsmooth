@@ -1,0 +1,20 @@
+
+.swiper-pagination-bullet {
+  border: 1px solid #23004e;
+  background: #ffffff !important;
+  width: 10px !important;
+  height: 10px !important;
+  opacity: 1 !important;
+}
+.swiper-pagination-bullet-active {
+  background: #23004e !important;
+}
+.swiper-pagination {
+  bottom: 0px !important;
+}
+.swiper-button-disabled{
+  opacity: 0.18 !important
+}
+.swiper-vertical .swiper-slide-thumb-active div {
+  @apply border-2 border-primary-100;
+}

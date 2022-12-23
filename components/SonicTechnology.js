@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 
 const SonicTechnology = ({
@@ -6,13 +7,19 @@ const SonicTechnology = ({
   sonic_smooth_title,
   other_product_title,
   sonic_smooth_section_image,
+  sonic_smooth_section_image_alt_name,
   other_product_section_image,
+  other_product_section_image_alt_name,
   sonic_smooth_section,
-  other_products_section
+  other_products_section,
+  section_id,
 }) => {
   return (
     <>
-      <div className="container mx-auto px-4 pb-10">
+      <div
+        id={section_id && section_id.trim()}
+        className="container mx-auto px-4 pb-10"
+      >
         <p className="font-post-grotesk text-center font-600 text-15 lg:text-16 leading-5 uppercase text-gray-100 mb-[6px]">
           SONIC TECHNOLOGY
         </p>
@@ -30,12 +37,21 @@ const SonicTechnology = ({
       <div className="grid lg:grid-cols-2 grid-cols-1 pb-10 lg:pb-20">
         <div className="bg-primary-300">
           <div className="flex justify-center h-full">
-            <div className="pt-0 sm:pt-20 max-w-[350px] w-full h-auto sm:h-full flex flex-[60%] justify-end !items-end">
-              <img src={sonic_smooth_section_image} />
+            <div className="relative pt-0 sm:pt-20 max-w-[350px] w-full h-auto sm:h-full flex flex-[60%] justify-end !items-end">
+              <Image
+                layout="fill"
+                objectFit="contain"
+                alt={
+                  sonic_smooth_section_image_alt_name
+                    ? sonic_smooth_section_image_alt_name
+                    : "Michael Todd Beauty"
+                }
+                src={sonic_smooth_section_image}
+              />
             </div>
             <div className="flex flex-[100%] justify-center items-center sm:pr-[10%] pr-4 sm:py-0 py-9">
               <div>
-                <h2 className="text-primary-100 font-cambon text-24 sm:text-30 leading-8 sm:leading-9 lg:leading-[51px] mb-[30px]">
+                <h2 className="text-primary-100 font-cambon text-24 sm:text-40 leading-8 sm:leading-9 lg:leading-[51px] mb-[30px]">
                   {sonic_smooth_title}
                 </h2>
                 <ul>
@@ -45,7 +61,10 @@ const SonicTechnology = ({
                         key={`sonic-smooth${index}`}
                         className="flex justify-start items-start gap-x-5 mb-2 sm:mb-5"
                       >
-                        <img
+                        <Image
+                          width={30}
+                          height={30}
+                          alt="icon"
                           src={item.icon}
                           className="w-4 md:w-6 lg:w-8 h-4 md:h-6 lg:h-8"
                         />
@@ -54,53 +73,16 @@ const SonicTechnology = ({
                         </p>
                       </li>
                     ))}
-
-                  {/* <li className="flex justify-start items-center gap-x-5 mb-2 sm:mb-5">
-                    <img
-                      src="/images/check.png"
-                      className="w-4 md:w-6 lg:w-8 h-4 md:h-6 lg:h-8"
-                    />
-                    <p className="font-400 text-16 sm:text-18 lg:text-20 leading-5 lg:leading-7 text-primary-100">
-                      Leaves your skin soft & smooth
-                    </p>
-                  </li>
-                  <li className="flex justify-start items-center gap-x-5 mb-2 sm:mb-5">
-                    <img
-                      src="/images/check.png"
-                      className="w-4 md:w-6 lg:w-8 h-4 md:h-6 lg:h-8"
-                    />
-                    <p className="font-400 text-16 sm:text-18 lg:text-20 leading-5 lg:leading-7 text-primary-100">
-                      Designed for women’s hair
-                    </p>
-                  </li>
-                  <li className="flex justify-start items-center gap-x-5 mb-2 sm:mb-5">
-                    <img
-                      src="/images/check.png"
-                      className="w-4 md:w-6 lg:w-8 h-4 md:h-6 lg:h-8"
-                    />
-                    <p className="font-400 text-16 sm:text-18 lg:text-20 leading-5 lg:leading-7 text-primary-100">
-                      Gently removes dead skin & debris
-                    </p>
-                  </li>
-                  <li className="flex justify-start items-center gap-x-5 mb-2 sm:mb-5">
-                    <img
-                      src="/images/check.png"
-                      className="w-4 md:w-6 lg:w-8 h-4 md:h-6 lg:h-8"
-                    />
-                    <p className="font-400 text-16 sm:text-18 lg:text-20 leading-5 lg:leading-7 text-primary-100">
-                      Sonic technology helps reduces fine lines & wrinkles
-                    </p>
-                  </li> */}
                 </ul>
               </div>
             </div>
           </div>
         </div>
         <div className="bg-primary-200">
-          <div className="flex justify-center  h-full ">
+          <div className="flex justify-center h-full">
             <div className="flex flex-[100%] justify-center items-center sm:pl-[10%] pl-6 sm:py-0 py-9">
               <div className="">
-                <h2 className="text-primary-100 font-cambon  text-24 sm:text-30 leading-8 sm:leading-9 lg:leading-[51px] mb-[30px]">
+                <h2 className="text-primary-100 font-cambon  text-24 sm:text-40 leading-8 sm:leading-9 lg:leading-[51px] mb-[30px]">
                   {other_product_title}
                 </h2>
                 <ul>
@@ -110,7 +92,10 @@ const SonicTechnology = ({
                         key={`other-products${index}`}
                         className="flex justify-start items-start gap-x-5 mb-2 sm:mb-5"
                       >
-                        <img
+                        <Image
+                          width={30}
+                          height={30}
+                          alt="icon"
                           src={item.icon}
                           className="w-4 md:w-6 lg:w-8 h-4 md:h-6 lg:h-8"
                         />
@@ -119,48 +104,20 @@ const SonicTechnology = ({
                         </p>
                       </li>
                     ))}
-                  {/*
-                  <li className="flex justify-start items-center gap-x-5 mb-2 sm:mb-5">
-                    <img
-                      src="/images/wrong.png"
-                      className="w-4 md:w-6 lg:w-8 h-4 md:h-6 lg:h-8"
-                    />
-                    <p className="font-400 text-16 sm:text-18 lg:text-20 leading-5 lg:leading-7 text-primary-100">
-                      Cause irritation & redness
-                    </p>
-                  </li>
-                  <li className="flex justify-start items-center gap-x-5 mb-2 sm:mb-5">
-                    <img
-                      src="/images/wrong.png"
-                      className="w-4 md:w-6 lg:w-8 h-4 md:h-6 lg:h-8"
-                    />
-                    <p className="font-400 text-16 sm:text-18 lg:text-20 leading-5 lg:leading-7 text-primary-100">
-                      Cause razor burn
-                    </p>
-                  </li>
-                  <li className="flex justify-start items-center gap-x-5 mb-2 sm:mb-5">
-                    <img
-                      src="/images/wrong.png"
-                      className="w-4 md:w-6 lg:w-8 h-4 md:h-6 lg:h-8"
-                    />
-                    <p className="font-400 text-16 sm:text-18 lg:text-20 leading-5 lg:leading-7 text-primary-100">
-                      Easier to cut or nick your skin, causing scarring
-                    </p>
-                  </li>
-                  <li className="flex justify-start items-center gap-x-5 mb-2 sm:mb-5">
-                    <img
-                      src="/images/wrong.png"
-                      className="w-4 md:w-6 lg:w-8 h-4 md:h-6 lg:h-8"
-                    />
-                    <p className="font-400 text-16 sm:text-18 lg:text-20 leading-5 lg:leading-7 text-primary-100">
-                      Can introduce small abrasions on the skin
-                    </p>
-                  </li> */}
                 </ul>
               </div>
             </div>
-            <div className="pt-0 sm:pt-20 max-w-[257px] w-full h-auto sm:h-full flex flex-[60%] justify-end items-end">
-              <img src={other_product_section_image} />
+            <div className=" pt-0 sm:pt-20 max-w-[257px] w-full h-auto sm:h-full flex flex-[60%] justify-end items-end">
+              <Image
+                width={257}
+                height={440}
+                alt={
+                  other_product_section_image_alt_name
+                    ? other_product_section_image_alt_name
+                    : "Michael Todd Beauty"
+                }
+                src={other_product_section_image}
+              />
             </div>
           </div>
         </div>

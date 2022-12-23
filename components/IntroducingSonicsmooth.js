@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import Accordion from "./accrodian/Accordion";
 const IntroducingSonicSmooth = ({
@@ -5,19 +6,25 @@ const IntroducingSonicSmooth = ({
   description,
   sub_description,
   product_image,
+  product_image_alt_name,
   introduction_card_second,
   introduction_card_first,
   money_description,
   text_on_button,
+  section_id,
+  introduction_card_last_client_name,
 }) => {
   return (
-    <div className="bg-primary-700 md:px-0 px-4">
+    <div
+      id={section_id && section_id.trim()}
+      className="bg-primary-700 md:px-0 px-4"
+    >
       <div className="container mx-auto py-8 lg:py-14">
         <div>
           <p className="font-500 mb-1 font-post-grotesk text-center">
             INTRODUCING
           </p>
-          <h3 className="!font-500 text-primary-100 !text-[40px] font-cambon mb-5 text-center">
+          <h3 className="!font-500 text-primary-100 text-28 md:!text-[40px] font-cambon mb-5 text-center">
             {title && title}
           </h3>
           <p className="text-18 font-500 font-post-grotesk max-w-[640px] mx-auto mb-7 text-center">
@@ -46,19 +53,29 @@ const IntroducingSonicSmooth = ({
                           </p>
                         </div>
                         <div>
-                          <img src={card.icon} alt="" />
+                          <Image
+                            width={93}
+                            height={93}
+                            alt="sonic smooth"
+                            src={card.icon}
+                          />
                         </div>
                       </div>
                     </div>
                     <div className="lg:hidden block ">
                       <Accordion
-                        className="p-4 mb-4 bg-white"
+                        className={`p-4 mb-4 bg-white ${
+                          index == introduction_card_first.length - 1
+                            ? "hidden"
+                            : "block"
+                        }`}
                         accordion_heading={
                           <div className="pb-2">{card.title}</div>
                         }
                         accordion_content={
                           <div className="flex justify-center items-center gap-x-2 ">
                             <img
+                              alt=""
                               src={card.icon}
                               className="w-[66px] h-[66px]"
                             />
@@ -75,7 +92,16 @@ const IntroducingSonicSmooth = ({
             <div className="lg:block hidden">
               <div className="xl:-mb-[260px] flex flex-col items-center font-post-grotesk">
                 <div className="mb-7">
-                  <img src={product_image && product_image} alt="" />
+                  <Image
+                    width={330}
+                    height={627}
+                    alt={
+                      product_image_alt_name
+                        ? { product_image_alt_name }
+                        : "sonicsmooth TODD BEAUTY"
+                    }
+                    src={product_image && product_image}
+                  />
                 </div>
                 <a className="btn-primary mb-2 mx-auto" href="#">
                   {text_on_button && text_on_button}
@@ -94,7 +120,7 @@ const IntroducingSonicSmooth = ({
                         }`}
                       >
                         <div>
-                          <img src={card.icon} alt="" />
+                          <img alt="" src={card.icon} />
                         </div>
                         <div>
                           <p className="text-20 font-cambon mb-2 text-primary-100 ">
@@ -103,8 +129,11 @@ const IntroducingSonicSmooth = ({
                           <p className="text-16 text-gray-100  font-post-grotesk max-w-[265px]">
                             {card.description}
                           </p>
-                         {(index + 1 == introduction_card_second.length && <p className="font-500 text-primary-100 font-post-grotesk">-Dendy Engelman, MD</p> )}
-
+                          {index + 1 == introduction_card_second.length && (
+                            <p className="font-500 text-primary-100 font-post-grotesk">
+                              {introduction_card_last_client_name}
+                            </p>
+                          )}
                         </div>
                       </div>
                     </div>
@@ -117,6 +146,7 @@ const IntroducingSonicSmooth = ({
                         accordion_content={
                           <div className="flex justify-center items-center gap-x-2 ">
                             <img
+                              alt=""
                               src={card.icon}
                               className="w-[66px] h-[66px]"
                             />
@@ -127,9 +157,15 @@ const IntroducingSonicSmooth = ({
                         }
                       />
                     </div>
-                    <div className={`  ${index+1  == introduction_card_second.length  ? "lg:hidden block" : "hidden"}`}>
+                    <div
+                      className={`${
+                        index + 1 == introduction_card_second.length
+                          ? "lg:hidden block"
+                          : "hidden"
+                      }`}
+                    >
                       <div
-                        className={"flex justify-start items-start mb-8 gap-x-4"}
+                        className={"flex justify-start items-start  gap-x-4"}
                       >
                         <div>
                           <img src={card.icon} alt="" />
@@ -141,7 +177,11 @@ const IntroducingSonicSmooth = ({
                           <p className="text-16 text-gray-100  font-post-grotesk max-w-[265px]">
                             {card.description}
                           </p>
-                         {(index + 1 == introduction_card_second.length && <p className="font-500 text-primary-100 font-post-grotesk">-Dendy Engelman, MD</p> )}
+                          {index + 1 == introduction_card_second.length && (
+                            <p className="font-500 text-primary-100 font-post-grotesk">
+                              {introduction_card_last_client_name}
+                            </p>
+                          )}
                         </div>
                       </div>
                     </div>

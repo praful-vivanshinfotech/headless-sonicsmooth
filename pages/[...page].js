@@ -1,17 +1,17 @@
-import { useRouter } from "next/router";
-import DefaultErrorPage from "next/error";
-import Head from "next/head";
-import React from "react";
+import { ProductContext } from "@/context/productContext";
+import { getShopifyProducts } from "@/lib/shopify";
 import {
-  BuilderComponent,
   builder,
   Builder,
+  BuilderComponent,
   useIsPreviewing,
 } from "@builder.io/react";
-import { getShopifyProducts } from "@/lib/shopify";
-builder.init(process.env.NEXT_PUBLIC_BUILDER_KEY);
 import dynamic from "next/dynamic";
-import { ProductContext } from "@/context/productContext";
+import DefaultErrorPage from "next/error";
+import Head from "next/head";
+import { useRouter } from "next/router";
+import React from "react";
+builder.init(process.env.NEXT_PUBLIC_BUILDER_KEY);
 export async function getStaticProps({ params }) {
   const page = await builder
     .get("page", {
@@ -70,6 +70,10 @@ Builder.registerComponent(
   {
     name: "BannerSection",
     inputs: [
+      {
+        name: "section_id",
+        type: "string",
+      },
       {
         name: "rating_content",
         type: "longText",
@@ -146,6 +150,10 @@ Builder.registerComponent(
     name: "BrandLogo",
     inputs: [
       {
+        name: "section_id",
+        type: "string",
+      },
+      {
         name: "brand_Logo_Section",
         type: "list",
         subFields: [
@@ -154,6 +162,10 @@ Builder.registerComponent(
             type: "file",
             allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
             required: true,
+          },
+          {
+            name: "logo_alt_name",
+            type: "string",
           },
         ],
       },
@@ -166,7 +178,11 @@ Builder.registerComponent(
     name: "SaleSection",
     inputs: [
       {
-        name: "sale_details",
+        name: "section_id",
+        type: "string",
+      },
+      {
+        name: "sales_details",
         type: "list",
         subFields: [
           {
@@ -190,6 +206,10 @@ Builder.registerComponent(
     name: "HeaderSection",
     inputs: [
       {
+        name: "section_id",
+        type: "string",
+      },
+      {
         name: "header_menu",
         type: "list",
         subFields: [
@@ -199,8 +219,8 @@ Builder.registerComponent(
             required: true,
           },
           {
-            name: "link",
-            type: "longText",
+            name: "section_id",
+            type: "string",
             required: true,
           },
         ],
@@ -213,6 +233,10 @@ Builder.registerComponent(
   {
     name: "OfferBannerSection",
     inputs: [
+      {
+        name: "section_id",
+        type: "string",
+      },
       {
         name: "description_1",
         type: "longText",
@@ -229,6 +253,10 @@ Builder.registerComponent(
   {
     name: "FooterSection",
     inputs: [
+      {
+        name: "section_id",
+        type: "string",
+      },
       {
         name: "about",
         type: "list",
@@ -291,6 +319,10 @@ Builder.registerComponent(
     name: "CopyrightSection",
     inputs: [
       {
+        name: "section_id",
+        type: "string",
+      },
+      {
         name: "page_link",
         type: "list",
         subFields: [
@@ -325,6 +357,10 @@ Builder.registerComponent(
   {
     name: "SkinConcernSection",
     inputs: [
+      {
+        name: "section_id",
+        type: "string",
+      },
       {
         name: "video_url",
         type: "longText",
@@ -370,6 +406,10 @@ Builder.registerComponent(
     name: "GlowingSkinSection",
     inputs: [
       {
+        name: "section_id",
+        type: "string",
+      },
+      {
         name: "skin_image",
         type: "list",
         subFields: [
@@ -378,6 +418,10 @@ Builder.registerComponent(
             type: "file",
             allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
             required: true,
+          },
+          {
+            name: "skin_image_alt_name",
+            type: "string",
           },
         ],
       },
@@ -410,6 +454,10 @@ Builder.registerComponent(
     name: "SonicTechnologySection",
     inputs: [
       {
+        name: "section_id",
+        type: "string",
+      },
+      {
         name: "title",
         type: "longText",
         required: true,
@@ -440,6 +488,10 @@ Builder.registerComponent(
         type: "file",
         allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
         required: true,
+      },
+      {
+        name: "other_product_section_image_alt_name",
+        type: "longText",
       },
       {
         name: "sonic_smooth_section",
@@ -484,6 +536,10 @@ Builder.registerComponent(
     name: "HowToUseSection",
     inputs: [
       {
+        name: "section_id",
+        type: "string",
+      },
+      {
         name: "title",
         type: "longText",
         required: true,
@@ -497,6 +553,10 @@ Builder.registerComponent(
             type: "file",
             allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
             required: true,
+          },
+          {
+            name: "image_alt_name",
+            type: "longText",
           },
           {
             name: "description",
@@ -513,6 +573,10 @@ Builder.registerComponent(
   {
     name: "GuaranteeCardSection",
     inputs: [
+      {
+        name: "section_id",
+        type: "string",
+      },
       {
         name: "card",
         type: "list",
@@ -548,6 +612,10 @@ Builder.registerComponent(
   {
     name: "SalesCompanyDetailsSection",
     inputs: [
+      {
+        name: "section_id",
+        type: "string",
+      },
       {
         name: "description",
         type: "longText",
@@ -585,6 +653,10 @@ Builder.registerComponent(
     name: "FAQSection",
     inputs: [
       {
+        name: "section_id",
+        type: "string",
+      },
+      {
         name: "FAQ",
         type: "list",
         subFields: [
@@ -608,6 +680,10 @@ Builder.registerComponent(
   {
     name: "SpaExperienceSection",
     inputs: [
+      {
+        name: "section_id",
+        type: "string",
+      },
       {
         name: "title",
         type: "longText",
@@ -668,6 +744,10 @@ Builder.registerComponent(
     name: "SalesHelpSection",
     inputs: [
       {
+        name: "section_id",
+        type: "string",
+      },
+      {
         name: "title",
         type: "longText",
         required: true,
@@ -696,10 +776,18 @@ Builder.registerComponent(
     name: "SalesBenefitsSection",
     inputs: [
       {
+        name: "section_id",
+        type: "string",
+      },
+      {
         name: "product_image",
         type: "file",
         allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
         required: true,
+      },
+      {
+        name: "product_image_alt_name",
+        type: "longText",
       },
       {
         name: "title",
@@ -752,10 +840,18 @@ Builder.registerComponent(
     name: "IntroducingSonicSmoothSection",
     inputs: [
       {
+        name: "section_id",
+        type: "string",
+      },
+      {
         name: "product_image",
         type: "file",
         allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
         required: true,
+      },
+      {
+        name: "product_image_alt_name",
+        type: "string",
       },
       {
         name: "title",
@@ -817,7 +913,11 @@ Builder.registerComponent(
           },
         ],
       },
-
+      {
+        name: "introduction_card_last_client_name",
+        type: "longText",
+        required: true,
+      },
       {
         name: "text_on_button",
         type: "longText",
@@ -836,6 +936,10 @@ Builder.registerComponent(
   {
     name: "ClientTestimonialsSection",
     inputs: [
+      {
+        name: "section_id",
+        type: "string",
+      },
       {
         name: "sub_title",
         type: "string",
@@ -860,6 +964,10 @@ Builder.registerComponent(
             type: "file",
             allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
             required: true,
+          },
+          {
+            name: "client_image_alt_name",
+            type: "longText",
           },
           {
             name: "star",
@@ -891,6 +999,10 @@ Builder.registerComponent(
   {
     name: "ProductSection",
     inputs: [
+      {
+        name: "section_id",
+        type: "string",
+      },
       {
         name: "offer_title",
         type: "longText",
@@ -960,6 +1072,10 @@ Builder.registerComponent(
     name: "ReviewSection",
     inputs: [
       {
+        name: "section_id",
+        type: "string",
+      },
+      {
         name: "sub_title",
         type: "string",
         required: true,
@@ -983,6 +1099,10 @@ Builder.registerComponent(
             type: "file",
             allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
             required: true,
+          },
+          {
+            name: "award_description_alt_name",
+            type: "longText",
           },
           {
             name: "award_description",
@@ -1009,6 +1129,11 @@ Builder.registerComponent(
             name: "post_image",
             type: "file",
             allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+            required: true,
+          },
+          {
+            name: "post_image_alt_name",
+            type: "longText",
             required: true,
           },
           {

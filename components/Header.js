@@ -1,12 +1,39 @@
 import Image from "next/image";
 import Link from "next/link";
 import React, { useState } from "react";
-const Header = ({ header_menu, logo }) => {
+const Header = ({ header_menu }) => {
   const [toggleNavBar, setToggleNavBar] = useState(false);
+
   const navbarToggle = () => {
     setToggleNavBar(!toggleNavBar);
     document.body.classList.toggle("menu-open");
   };
+
+  const scrollToTerm = (event) => {
+    if (screen.width < 1024) {
+      navbarToggle();
+    }
+
+    if (typeof window !== "undefined") {
+      window.scrollTo({
+        top: elementPosition(
+          document.getElementById(event.target.dataset.scrollTo)
+        ),
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const elementPosition = (obj) => {
+    let currentTop = 0;
+    if (obj.offsetParent) {
+      do {
+        currentTop += obj.offsetTop;
+      } while ((obj = obj.offsetParent));
+      return [currentTop - 50];
+    }
+  };
+
   return (
     <div className="font-post-grotesk border-gray-200 menu-mobile py-4 border-b-[1px]">
       <div className="container lg:px-4 flex lg:flex-nowrap flex-wrap items-center justify-between mx-auto">
@@ -21,13 +48,13 @@ const Header = ({ header_menu, logo }) => {
           </div>
         </button>
         <div className="mx-auto lg:mx-0">
-          <Link href="/about" legacyBehavior>
+          <Link href="/sonicsmooth" legacyBehavior>
             <Image
-              alt="logo"
+              alt="michael-todd-beauty-logo"
               width={222}
               height={38}
               src="/images/svg/logo.svg"
-              className="w-[222px] h-[38px] lg:order-1 order-2"
+              className="w-[222px] h-[38px] lg:order-1 order-2 cursor-pointer"
             />
           </Link>
         </div>
@@ -49,24 +76,29 @@ const Header = ({ header_menu, logo }) => {
                       <>
                         <div className="lg:block hidden py-4 lg:py-0">
                           <Link
-                            href={`#${header.link}`}
+                            href="#!"
+                            onClick={scrollToTerm}
+                            data-scroll-to={header?.section_id.trim()}
                             className="lg:ml-3 !text-16 !my-4 btn-primary w-full lg:w-auto"
                           >
                             {header.title}
                           </Link>
                         </div>
 
-                          <Link
-                            href={`#${header.link}`}
-                            className="lg:hidden block !py-4 lg:ml-3 btn-primary min-w-full sm:min-w-[300px] lg:min-w-auto mx-auto"
-                          >
-                            {header.title}
-                          </Link>
-
+                        <Link
+                          href="#!"
+                          onClick={scrollToTerm}
+                          data-scroll-to={header?.section_id.trim()}
+                          className="lg:hidden block !py-4 lg:ml-3 btn-primary min-w-full sm:min-w-[300px] lg:min-w-auto mx-auto"
+                        >
+                          {header.title}
+                        </Link>
                       </>
                     ) : (
                       <Link
-                        href={`#${header.link}`}
+                        href="#!"
+                        onClick={scrollToTerm}
+                        data-scroll-to={header?.section_id.trim()}
                         className="text-primary-100  font-400 text-16 uppercase"
                       >
                         {header.title}

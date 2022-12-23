@@ -28,6 +28,7 @@ module.exports = {
       700: 700,
       800: 800,
       900: 900,
+      bold: "bold",
     },
     fontSize: {
       10: rem(10),

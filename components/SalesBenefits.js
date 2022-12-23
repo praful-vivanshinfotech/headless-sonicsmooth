@@ -1,21 +1,34 @@
+import Image from "next/image";
 import React from "react";
 
 const SalesBenefits = ({
   product_image,
+  product_image_alt_name,
   title,
   description,
   product_benefits,
   sub_description,
   text_on_button,
-  money_description
+  money_description,
+  section_id,
 }) => {
   return (
-    <div className="bg-primary-500 ">
+    <div id={section_id && section_id.trim()} className="bg-primary-500 ">
       <div className="grid lg:grid-cols-2 grid-cols-1">
         <div className="">
-          <img src={product_image} className="w-full" />
+          <Image
+            width={1170}
+            height={945}
+            alt={
+              product_image_alt_name
+                ? product_image_alt_name
+                : "Michael Todd Beauty"
+            }
+            src={product_image}
+            className="w-full"
+          />
         </div>
-        <div className="m-auto p-4 lg:p-0">
+        <div className="m-auto  !p-4 lg:p-0 max-w-[505px]">
           <h2 className="font-cambon font-400 lg:text-40 text-30 lg:leading-[51px] leading-9 text-primary-100 pb-8">
             {title && title}
           </h2>
@@ -28,7 +41,7 @@ const SalesBenefits = ({
                 key={`product_benefits${index}`}
                 className="flex justify-start items-center gap-x-2 pb-2"
               >
-                <img src={product_benefits.icon} className="w-5 h-5" />
+                <img alt="" src={product_benefits.icon} className="w-5 h-5" />
                 <p className="font-400 text-16 leading-5 text-gray-100 font-post-grotesk">
                   {product_benefits.benefits}
                 </p>

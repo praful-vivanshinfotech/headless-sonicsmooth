@@ -1,8 +1,11 @@
 import React from "react";
 
-const AverageTime = ({ averageTime }) => {
+const AverageTime = ({ averageTime, section_id }) => {
   return (
-    <div className="bg-primary-200 py-[35px] md:py-[42px]">
+    <div
+      id={section_id && section_id.trim()}
+      className="bg-primary-200 py-[35px] md:py-[42px]"
+    >
       <div className="container mx-auto">
         <div className="flex justify-center items-start">
           {averageTime &&

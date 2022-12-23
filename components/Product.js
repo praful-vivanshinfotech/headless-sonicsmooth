@@ -1,25 +1,26 @@
-import React, { useContext, useState } from "react";
 import { ProductContext } from "@/context/productContext";
-import sanitizeHtml from "sanitize-html";
 import { productCheckout } from "@/lib/shopify";
+import Image from "next/image";
 import { useRouter } from "next/router";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/effect-coverflow";
-import "swiper/css/free-mode";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import "swiper/css/thumbs";
+import React, { useContext, useState } from "react";
+import sanitizeHtml from "sanitize-html";
 import {
   EffectCoverflow,
   FreeMode,
   Navigation,
-  Thumbs,
   Pagination,
+  Thumbs,
 } from "swiper";
-import { Modal } from "./Modal";
-import Image from "next/image";
+import "swiper/css";
+import "swiper/css/effect-coverflow";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/thumbs";
+import { Swiper, SwiperSlide } from "swiper/react";
+import IconRoundSpin from "../public/images/svg/icon-round.svg";
 import AfterPayModal from "./AfterPayModal";
+import { Modal } from "./Modal";
 const Product = ({
   offer_title,
   payment_method_image,
@@ -30,6 +31,7 @@ const Product = ({
   after_pay_image,
   award_image,
   subtitle,
+  section_id,
 }) => {
   const router = useRouter();
   const [thumbsSwiper, setThumbsSwiper] = useState();
@@ -80,18 +82,19 @@ const Product = ({
     });
   });
   media.edges.map((gallery, index) => {
+    var altName = gallery?.node?.previewImage?.altText?.split("-").pop();
     if (gallery.node.mediaContentType == "IMAGE") {
-      if (Object.hasOwn(mediaGallery, gallery.node.previewImage.altText)) {
-        mediaGallery[gallery.node.previewImage.altText].push({
+      if (Object.hasOwn(mediaGallery, altName)) {
+        mediaGallery[altName].push({
           src: gallery.node.previewImage.url,
-          altName: gallery.node.previewImage.altText,
+          altName: altName,
           width: gallery.node.previewImage.width,
           height: gallery.node.previewImage.height,
         });
       } else {
         mediaGallery.common.push({
           src: gallery.node.previewImage.url,
-          altName: gallery.node.previewImage.altText,
+          altName: altName,
           width: gallery.node.previewImage.width,
           height: gallery.node.previewImage.height,
         });
@@ -101,7 +104,7 @@ const Product = ({
         if (index == 0 && videoURL.format == "mp4") {
           videoGallery.thumbImage.push({
             src: gallery.node.previewImage.url,
-            altName: gallery.node.previewImage.altText,
+            altName: altName,
             width: gallery.node.previewImage.width,
             height: gallery.node.previewImage.height,
           });
@@ -113,7 +116,10 @@ const Product = ({
     }
   });
   return (
-    <div className="container mx-auto mt-[72px] lg:mt-20 lg:mb-6 lg:px-0 px-4">
+    <div
+      id={section_id && section_id.trim()}
+      className="container mx-auto mt-[72px] lg:mt-20 lg:mb-6 lg:px-0 px-4"
+    >
       <div className="grid grid-cols-12 gap-y-24 sm:gap-y-12 lg:gap-x-[70px]">
         <div className="col-span-12 lg:col-span-6 ">
           <div className="flex items-stretch h-[110%] md:h-auto">
@@ -138,7 +144,11 @@ const Product = ({
                             <Image
                               width={gallery.width}
                               height={gallery.height}
-                              alt={gallery.altName}
+                              alt={
+                                gallery.altName
+                                  ? gallery.altName
+                                  : "michael-todd-beauty"
+                              }
                               src={gallery.src}
                               className="thumbnail-slider object-contain object-center h-full w-full"
                             />
@@ -155,7 +165,11 @@ const Product = ({
                               <Image
                                 width={gallery.node.previewImage.width}
                                 height={gallery.node.previewImage.height}
-                                alt={gallery.node.previewImage.altText}
+                                alt={
+                                  gallery.node.previewImage.altText
+                                    ? gallery.node.previewImage.altText
+                                    : "gallery.altName"
+                                }
                                 src={gallery.node.previewImage.url}
                                 className="thumbnail-slider object-contain object-center h-full w-full"
                               />
@@ -175,7 +189,11 @@ const Product = ({
                           <Image
                             width={gallery.width}
                             height={gallery.height}
-                            alt={gallery.altName}
+                            alt={
+                              gallery.altName
+                                ? gallery.altName
+                                : "thumbImage.altName"
+                            }
                             src={gallery.src}
                             className="thumbnail-slider object-contain object-center h-full w-full"
                           />
@@ -193,7 +211,11 @@ const Product = ({
                           <Image
                             width={thumbImage.width}
                             height={thumbImage.height}
-                            alt={thumbImage.altName}
+                            alt={
+                              thumbImage.altName
+                                ? thumbImage.altName
+                                : "gallery.altName"
+                            }
                             src={thumbImage.src}
                             className="thumbnail-slider object-contain object-center h-full w-full"
                           />
@@ -240,7 +262,11 @@ const Product = ({
                           <Image
                             width={gallery.width}
                             height={gallery.height}
-                            alt={gallery.altName}
+                            alt={
+                              gallery.altName
+                                ? gallery.altName
+                                : "michael-todd-beauty"
+                            }
                             src={gallery.src}
                             className="thumbnail-slider object-contain object-center h-full w-full"
                           />
@@ -254,7 +280,11 @@ const Product = ({
                             <Image
                               width={gallery.node.previewImage.width}
                               height={gallery.node.previewImage.height}
-                              alt={gallery.node.previewImage.altText}
+                              alt={
+                                gallery.node.previewImage.altText
+                                  ? gallery.node.previewImage.altText
+                                  : "michael-todd-beauty"
+                              }
                               src={gallery.node.previewImage.url}
                               className="thumbnail-slider object-contain object-center h-full w-full"
                             />
@@ -272,7 +302,11 @@ const Product = ({
                         <Image
                           width={gallery.width}
                           height={gallery.height}
-                          alt={gallery.altName}
+                          alt={
+                            gallery.altName
+                              ? gallery.altName
+                              : "michael-todd-beauty"
+                          }
                           src={gallery.src}
                           className="thumbnail-slider object-contain object-center h-full w-full"
                         />
@@ -297,6 +331,7 @@ const Product = ({
               </Swiper>
               <div className="absolute top-0 left-0 md:block hidden z-20">
                 <img
+                  alt=""
                   src={award_image}
                   className="mx-auto w-[100px] h-[100px]"
                 />
@@ -312,7 +347,7 @@ const Product = ({
 
         <div className="col-span-12 lg:col-span-6">
           <div>
-            <h2 className="font-cambon font-400 lg:text-40 text-30 lg:leading-[51px] leading-9 text-primary-100 pb-3">
+            <h2 className="font-cambon font-400 lg:text-[38px] text-30 lg:leading-[51px] leading-9 text-primary-100 pb-3">
               {title}
             </h2>
             <p className="font-400 text-16 leading-5 text-secondary-200 pb-3 font-post-grotesk">
@@ -328,7 +363,7 @@ const Product = ({
               </p>
             </div>
             <div className="py-3 border-b border-gray-400">
-              <div className="">
+              <div className="opacity-[0.66]">
                 <div className="text-secondary-300 font-400 text-24 leading-8 pb-2 font-post-grotesk">
                   ${priceRange?.minVariantPrice?.amount}{" "}
                   <span className="line-through decoration-secondary-100/60 text-gray-100/60">
@@ -392,7 +427,7 @@ const Product = ({
                 </div>
               )}
               <div className="flex items-center gap-x-5 py-4">
-                <div className="border border-gray-100 w-24 md:w-[135px] p-3">
+                <div className="border border-gray-100 h-12 w-24 md:w-[135px] p-3">
                   <div className="flex justify-between items-center">
                     <div
                       onClick={() => setProductQuantity(productQuantity - 1)}
@@ -416,29 +451,10 @@ const Product = ({
                 <div className="w-full">
                   <button
                     onClick={() => Checkout()}
-                    className="btn-primary w-full sm:w-[378px]"
+                    className="btn-primary leading-5  w-full sm:w-[378px]"
                   >
                     {showLoader ? (
-                      <svg
-                        className="animate-spin m-auto h-5 w-5 hover:text-primary"
-                        xmlns="http://www.w3.org/2000/svg"
-                        fill="none"
-                        viewBox="0 0 24 24"
-                      >
-                        <circle
-                          className="opacity-25"
-                          cx="12"
-                          cy="12"
-                          r="10"
-                          stroke="currentColor"
-                          strokeWidth="4"
-                        ></circle>
-                        <path
-                          className="opacity-75"
-                          fill="currentColor"
-                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                        ></path>
-                      </svg>
+                      <IconRoundSpin className="animate-spin m-auto h-5 w-5 hover:text-primary" />
                     ) : (
                       "Add To Cart"
                     )}
@@ -446,7 +462,7 @@ const Product = ({
                 </div>
               </div>
               <div>
-                <img src={payment_method_image} className="" />
+                <img src={payment_method_image} className="" alt="" />
               </div>
               <div className="py-3">
                 {product_guarantee_description &&
@@ -457,18 +473,12 @@ const Product = ({
                         index + 1 == 1 ? "" : "pt-3"
                       }`}
                     >
-                      <img src={item.icon} />
+                      <img src={item.icon} alt="" />
                       <p className="font-400 text-14 font-post-grotesk hover:underline">
                         {item.description}
                       </p>
                     </div>
                   ))}
-                {/* <div className="flex justify-start items-center gap-x-2 pt-3">
-                  <img src="/images/svg/shield.svg" />
-                  <p className="font-400 text-14 font-post-grotesk hover:underline">
-                    3 Year Warranty
-                  </p>
-                </div> */}
               </div>
             </div>
           </div>

@@ -21,7 +21,7 @@ const Copyright = ({ page_link, payment_card }) => {
       <div className="pt-5 flex flex-wrap justify-center items-center gap-4">
         {payment_card &&
           payment_card.map((card, index) => (
-            <img key={`card-${index}`} src={card.card_logo} />
+            <img alt="" key={`card-${index}`} src={card.card_logo} />
           ))}
       </div>
     </div>
