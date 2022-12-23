@@ -5,7 +5,7 @@ const FAQSection = ({ FAQ, section_id }) => {
   return (
     <div
       id={section_id && section_id.trim()}
-      className="container-sm mx-auto md:px-0 px-4 py-10 lg:pt-[84px] lg:pb-20"
+      className="container-sm mx-auto  px-4 py-10 lg:pt-[84px] lg:pb-20"
     >
       <h2 className="pb-[30px] lg:pb-10 font-cambon text-center font-400 lg:text-40 text-30 lg:leading-[51px] leading-9 text-primary-100">
         Frequently Asked Questions

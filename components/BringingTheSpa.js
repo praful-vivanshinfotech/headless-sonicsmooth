@@ -22,7 +22,7 @@ const BringingTheSpa = ({
             {description}
           </p>
           <video
-            className="pt-14 mx-auto max-w-[600px]"
+            className="pt-14 mx-auto md:max-w-[600px]"
             autoPlay="autoplay"
             loop
             muted
@@ -65,7 +65,7 @@ const BringingTheSpa = ({
                   </p>
                   <div className="flex justify-center items-center gap-x-1">
                     <img src="/images/verified.png" />
-                    <p className="text-secondary font-700 text-[15px] leading-5 font-post-grotesk">
+                    <p className="text-secondary font-bold text-[15px] leading-5 font-post-grotesk">
                       Verified Buyer
                     </p>
                   </div>

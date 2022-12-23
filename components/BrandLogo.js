@@ -44,7 +44,7 @@ const BrandLogo = ({ brand_Logo_Section, section_id }) => {
                   ? brand?.logo_alt_name
                   : "Michael Todd Beauty"
               }
-              className="mx-auto"
+              className="mx-auto !h-7"
               src={brand.logo}
             />
           </SwiperSlide>

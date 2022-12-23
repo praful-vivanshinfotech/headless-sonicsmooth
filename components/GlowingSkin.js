@@ -14,7 +14,7 @@ const GlowingSkin = ({
   return (
     <div
       id={section_id && section_id.trim()}
-      className="container-sm mx-auto md:px-0 px-4 xl:mt-[260px] py-10 lg:py-20"
+      className="container-sm mx-auto md:px-0 px-4 xl:mt-[190px] py-10 lg:py-20"
     >
       <h5 className="uppercase font-post-grotesk text-center font-500 text-[15px] md:text-16 leading-5 text-gray-100 pb-6 mb-1">
         Before & after
