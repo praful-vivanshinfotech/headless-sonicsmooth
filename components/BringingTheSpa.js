@@ -40,7 +40,7 @@ const BringingTheSpa = ({
               {customer_review_title}
             </h2>
           </div>
-          <div className="flex gap-y-6 items-stretch justify-around md:px-0 px-4">
+          <div className="flex flex-col items-center lg:flex-row gap-y-6 lg:items-stretch justify-around md:px-0 px-4">
             {product_reviews.slice(0, 2).map((review, index) => (
               <div
                 key={`product_reviews-${index}`}
