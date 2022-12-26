@@ -42,6 +42,13 @@ const Product = ({
   const [activeVariantsID, setActiveVariantsID] = useState();
   const [productQuantity, setProductQuantity] = useState(1);
   const product = useContext(ProductContext);
+  if (product.product == null || product.product == "") {
+    return (
+      <h2 className="text-center text-white bg-secondary-300 text-22 py-5">
+        Invalid product id{" "}
+      </h2>
+    );
+  }
   const {
     title,
     descriptionHtml,
@@ -51,6 +58,7 @@ const Product = ({
     media,
     options,
   } = product.product;
+
   const setVariants = (title, variantsID) => {
     setProductGallery(true);
     setVariantsError(false);
@@ -81,8 +89,10 @@ const Product = ({
       mediaGallery[color] = [];
     });
   });
-  media.edges.map((gallery, index) => {
-    var altName = gallery?.node?.previewImage?.altText?.split("-").pop();
+  media?.edges.map((gallery, index) => {
+    var altName = gallery?.node?.previewImage?.altText
+      ?.split("Sonicsmooth")[0]
+      .trim();
     if (gallery.node.mediaContentType == "IMAGE") {
       if (Object.hasOwn(mediaGallery, altName)) {
         mediaGallery[altName].push({
@@ -100,7 +110,7 @@ const Product = ({
         });
       }
     } else {
-      gallery.node.sources.map((videoURL, index) => {
+      gallery?.node.sources.map((videoURL, index) => {
         if (index == 0 && videoURL.format == "mp4") {
           videoGallery.thumbImage.push({
             src: gallery.node.previewImage.url,
@@ -140,7 +150,7 @@ const Product = ({
                           className="!w-16 !h-16 mx-auto filter-img"
                           key={`thumbnail-gallery-${index}`}
                         >
-                          <div className="mb- w-full cursor-pointer">
+                          <div className=" w-full cursor-pointer">
                             <Image
                               width={gallery.width}
                               height={gallery.height}
@@ -348,16 +358,16 @@ const Product = ({
         <div className="col-span-12 lg:col-span-6">
           <div>
             <h2 className="font-cambon font-400 lg:text-[38px] text-30 lg:leading-[51px] leading-9 text-primary-100 pb-3">
-              {title}
+              {title && title}
             </h2>
             <p className="font-400 text-16 leading-5 text-secondary-200 pb-3 font-post-grotesk">
-              {subtitle}
+              {subtitle && subtitle}
             </p>
             <div className="flex justify-start items-center gap-x-5 border-b border-gray-400 pb-4">
               <p className="text-gray-100 text-14  font-post-grotesk flex items-center">
                 <i
                   className="after:text-primary text-26 flex mr-2 items-center"
-                  data-star={rating_star}
+                  data-star={rating_star && rating_star}
                 ></i>
                 {rating_star} ({rating_user})
               </p>
@@ -396,26 +406,28 @@ const Product = ({
             </div>
             <div className="py-4 border-b border-gray-400 mb-6">
               <p className="font-post-gretosk text-16 leading-5 text-gray-100 font-400">
-                Color: {activeVariants}
+                Color: {activeVariants && activeVariants}
               </p>
               <div className="flex flex-wrap gap-x-4 pt-2">
                 {variants.edges &&
-                  variants.edges.map((option, index) => {
+                  variants?.edges?.map((option, index) => {
                     return (
                       <div
                         onClick={() =>
-                          setVariants(option.node.title, option.node.id)
+                          setVariants(option?.node?.title, option?.node?.id)
                         }
                         key={`color-${index}`}
                         className={`border p-1 rounded-full ${
-                          activeVariants == option.node.title
+                          activeVariants == option?.node?.title
                             ? "border-black"
                             : ""
                         }`}
                       >
                         <div
                           className="w-7 h-7 rounded-full bg-center bg-cover cursor-pointer"
-                          style={{ backgroundColor: option.node.color.value }}
+                          style={{
+                            backgroundColor: option?.node?.color?.value,
+                          }}
                         ></div>
                       </div>
                     );
