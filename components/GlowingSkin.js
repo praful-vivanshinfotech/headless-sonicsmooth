@@ -40,7 +40,7 @@ const GlowingSkin = ({
                     : "Michael Todd Beauty"
                 }
                 src={skin.skin_image}
-                className="w-full h-72 sm:h-auto"
+                className="w-full h-72 sm:h-80 object-cover"
               />
               <div className="absolute bg-primary-300 md:bg-transparent md:px-0 md:py-0 px-[5px] py-[3px]  text-gray-100 text-16 uppercase font-post-grotesk font-500 bottom-2 left-3 z-[1]">
                 {skin.text}
