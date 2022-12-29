@@ -19,7 +19,7 @@ const IntroducingSonicSmooth = ({
   return (
     <div
       id={section_id && section_id.trim()}
-      className="bg-primary-700 md:px-0 px-4"
+      className="bg-primary-700 lg:px-0 px-4"
     >
       <div className="container mx-auto py-8 lg:py-14">
         <div>
@@ -56,7 +56,7 @@ const IntroducingSonicSmooth = ({
                         </div>
                         <div>
                           <img
-                            className="w-[93px] h-[93px]"
+                            className="w-[93px] h-[93px] rounded-full"
                             width={93}
                             height={93}
                             alt="sonic smooth"
@@ -129,7 +129,11 @@ const IntroducingSonicSmooth = ({
                         }`}
                       >
                         <div>
-                          <img alt="" src={card.icon} />
+                          <img
+                            className="w-24 h-24 rounded-full"
+                            alt=""
+                            src={card.icon}
+                          />
                         </div>
                         <div>
                           <p className="text-20 font-cambon mb-2 text-primary-100 ">
@@ -173,11 +177,13 @@ const IntroducingSonicSmooth = ({
                           : "hidden"
                       }`}
                     >
-                      <div
-                        className={"flex justify-start items-start  gap-x-4"}
-                      >
-                        <div>
-                          <img src={card.icon} alt="" />
+                      <div className={"flex justify-start items-start gap-x-4"}>
+                        <div className="min-w-[96px]">
+                          <img
+                            className="w-24 h-24 rounded-full"
+                            src={card.icon}
+                            alt=""
+                          />
                         </div>
                         <div>
                           <p className="text-20 font-cambon mb-2 text-primary-100 ">
@@ -196,6 +202,17 @@ const IntroducingSonicSmooth = ({
                     </div>
                   </div>
                 ))}
+              <div className="m-auto mt-8 mb-1  lg:hidden block">
+                <button
+                  onClick={ScrollToDiv}
+                  data-scroll-to={button_link ? button_link?.trim() : "__next"}
+                  className="uppercase btn-primary px-9 md:px-[50px] z-20 "
+                  href="#"
+                >
+                  {text_on_button && text_on_button}
+                </button>
+                <p className="text-center pt-4">{money_description}</p>
+              </div>
             </div>
           </div>
         </div>
