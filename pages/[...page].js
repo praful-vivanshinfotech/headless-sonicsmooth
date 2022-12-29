@@ -141,9 +141,21 @@ Builder.registerComponent(
         type: "longText",
       },
       {
-        name: "banner_image",
-        type: "file",
-        allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+        name: "banner_images",
+        type: "list",
+        subFields: [
+          {
+            name: "image",
+            type: "file",
+            allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+            required: true,
+          },
+          {
+            name: "text",
+            type: "text",
+            required: true,
+          },
+        ],
       },
     ],
   }
@@ -425,6 +437,10 @@ Builder.registerComponent(
           },
           {
             name: "skin_image_alt_name",
+            type: "string",
+          },
+          {
+            name: "text",
             type: "string",
           },
         ],

@@ -27,21 +27,25 @@ const GlowingSkin = ({
           {description}
         </p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 md:gap-x-5 gap-y-3">
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 md:gap-x-5 gap-y-3">
         {skin_image &&
           skin_image.map((skin, index) => (
-            <Image
-              width={380}
-              height={334}
-              alt={
-                skin?.skin_image_alt_name
-                  ? skin?.skin_image_alt_name
-                  : "Michael Todd Beauty"
-              }
-              key={`skinimg-${index}`}
-              src={skin.skin_image}
-              className="w-full"
-            />
+            <div className="relative" key={`skin-img-${index}`}>
+              <Image
+                width={380}
+                height={334}
+                alt={
+                  skin?.skin_image_alt_name
+                    ? skin?.skin_image_alt_name
+                    : "Michael Todd Beauty"
+                }
+                src={skin.skin_image}
+                className="w-full h-72 sm:h-auto"
+              />
+              <div className="absolute bg-primary-300 md:bg-transparent md:px-0 md:py-0 px-[5px] py-[3px]  text-gray-100 text-16 uppercase font-post-grotesk font-500 bottom-2 left-3 z-[1]">
+                {skin.text}
+              </div>
+            </div>
           ))}
       </div>
       <div className="lg:mt-10 mt-[35px]">

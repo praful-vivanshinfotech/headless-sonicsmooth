@@ -18,17 +18,27 @@ const Banner = (props) => {
               {props.banner_title}
             </h2>
           </div>
-          <div className="lg:hidden block">
-            <div className="grid grid-cols-1 gap-x-3 py-5">
-              <div className="relative">
-                <Image
-                  width={616}
-                  height={532}
-                  alt="michael-todd-beauty"
-                  className="w-full"
-                  src={props.banner_image}
-                />
-              </div>
+          <div className="lg:hidden block my-6">
+            <div className="grid grid-cols-2 gap-2">
+              {props.banner_images &&
+                props.banner_images.slice(0, 2).map((banner, index) => (
+                  <div
+                    key={`banner-image-${index}`}
+                    className="relative h-[350] md:h-[500px]"
+                  >
+                    <Image
+                      width={616}
+                      height={536}
+                      quality={100}
+                      src={banner.image}
+                      className="w-full h-full"
+                      alt="Persons face with red lipstick"
+                    />
+                    <div className="absolute bg-primary-300 text-primary-100 text-16 uppercase font-post-grotesk font-500 px-4 py-2 bottom-4 left-4 z-[1]">
+                      {banner.text}
+                    </div>
+                  </div>
+                ))}
             </div>
           </div>
           <div className="flex flex-col font-post-grotesk">
@@ -101,17 +111,27 @@ const Banner = (props) => {
             </div>
           </div>
         </div>
-        <div className="lg:block hidden ">
-          <div className="grid grid-cols-1">
-            <div className="relative h-[500px]">
-              <Image
-                width={616}
-                height={536}
-                src={props.banner_image}
-                className="w-full h-full"
-                alt="Persons face with red lipstick"
-              />
-            </div>
+        <div className="lg:block hidden">
+          <div className="grid grid-cols-2 gap-2">
+            {props.banner_images &&
+              props.banner_images.slice(0, 2).map((banner, index) => (
+                <div
+                  key={`banner-image-${index}`}
+                  className="relative h-[500px]"
+                >
+                  <Image
+                    width={616}
+                    height={536}
+                    quality={100}
+                    src={banner.image}
+                    className="w-full h-full"
+                    alt="Persons face with red lipstick"
+                  />
+                  <div className="absolute bg-primary-300 text-primary-100 text-16 uppercase font-post-grotesk font-500 px-4 py-2 bottom-4 left-4 z-[1]">
+                    {banner.text}
+                  </div>
+                </div>
+              ))}
           </div>
         </div>
       </div>
