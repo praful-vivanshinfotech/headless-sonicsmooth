@@ -41,7 +41,7 @@ const ClientTestimonials = ({
                       : " Michael Todd Beauty"
                   }
                   src={testimonials.client_image}
-                  className="w-[100px] h-[100px] mx-auto"
+                  className="w-[100px] h-[100px] mx-auto rounded-full"
                 />
 
                 <i

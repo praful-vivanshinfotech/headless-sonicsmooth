@@ -27,7 +27,7 @@ const GlowingSkin = ({
           {description}
         </p>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 md:gap-x-5 gap-y-3">
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 md:gap-x-5 gap-x-3 gap-y-3">
         {skin_image &&
           skin_image.map((skin, index) => (
             <div className="relative" key={`skin-img-${index}`}>
