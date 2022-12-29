@@ -55,7 +55,7 @@ const IntroducingSonicSmooth = ({
                           </p>
                         </div>
                         <div>
-                          <Image
+                          <img
                             className="w-[93px] h-[93px]"
                             width={93}
                             height={93}
@@ -96,8 +96,9 @@ const IntroducingSonicSmooth = ({
               <div className="xl:-mb-[260px] flex flex-col items-center font-post-grotesk">
                 <div className="mb-7">
                   <Image
+                    className="max-w-[330px] max-h-[715px]"
                     width={330}
-                    height={627}
+                    height={715}
                     alt={
                       product_image_alt_name
                         ? { product_image_alt_name }
