@@ -64,7 +64,6 @@ export default function Page({ page, products }) {
   );
 }
 // --------- Builder register -------------  //
-
 Builder.registerComponent(
   dynamic(() => import("@/components/Banner")),
   {
@@ -188,34 +187,34 @@ Builder.registerComponent(
     ],
   }
 );
-// Builder.registerComponent(
-//   dynamic(() => import("@/components/Sales")),
-//   {
-//     name: "SaleSection",
-//     inputs: [
-//       {
-//         name: "section_id",
-//         type: "string",
-//       },
-//       {
-//         name: "sales_details",
-//         type: "list",
-//         subFields: [
-//           {
-//             name: "heading",
-//             type: "longText",
-//             required: true,
-//           },
-//           {
-//             name: "details",
-//             type: "longText",
-//             required: true,
-//           },
-//         ],
-//       },
-//     ],
-//   }
-// );
+Builder.registerComponent(
+  dynamic(() => import("@/components/Sales")),
+  {
+    name: "SaleSection",
+    inputs: [
+      {
+        name: "section_id",
+        type: "string",
+      },
+      {
+        name: "sales_details",
+        type: "list",
+        subFields: [
+          {
+            name: "heading",
+            type: "longText",
+            required: true,
+          },
+          {
+            name: "details",
+            type: "longText",
+            required: true,
+          },
+        ],
+      },
+    ],
+  }
+);
 Builder.registerComponent(
   dynamic(() => import("@/components/Header")),
   {
@@ -260,110 +259,6 @@ Builder.registerComponent(
       {
         name: "description_2",
         type: "longText",
-      },
-    ],
-  }
-);
-Builder.registerComponent(
-  dynamic(() => import("@/components/Footer")),
-  {
-    name: "FooterSection",
-    inputs: [
-      {
-        name: "section_id",
-        type: "string",
-      },
-      {
-        name: "about",
-        type: "list",
-        subFields: [
-          {
-            name: "title",
-            type: "text",
-            required: true,
-          },
-          {
-            name: "link",
-            type: "text",
-            required: true,
-          },
-        ],
-      },
-      {
-        name: "menu",
-        type: "list",
-        subFields: [
-          {
-            name: "title",
-            type: "text",
-            required: true,
-          },
-          {
-            name: "link",
-            type: "text",
-            required: true,
-          },
-        ],
-      },
-      {
-        name: "social_icon",
-        type: "list",
-        subFields: [
-          {
-            name: "icon",
-            type: "file",
-            allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
-            required: true,
-          },
-          {
-            name: "link",
-            type: "text",
-            required: true,
-          },
-        ],
-      },
-      {
-        name: "email",
-        type: "email",
-      },
-    ],
-  }
-);
-Builder.registerComponent(
-  dynamic(() => import("@/components/Copyright")),
-  {
-    name: "CopyrightSection",
-    inputs: [
-      {
-        name: "section_id",
-        type: "string",
-      },
-      {
-        name: "page_link",
-        type: "list",
-        subFields: [
-          {
-            name: "title",
-            type: "text",
-            required: true,
-          },
-          {
-            name: "link",
-            type: "text",
-          },
-        ],
-      },
-      {
-        name: "payment_card",
-        type: "list",
-        subFields: [
-          {
-            name: "card_logo",
-            type: "file",
-            allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
-            required: true,
-          },
-        ],
       },
     ],
   }
@@ -701,69 +596,6 @@ Builder.registerComponent(
   }
 );
 Builder.registerComponent(
-  dynamic(() => import("@/components/BringingTheSpa")),
-  {
-    name: "SpaExperienceSection",
-    inputs: [
-      {
-        name: "section_id",
-        type: "string",
-      },
-      {
-        name: "title",
-        type: "longText",
-        required: true,
-      },
-      {
-        name: "description",
-        type: "longText",
-        required: true,
-      },
-      {
-        name: "video_url",
-        type: "longText",
-        required: true,
-      },
-      {
-        name: "heading",
-        type: "longText",
-        required: true,
-      },
-      {
-        name: "customer_review_title",
-        type: "longText",
-        required: true,
-      },
-      {
-        name: "product_reviews",
-        type: "list",
-        subFields: [
-          {
-            name: "ratings",
-            type: "longText",
-            required: true,
-          },
-          {
-            name: "one_word_reviews",
-            type: "longText",
-            required: true,
-          },
-          {
-            name: "customer_reviews",
-            type: "longText",
-            required: true,
-          },
-          {
-            name: "customer_name",
-            type: "longText",
-            required: true,
-          },
-        ],
-      },
-    ],
-  }
-);
-Builder.registerComponent(
   dynamic(() => import("@/components/SalesHelp")),
   {
     name: "SalesHelpSection",
@@ -791,313 +623,6 @@ Builder.registerComponent(
         name: "sub_description",
         type: "longText",
         required: true,
-      },
-    ],
-  }
-);
-Builder.registerComponent(
-  dynamic(() => import("@/components/SalesBenefits")),
-  {
-    name: "SalesBenefitsSection",
-    inputs: [
-      {
-        name: "section_id",
-        type: "string",
-      },
-      {
-        name: "product_image",
-        type: "file",
-        allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
-        required: true,
-      },
-      {
-        name: "product_image_alt_name",
-        type: "longText",
-      },
-      {
-        name: "title",
-        type: "longText",
-        required: true,
-      },
-      {
-        name: "description",
-        type: "longText",
-        required: true,
-      },
-      {
-        name: "product_benefits",
-        type: "list",
-        subFields: [
-          {
-            name: "icon",
-            type: "file",
-            allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
-            required: true,
-          },
-          {
-            name: "benefits",
-            type: "longText",
-            required: true,
-          },
-        ],
-      },
-      {
-        name: "sub_description",
-        type: "longText",
-        required: true,
-      },
-      {
-        name: "text_on_button",
-        type: "longText",
-        required: true,
-      },
-      {
-        name: "button_link",
-        type: "longText",
-        required: true,
-      },
-      {
-        name: "money_description",
-        type: "longText",
-        required: true,
-      },
-    ],
-  }
-);
-Builder.registerComponent(
-  dynamic(() => import("@/components/IntroducingSonicsmooth")),
-  {
-    name: "IntroducingSonicSmoothSection",
-    inputs: [
-      {
-        name: "section_id",
-        type: "string",
-      },
-      {
-        name: "product_image",
-        type: "file",
-        allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
-        required: true,
-      },
-      {
-        name: "product_image_alt_name",
-        type: "string",
-      },
-      {
-        name: "title",
-        type: "longText",
-        required: true,
-      },
-      {
-        name: "description",
-        type: "longText",
-        required: true,
-      },
-      {
-        name: "sub_description",
-        type: "longText",
-        required: true,
-      },
-
-      {
-        name: "introduction_card_first",
-        type: "list",
-        subFields: [
-          {
-            name: "icon",
-            type: "file",
-            allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
-            required: true,
-          },
-          {
-            name: "title",
-            type: "longText",
-            required: true,
-          },
-          {
-            name: "description",
-            type: "longText",
-            required: true,
-          },
-        ],
-      },
-      {
-        name: "introduction_card_second",
-        type: "list",
-        subFields: [
-          {
-            name: "icon",
-            type: "file",
-            allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
-            required: true,
-          },
-          {
-            name: "title",
-            type: "longText",
-            required: true,
-          },
-          {
-            name: "description",
-            type: "longText",
-            required: true,
-          },
-        ],
-      },
-      {
-        name: "introduction_card_last_client_name",
-        type: "longText",
-        required: true,
-      },
-      {
-        name: "text_on_button",
-        type: "longText",
-        required: true,
-      },
-      {
-        name: "button_link",
-        type: "longText",
-        required: true,
-      },
-
-      {
-        name: "money_description",
-        type: "longText",
-        required: true,
-      },
-    ],
-  }
-);
-Builder.registerComponent(
-  dynamic(() => import("@/components/ClientTestimonials")),
-  {
-    name: "ClientTestimonialsSection",
-    inputs: [
-      {
-        name: "section_id",
-        type: "string",
-      },
-      {
-        name: "sub_title",
-        type: "string",
-        required: true,
-      },
-      {
-        name: "title",
-        type: "string",
-        required: true,
-      },
-      {
-        name: "rating",
-        type: "string",
-        required: true,
-      },
-      {
-        name: "testimonials_card",
-        type: "list",
-        subFields: [
-          {
-            name: "client_image",
-            type: "file",
-            allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
-            required: true,
-          },
-          {
-            name: "client_image_alt_name",
-            type: "longText",
-          },
-          {
-            name: "star",
-            type: "longText",
-            required: true,
-          },
-          {
-            name: "comment",
-            type: "longText",
-            required: true,
-          },
-          {
-            name: "description",
-            type: "longText",
-            required: true,
-          },
-          {
-            name: "client_name",
-            type: "longText",
-            required: true,
-          },
-        ],
-      },
-    ],
-  }
-);
-Builder.registerComponent(
-  dynamic(() => import("@/components/Product"), { ssr: true }),
-  {
-    name: "ProductSection",
-    inputs: [
-      {
-        name: "section_id",
-        type: "string",
-      },
-      {
-        name: "offer_title",
-        type: "longText",
-        required: true,
-      },
-      {
-        name: "award_image",
-        type: "file",
-        allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
-        required: true,
-      },
-      {
-        name: "subtitle",
-        type: "longText",
-        required: true,
-      },
-      {
-        name: "rating_star",
-        type: "longText",
-        required: true,
-      },
-      {
-        name: "rating_user",
-        type: "longText",
-        required: true,
-      },
-      {
-        name: "after_pay_content",
-        type: "longText",
-        required: true,
-      },
-      {
-        name: "after_pay_image",
-        type: "file",
-        allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
-        required: true,
-      },
-      {
-        name: "payment_method_image",
-        type: "file",
-        allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
-        required: true,
-      },
-      {
-        name: "product_guarantee_description",
-        type: "list",
-        subFields: [
-          {
-            name: "icon",
-            type: "file",
-            allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
-            required: true,
-          },
-          {
-            name: "description",
-            type: "longText",
-            required: true,
-          },
-        ],
       },
     ],
   }
@@ -1219,6 +744,484 @@ Builder.registerComponent(
     ],
   }
 );
+Builder.registerComponent(
+  dynamic(() => import("@/components/IntroducingSonicsmooth")),
+  {
+    name: "IntroducingSonicSmoothSection",
+    inputs: [
+      {
+        name: "section_id",
+        type: "string",
+      },
+      {
+        name: "product_image",
+        type: "file",
+        allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+        required: true,
+      },
+      {
+        name: "product_image_alt_name",
+        type: "string",
+      },
+      {
+        name: "title",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "description",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "sub_description",
+        type: "longText",
+        required: true,
+      },
+
+      {
+        name: "introduction_card_first",
+        type: "list",
+        subFields: [
+          {
+            name: "icon",
+            type: "file",
+            allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+            required: true,
+          },
+          {
+            name: "title",
+            type: "longText",
+            required: true,
+          },
+          {
+            name: "description",
+            type: "longText",
+            required: true,
+          },
+        ],
+      },
+      {
+        name: "introduction_card_second",
+        type: "list",
+        subFields: [
+          {
+            name: "icon",
+            type: "file",
+            allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+            required: true,
+          },
+          {
+            name: "title",
+            type: "longText",
+            required: true,
+          },
+          {
+            name: "description",
+            type: "longText",
+            required: true,
+          },
+        ],
+      },
+      {
+        name: "introduction_card_last_client_name",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "text_on_button",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "button_link",
+        type: "longText",
+        required: true,
+      },
+
+      {
+        name: "money_description",
+        type: "longText",
+        required: true,
+      },
+    ],
+  }
+);
+// erroe
+
+Builder.registerComponent(
+  dynamic(() => import("@/components/Footer")),
+  {
+    name: "FooterSection",
+    inputs: [
+      {
+        name: "section_id",
+        type: "string",
+      },
+      {
+        name: "about",
+        type: "list",
+        subFields: [
+          {
+            name: "title",
+            type: "text",
+            required: true,
+          },
+          {
+            name: "link",
+            type: "text",
+            required: true,
+          },
+        ],
+      },
+      {
+        name: "menu",
+        type: "list",
+        subFields: [
+          {
+            name: "title",
+            type: "text",
+            required: true,
+          },
+          {
+            name: "link",
+            type: "text",
+            required: true,
+          },
+        ],
+      },
+      {
+        name: "social_icon",
+        type: "list",
+        subFields: [
+          {
+            name: "icon",
+            type: "file",
+            allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+            required: true,
+          },
+          {
+            name: "link",
+            type: "text",
+            required: true,
+          },
+        ],
+      },
+      {
+        name: "email",
+        type: "email",
+      },
+    ],
+  }
+);
+Builder.registerComponent(
+  dynamic(() => import("@/components/Copyright")),
+  {
+    name: "CopyrightSection",
+    inputs: [
+      {
+        name: "section_id",
+        type: "string",
+      },
+      {
+        name: "page_link",
+        type: "list",
+        subFields: [
+          {
+            name: "title",
+            type: "text",
+            required: true,
+          },
+          {
+            name: "link",
+            type: "text",
+          },
+        ],
+      },
+      {
+        name: "payment_card",
+        type: "list",
+        subFields: [
+          {
+            name: "card_logo",
+            type: "file",
+            allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+            required: true,
+          },
+        ],
+      },
+    ],
+  }
+);
+Builder.registerComponent(
+  dynamic(() => import("@/components/BringingTheSpa")),
+  {
+    name: "SpaExperienceSection",
+    inputs: [
+      {
+        name: "section_id",
+        type: "string",
+      },
+      {
+        name: "title",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "description",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "video_url",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "heading",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "customer_review_title",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "product_reviews",
+        type: "list",
+        subFields: [
+          {
+            name: "ratings",
+            type: "longText",
+            required: true,
+          },
+          {
+            name: "one_word_reviews",
+            type: "longText",
+            required: true,
+          },
+          {
+            name: "customer_reviews",
+            type: "longText",
+            required: true,
+          },
+          {
+            name: "customer_name",
+            type: "longText",
+            required: true,
+          },
+        ],
+      },
+    ],
+  }
+);
+
+Builder.registerComponent(
+  dynamic(() => import("@/components/SalesBenefits")),
+  {
+    name: "SalesBenefitsSection",
+    inputs: [
+      {
+        name: "section_id",
+        type: "string",
+      },
+      {
+        name: "product_image",
+        type: "file",
+        allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+        required: true,
+      },
+      {
+        name: "product_image_alt_name",
+        type: "longText",
+      },
+      {
+        name: "title",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "description",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "product_benefits",
+        type: "list",
+        subFields: [
+          {
+            name: "icon",
+            type: "file",
+            allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+            required: true,
+          },
+          {
+            name: "benefits",
+            type: "longText",
+            required: true,
+          },
+        ],
+      },
+      {
+        name: "sub_description",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "text_on_button",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "button_link",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "money_description",
+        type: "longText",
+        required: true,
+      },
+    ],
+  }
+);
+
+Builder.registerComponent(
+  dynamic(() => import("@/components/ClientTestimonials")),
+  {
+    name: "ClientTestimonialsSection",
+    inputs: [
+      {
+        name: "section_id",
+        type: "string",
+      },
+      {
+        name: "sub_title",
+        type: "string",
+        required: false,
+      },
+      {
+        name: "title",
+        type: "string",
+        required: false,
+      },
+      {
+        name: "rating",
+        type: "string",
+        required: false,
+      },
+      {
+        name: "testimonials_card",
+        type: "list",
+        subFields: [
+          {
+            name: "client_image",
+            type: "file",
+            allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+            required: true,
+          },
+          {
+            name: "client_image_alt_name",
+            type: "longText",
+          },
+          {
+            name: "star",
+            type: "longText",
+            required: true,
+          },
+          {
+            name: "comment",
+            type: "longText",
+            required: true,
+          },
+          {
+            name: "description",
+            type: "longText",
+            required: true,
+          },
+          {
+            name: "client_name",
+            type: "longText",
+            required: true,
+          },
+        ],
+      },
+    ],
+  }
+);
+Builder.registerComponent(
+  dynamic(() => import("@/components/Product"), { ssr: true }),
+  {
+    name: "ProductSection",
+    inputs: [
+      {
+        name: "section_id",
+        type: "string",
+      },
+      {
+        name: "offer_title",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "award_image",
+        type: "file",
+        allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+        required: true,
+      },
+      {
+        name: "subtitle",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "rating_star",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "rating_user",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "after_pay_content",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "after_pay_image",
+        type: "file",
+        allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+        required: true,
+      },
+      {
+        name: "payment_method_image",
+        type: "file",
+        allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+        required: true,
+      },
+      {
+        name: "product_guarantee_description",
+        type: "list",
+        subFields: [
+          {
+            name: "icon",
+            type: "file",
+            allowedFileTypes: ["jpeg", "jpg", "png", "svg", "webp"],
+            required: true,
+          },
+          {
+            name: "description",
+            type: "longText",
+            required: true,
+          },
+        ],
+      },
+    ],
+  }
+);
 
 // --------- register Component -------------  //
 
@@ -1231,10 +1234,10 @@ Builder.register(
     name: "Brand Logo",
     items: [{ item: "BrandLogo" }],
   },
-  // {
-  //   name: "Sale Section",
-  //   items: [{ item: "SaleSection" }],
-  // },
+  {
+    name: "Sale Section new",
+    items: [{ item: "SaleSection" }],
+  },
   {
     name: "Header Section",
     items: [{ item: "HeaderSection" }],
@@ -1242,14 +1245,6 @@ Builder.register(
   {
     name: "Offer Banner Section",
     items: [{ item: "OfferBannerSection" }],
-  },
-  {
-    name: "Footer  Section",
-    items: [{ item: "FooterSection" }],
-  },
-  {
-    name: "Copyright  Section",
-    items: [{ item: "CopyrightSection" }],
   },
   {
     name: "Skin Concern Section",
@@ -1280,20 +1275,16 @@ Builder.register(
     items: [{ item: "FAQSection" }],
   },
   {
-    name: "Spa Experience Section",
-    items: [{ item: "SpaExperienceSection" }],
-  },
-  {
     name: "Sales Help Section",
     items: [{ item: "SalesHelpSection" }],
   },
   {
-    name: "Sales Benefits Section",
-    items: [{ item: "SalesBenefitsSection" }],
-  },
-  {
     name: "Introducing Sonic Smooth Section",
     items: [{ item: "IntroducingSonicSmoothSection" }],
+  },
+  {
+    name: "Review Section",
+    items: [{ item: "ReviewSection" }],
   },
   {
     name: "Client Testimonials Section",
@@ -1304,7 +1295,19 @@ Builder.register(
     items: [{ item: "ProductSection" }],
   },
   {
-    name: "Review Section",
-    items: [{ item: "ReviewSection" }],
+    name: "Footer  Section",
+    items: [{ item: "FooterSection" }],
+  },
+  {
+    name: "Copyright  Section",
+    items: [{ item: "CopyrightSection" }],
+  },
+  {
+    name: "Spa Experience Section",
+    items: [{ item: "SpaExperienceSection" }],
+  },
+  {
+    name: "Sales Benefits Section",
+    items: [{ item: "SalesBenefitsSection" }],
   }
 );
