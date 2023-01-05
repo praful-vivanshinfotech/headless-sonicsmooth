@@ -188,34 +188,34 @@ Builder.registerComponent(
     ],
   }
 );
-Builder.registerComponent(
-  dynamic(() => import("@/components/Sales")),
-  {
-    name: "SaleSection",
-    inputs: [
-      {
-        name: "section_id",
-        type: "string",
-      },
-      {
-        name: "sales_details",
-        type: "list",
-        subFields: [
-          {
-            name: "heading",
-            type: "longText",
-            required: true,
-          },
-          {
-            name: "details",
-            type: "longText",
-            required: true,
-          },
-        ],
-      },
-    ],
-  }
-);
+// Builder.registerComponent(
+//   dynamic(() => import("@/components/Sales")),
+//   {
+//     name: "SaleSection",
+//     inputs: [
+//       {
+//         name: "section_id",
+//         type: "string",
+//       },
+//       {
+//         name: "sales_details",
+//         type: "list",
+//         subFields: [
+//           {
+//             name: "heading",
+//             type: "longText",
+//             required: true,
+//           },
+//           {
+//             name: "details",
+//             type: "longText",
+//             required: true,
+//           },
+//         ],
+//       },
+//     ],
+//   }
+// );
 Builder.registerComponent(
   dynamic(() => import("@/components/Header")),
   {
@@ -1231,10 +1231,10 @@ Builder.register(
     name: "Brand Logo",
     items: [{ item: "BrandLogo" }],
   },
-  {
-    name: "Sale Section",
-    items: [{ item: "SaleSection" }],
-  },
+  // {
+  //   name: "Sale Section",
+  //   items: [{ item: "SaleSection" }],
+  // },
   {
     name: "Header Section",
     items: [{ item: "HeaderSection" }],
