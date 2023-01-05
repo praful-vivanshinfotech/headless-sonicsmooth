@@ -3,7 +3,7 @@ export async function decode(str) {
     typeof window === "undefined"
       ? Buffer.from(str, "base64").toString("utf-8")
       : atob(str)
-  ) // eslint-disable-line no-undef
+  )
     .split("shopify/")[1];
 
   const [type, id] = raw.split("/");
