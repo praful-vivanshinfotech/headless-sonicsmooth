@@ -22,8 +22,8 @@ const SalesInstagram = ({
   button_link,
   section_id,
 }) => {
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
+  // const prevRef = useRef(null);
+  // const nextRef = useRef(null);
 
   return (
     <div
@@ -44,13 +44,10 @@ const SalesInstagram = ({
             </p>
           </div>
           <div className="md:px-0 px-4 flex gap-x-2 items-center">
-            <div className="relative " ref={prevRef}>
-              <IconLeft className="mb-2" />
-            </div>
             <Swiper
               className="w-full !relative !py-10 lg:!py-[74px]"
               loop={false}
-              navigation={false}
+              navigation={true}
               freeMode={true}
               modules={[Navigation]}
               spaceBetween={0}
@@ -64,12 +61,6 @@ const SalesInstagram = ({
                 1024: {
                   slidesPerView: 3,
                 },
-              }}
-              onInit={(swiper) => {
-                swiper.params.navigation.prevEl = prevRef.current;
-                swiper.params.navigation.nextEl = nextRef.current;
-                swiper.navigation.init();
-                swiper.navigation.update();
               }}
             >
               {award_card.map((award, index) => (
@@ -97,9 +88,6 @@ const SalesInstagram = ({
                 </SwiperSlide>
               ))}
             </Swiper>
-            <div className="relative" ref={nextRef}>
-              <IconRight className="mb-2" />
-            </div>
           </div>
         </div>
         <div className="">

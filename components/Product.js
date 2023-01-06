@@ -373,8 +373,8 @@ const Product = ({
               </p>
             </div>
             <div className="py-3 border-b border-gray-400">
-              <div className="opacity-[0.66]">
-                <div className="text-secondary-300 font-400 text-24 leading-8 pb-2 font-post-grotesk">
+              <div className="">
+                <div className="text-secondary-300 font-400 text-24 leading-8 pb-2 font-post-grotesk opacity-[0.66]">
                   ${priceRange?.minVariantPrice?.amount}{" "}
                   <span className="line-through decoration-secondary-100/60 text-gray-100/60">
                     {"  "}${priceRange?.maxVariantPrice?.amount}

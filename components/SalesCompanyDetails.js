@@ -5,8 +5,8 @@ import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 const SalesCompanyDetails = ({ sales_card, description, logo, section_id }) => {
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
+  // const prevRef = useRef(null);
+  // const nextRef = useRef(null);
   return (
     <div
       id={section_id && section_id.trim()}
@@ -24,14 +24,14 @@ const SalesCompanyDetails = ({ sales_card, description, logo, section_id }) => {
           </div>
           <div className="col-span-6 md:col-span-8">
             <div className="pl-4 lg:px-0 m-auto flex items-center gap-x-2">
-              <div className="relative " ref={prevRef}>
+              {/* <div className="relative " ref={prevRef}>
                 <img alt="" src="/svg/icon-left.svg" className="pb-2" />
-              </div>
+              </div> */}
               <Swiper
-                className="w-full !relative !py-10 lg:!py-[74px]"
+                className="w-full !relative !py-10 lg:!py-[74px] salesCompanyDetails"
                 loop={false}
                 // centeredSlides={true}
-                navigation={false}
+                navigation={true}
                 freeMode={true}
                 modules={[Navigation]}
                 spaceBetween={0}
@@ -49,12 +49,12 @@ const SalesCompanyDetails = ({ sales_card, description, logo, section_id }) => {
                     slidesPerView: 4,
                   },
                 }}
-                onInit={(swiper) => {
-                  swiper.params.navigation.prevEl = prevRef.current;
-                  swiper.params.navigation.nextEl = nextRef.current;
-                  swiper.navigation.init();
-                  swiper.navigation.update();
-                }}
+                // onInit={(swiper) => {
+                //   swiper.params.navigation.prevEl = prevRef.current;
+                //   swiper.params.navigation.nextEl = nextRef.current;
+                //   swiper.navigation.init();
+                //   swiper.navigation.update();
+                // }}
               >
                 {sales_card &&
                   sales_card.map((sales, index) => (
@@ -74,9 +74,9 @@ const SalesCompanyDetails = ({ sales_card, description, logo, section_id }) => {
                     </SwiperSlide>
                   ))}
               </Swiper>
-              <div className="relative " ref={nextRef}>
+              {/* <div className="relative " ref={nextRef}>
                 <img alt="" src="/svg/icon-right.svg" className="pb-2" />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

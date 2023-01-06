@@ -42,7 +42,9 @@ const Accordion = ({
             : { height: "0px" }
         }
       >
-        <div className="answer pt-4 text-18">{accordion_content}</div>
+        <div className="answer pt-4 text-18 text-black">
+          {accordion_content}
+        </div>
       </div>
     </div>
   );

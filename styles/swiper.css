@@ -1,4 +1,27 @@
-
+.swiper-button-next {
+  @apply bg-[url('../public/svg/icon-right.svg')] bg-center bg-contain !h-4 !w-4 !top-[36%]  !-right-1 bg-no-repeat rounded-[20px];
+}
+.swiper-button-next::after {
+  @apply hidden;
+}
+.swiper-button-prev {
+  @apply bg-[url('../public/svg/icon-left.svg')] bg-center bg-contain  !h-4 !w-4 !top-[36%]   !-left-1 bg-no-repeat rounded-[20px];
+}
+.salesCompanyDetails .swiper-button-prev::after {
+  @apply hidden;
+}
+.salesCompanyDetails .swiper-button-next {
+  @apply bg-[url('../public/svg/icon-right.svg')] bg-center bg-contain !h-4 !w-4 !top-[50%]  !-right-1 bg-no-repeat rounded-[20px];
+}
+.salesCompanyDetails .swiper-button-next::after {
+  @apply hidden;
+}
+.salesCompanyDetails .swiper-button-prev {
+  @apply bg-[url('../public/svg/icon-left.svg')] bg-center bg-contain  !h-4 !w-4 !top-[50%]   !-left-1 bg-no-repeat rounded-[20px];
+}
+.salesCompanyDetails .swiper-button-prev::after {
+  @apply hidden;
+}
 .swiper-pagination-bullet {
   border: 1px solid #23004e;
   background: #ffffff !important;
@@ -12,8 +35,8 @@
 .swiper-pagination {
   bottom: 0px !important;
 }
-.swiper-button-disabled{
-  opacity: 0.18 !important
+.swiper-button-disabled {
+  opacity: 0.18 !important;
 }
 .swiper-vertical .swiper-slide-thumb-active div {
   @apply border-2 border-primary-100;

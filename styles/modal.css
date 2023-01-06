@@ -1,5 +1,5 @@
 .modal-backdrop {
-  @apply flex bottom-0 px-4 left-0 overflow-auto fixed right-0 top-0 z-10 bg-[#000000a6];
+  @apply flex bottom-0 px-4 left-0 overflow-auto fixed right-0 top-0 z-50 bg-[#000000a6];
 }
 .modal-container {
   @apply w-auto max-h-full m-auto bg-white border border-gray-300 rounded-sm;
