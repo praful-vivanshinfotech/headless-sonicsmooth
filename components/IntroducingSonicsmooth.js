@@ -50,7 +50,7 @@ const IntroducingSonicSmooth = ({
                           <p className="text-18 sm:text-20 font-cambon mb-2 text-primary-100 text-right">
                             {card.title}
                           </p>
-                          <p className="text-[15px] sm:text-16 text-gray-100 text-right font-post-grotesk max-w-[265px]">
+                          <p className="text-[15px] sm:text-16 text-gray-100 text-right ml-auto font-post-grotesk max-w-[265px]">
                             {card.description}
                           </p>
                         </div>
@@ -67,16 +67,12 @@ const IntroducingSonicSmooth = ({
                     </div>
                     <div className="lg:hidden block ">
                       <Accordion
-                        className={`p-4 mb-4 bg-white ${
-                          index == introduction_card_first.length - 1
-                            ? "hidden"
-                            : "block"
-                        }`}
+                        className={`p-4 mb-4 bg-white `}
                         accordion_heading={
                           <div className="pb-2">{card.title}</div>
                         }
                         accordion_content={
-                          <div className="flex justify-center items-center gap-x-2 ">
+                          <div className="flex justify-start items-center gap-x-2 ">
                             <img
                               alt=""
                               src={card.icon}
@@ -107,15 +103,15 @@ const IntroducingSonicSmooth = ({
                     src={product_image && product_image}
                   />
                 </div>
-                <butto
+                <button
                   onClick={ScrollToDiv}
                   data-scroll-to={button_link ? button_link?.trim() : "__next"}
-                  className="uppercase btn-primary px-[50px] z-20"
+                  className="uppercase btn-primary px-[50px] z-20 "
                   href="#"
                 >
                   {text_on_button && text_on_button}
-                </butto>
-                <p className="text-center">{money_description}</p>
+                </button>
+                <p className="text-center mt-[6px]">{money_description}</p>
               </div>
             </div>
             <div className="flex  flex-col justify-center lg:pt-5">
@@ -152,12 +148,16 @@ const IntroducingSonicSmooth = ({
                     </div>
                     <div className="lg:hidden block ">
                       <Accordion
-                        className="p-4 mb-4 bg-white"
+                        className={`p-4 mb-4 bg-white ${
+                          index == introduction_card_first.length - 1
+                            ? "hidden"
+                            : "block"
+                        }`}
                         accordion_heading={
                           <div className="pb-2">{card.title}</div>
                         }
                         accordion_content={
-                          <div className="flex justify-center items-center gap-x-2 ">
+                          <div className="flex justify-start items-center gap-x-2 ">
                             <img
                               alt=""
                               src={card.icon}

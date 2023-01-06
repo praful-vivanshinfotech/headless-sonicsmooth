@@ -7,7 +7,7 @@
 .swiper-button-prev {
   @apply bg-[url('../public/svg/icon-left.svg')] bg-center bg-contain  !h-4 !w-4 !top-[36%]   !-left-1 bg-no-repeat rounded-[20px];
 }
-.salesCompanyDetails .swiper-button-prev::after {
+.swiper-button-prev::after {
   @apply hidden;
 }
 .salesCompanyDetails .swiper-button-next {

@@ -31,7 +31,7 @@ const SalesBenefits = ({
             className="w-full"
           />
         </div>
-        <div className="ml-12 my-auto  !p-4 lg:p-0 max-w-[505px]">
+        <div className="sm:ml-12 my-auto  !p-4 lg:p-0 max-w-[505px]">
           <h2 className="font-cambon font-400 lg:text-40 text-30 lg:leading-[51px] leading-9 text-primary-100 pb-8">
             {title && title}
           </h2>
@@ -52,18 +52,18 @@ const SalesBenefits = ({
             ))}
           </ul>
           <div>
-            <p className="pt-4 pb-8 text-primary-100 font-post-grotesk font-700 text-18 leading-6">
+            <p className="pt-4 pb-8 text-primary-100 font-post-grotesk font-700  text-center lg:text-left sm:text-18 leading-6">
               {sub_description && sub_description}
             </p>
             <Link href="#!" onClick={ScrollToDiv} className="">
               <button
                 data-scroll-to={button_link && button_link}
-                className="btn-primary max-w-[280px]"
+                className="btn-primary w-full sm:max-w-[280px]"
               >
                 {text_on_button && text_on_button}
               </button>
             </Link>
-            <p className="pt-4 text-black font-400 text-16 leading-5 font-post-grotesk">
+            <p className="pt-4 text-black font-400 text-16 leading-5 text-center lg:text-left font-post-grotesk">
               {money_description && money_description}
             </p>
           </div>

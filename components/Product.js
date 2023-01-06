@@ -439,7 +439,7 @@ const Product = ({
                 </div>
               )}
               <div className="flex items-center gap-x-5 py-4">
-                <div className="border border-gray-100 h-12 w-24 md:w-[135px] p-3">
+                <div className="border border-primary-100 h-12 min-w-[6rem] md:w-[135px] p-3">
                   <div className="flex justify-between items-center">
                     <div
                       onClick={() => setProductQuantity(productQuantity - 1)}
@@ -486,7 +486,7 @@ const Product = ({
                       }`}
                     >
                       <img src={item.icon} alt="" />
-                      <p className="font-400 text-14 font-post-grotesk hover:underline">
+                      <p className="font-400 text-14 font-post-grotesk underline hover:underline">
                         {item.description}
                       </p>
                     </div>

@@ -8,9 +8,9 @@ const Banner = (props) => {
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:mt-9 lg:mt-5 mt-3 md:px-0   gap-x-12 xl:gap-x-24">
         <div>
           <div className="flex lg:flex-col flex-col-reverse">
-            <div className="font-post-grotesk flex justify-center lg:justify-start items-center gap-x-3 mb-1">
+            <div className="font-post-grotesk flex justify-center lg:justify-start items-center gap-x-2 mb-1 mt-3 lg:mt-0">
               <i className="after:text-yellow text-22" data-star="4.5"></i>
-              <p className="md:text-16 text-[13px] text-gray-100 leading-5">
+              <p className="md:text-16 text-[13px] text-gray-100 leading-5 ">
                 {props.rating_content}
               </p>
             </div>

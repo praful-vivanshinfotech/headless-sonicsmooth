@@ -15,7 +15,7 @@ const Sales = ({ sales_details, section_id }) => {
                 arr.length - 1 !== index ? "average-line " : ""
               } `}
             >
-              <h5 className="font-400 text-18 sm:text-20 pb-2 leading-5 md:leading-7 text-center text-primary-100 font-cambon uppercase">
+              <h5 className="font-400 sm:text-18 sm:text-20 pb-2 leading-5 md:leading-7 text-center text-primary-100 font-cambon uppercase">
                 {sales.heading}
               </h5>
               <p className="font-400 text-[15px] md:text-16 text-gray-100 text-center font-post-grotesk leading-5  lg:leading-6">

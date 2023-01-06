@@ -58,7 +58,7 @@ const GlowingSkin = ({
             {button_text}
           </button>
         </div>
-        <p className="text-center text-[15px] sm:text-16 font-400 text-gray-100 pt-4 font-post-grotesk">
+        <p className="text-center text-[15px] sm:text-16 font-400 text-gray-100 pt-[6px] font-post-grotesk">
           {guarantee_time}
         </p>
       </div>

@@ -78,7 +78,7 @@ const BringingTheSpa = ({
           </div>
           <div className="pt-6 lg:pt-[60px]">
             <Link href="#">
-              <div className="flex justify-center items-center gap-x-2 hover:underline">
+              <div className="flex justify-center items-center gap-x-2 underline hover:underline">
                 <p className="text-primary-100 text-18 font-500 leading-6 font-post-grotesk">
                   More Reviews
                 </p>

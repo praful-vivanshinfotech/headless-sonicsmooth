@@ -22,9 +22,6 @@ const SalesInstagram = ({
   button_link,
   section_id,
 }) => {
-  // const prevRef = useRef(null);
-  // const nextRef = useRef(null);
-
   return (
     <div
       id={section_id && section_id.trim()}
@@ -158,7 +155,7 @@ const SalesInstagram = ({
             <button
               onClick={ScrollToDiv}
               data-scroll-to={button_link ? button_link?.trim() : "__next"}
-              className="uppercase btn-primary px-[50px]"
+              className="uppercase btn-primary px-[50px] mb-[6px]"
             >
               {button}
             </button>
