@@ -1,6 +1,5 @@
 export function ScrollToDiv(event) {
   if (typeof window !== "undefined") {
-    console.log(event);
     window.scrollTo({
       top: elementPosition(
         document.getElementById(event.target.dataset.scrollTo)

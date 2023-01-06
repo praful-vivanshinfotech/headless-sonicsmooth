@@ -12,7 +12,7 @@ const BringingTheSpa = ({
   section_id,
 }) => {
   return (
-    <div id={section_id && section_id.trim()} className="bg-primary-300">
+    <div className="bg-primary-300">
       <div className="container-sm mx-auto">
         <div className="lg:pt-[70px] py-[35px] lg:pb-[60px] md:px-0 px-4">
           <h2 className=" text-center  font-cambon font-400 lg:text-40 text-30 lg:leading-[51px] leading-9 text-primary-100 pb-8">
@@ -31,7 +31,10 @@ const BringingTheSpa = ({
           </video>
         </div>
         <div className=" border-t border-gray-100/20 "></div>
-        <div className="py-[35px] lg:py-[60px]">
+        <div
+          id={section_id && section_id.trim()}
+          className="py-[35px] lg:py-[60px]"
+        >
           <div className="pb-[30px] lg:pb-[67px] px-4 sm:px-0">
             <h3 className="font-500 text-center text-gray-100 lg:text-16 text-[15px] leading-5 font-post-grotesk pb-2">
               {heading}

@@ -1,3 +1,4 @@
+import { ScrollToDiv } from "@/helper/Scroll";
 import Link from "next/link";
 import React from "react";
 
@@ -14,6 +15,7 @@ const Footer = ({ about, menu, social_icon, email, section_id }) => {
               <h4 className="font-700 text-16 sm:text-18 leading-7 text-primary-100 pb-6 lg:pb-9 font-post-grotesk">
                 About
               </h4>
+
               <ul className="font-400 text-16 leading-5 text-primary-100 font-post-grotesk">
                 {about &&
                   about.map((item, index) => (
@@ -21,7 +23,9 @@ const Footer = ({ about, menu, social_icon, email, section_id }) => {
                       key={`about--${index}`}
                       className="hover:underline transition-all duration-1000 pb-3 text-14 sm:text-16"
                     >
-                      <Link href={item.link}>{item.title}</Link>
+                      <Link legacyBehavior href={item.link}>
+                        <a target="_blank">{item.title}</a>
+                      </Link>
                     </li>
                   ))}
               </ul>
@@ -34,10 +38,13 @@ const Footer = ({ about, menu, social_icon, email, section_id }) => {
                 {menu &&
                   menu.map((item, index) => (
                     <li
+                      onClick={ScrollToDiv}
                       key={`menu--${index}`}
                       className="hover:underline transition-all duration-1000 pb-3 text-14 sm:text-16"
                     >
-                      <Link href={item.link}>{item.title}</Link>
+                      <Link data-scroll-to={item?.link && item?.link} href="#!">
+                        {item.title}
+                      </Link>
                     </li>
                   ))}
               </ul>
@@ -56,7 +63,7 @@ const Footer = ({ about, menu, social_icon, email, section_id }) => {
                   legacyBehavior
                   key={`social_icon--${index}`}
                 >
-                  <a target={"_blank"}>
+                  <a target="_blank">
                     <img
                       alt=""
                       src={item.icon}
