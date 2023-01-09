@@ -4,12 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "npm run partytown && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "partytown": "partytown copylib public/~partytown"
   },
   "dependencies": {
     "@apollo/client": "^3.7.2",
+    "@builder.io/partytown": "^0.7.4",
     "@builder.io/react": "^2.0.12",
     "@next/bundle-analyzer": "^13.0.6",
     "@svgr/webpack": "^6.5.1",

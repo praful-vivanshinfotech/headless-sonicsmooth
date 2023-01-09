@@ -1,5 +1,7 @@
 import { ProductContext } from "@/context/productContext";
 import { getShopifyProducts } from "@/lib/shopify";
+import { Partytown } from "@builder.io/partytown/react";
+
 import {
   builder,
   Builder,
@@ -56,6 +58,12 @@ export default function Page({ page, products }) {
       <Head>
         <title>{page?.data.title}</title>
         <meta name="description" content={page?.data.description} />
+        <Partytown debug={true} forward={["dataLayer.push"]} />
+        <script
+          src="https://example.com/analytics.js"
+          type="text/partytown"
+          defer
+        />
       </Head>
       <ProductContext.Provider value={products}>
         <BuilderComponent model="page" content={page} />
