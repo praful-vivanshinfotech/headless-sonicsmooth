@@ -1,3 +1,4 @@
+import Image from "next/image";
 import React from "react";
 import { Autoplay } from "swiper";
 import "swiper/css";
@@ -38,7 +39,9 @@ const BrandLogo = ({ brand_Logo_Section, section_id }) => {
       {brand_Logo_Section &&
         brand_Logo_Section.map((brand, index) => (
           <SwiperSlide key={`logo-${index}`}>
-            <img
+            <Image
+              width={150}
+              height={100}
               alt={
                 brand?.logo_alt_name
                   ? brand?.logo_alt_name
