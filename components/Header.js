@@ -1,16 +1,15 @@
 import { ScrollToDiv } from "@/helper/Scroll";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const Header = ({ header_menu }) => {
   const [toggleNavBar, setToggleNavBar] = useState(false);
-
+  const [scroll, setScroll] = useState(false);
   const navbarToggle = () => {
     setToggleNavBar(!toggleNavBar);
     document.body.classList.toggle("menu-open");
   };
-
   const scrollSection = (event) => {
     if (screen.width < 1024) {
       navbarToggle();
@@ -18,8 +17,18 @@ const Header = ({ header_menu }) => {
     ScrollToDiv(event);
   };
 
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", () => {
+      window.scrollY > 45 ? setScroll(true) : setScroll(false);
+    });
+  }
+
   return (
-    <div className="font-post-grotesk border-gray-200 menu-mobile py-4 border-b-[1px]">
+    <div
+      className={` ${
+        scroll ? "sticky-menu" : ""
+      } font-post-grotesk border-gray-200 menu-mobile py-4 border-b-[1px]`}
+    >
       <div className="container lg:px-4 flex lg:flex-nowrap flex-wrap items-center justify-between mx-auto">
         <button className="lg:hidden pl-4" onClick={() => navbarToggle()}>
           <div
@@ -33,13 +42,15 @@ const Header = ({ header_menu }) => {
         </button>
         <div className="mx-auto lg:mx-0">
           <Link href="/sonicsmooth" legacyBehavior>
-            <Image
-              alt="michael-todd-beauty-logo"
-              width={222}
-              height={38}
-              src="/images/svg/logo.svg"
-              className="w-[222px] h-[38px] lg:order-1 order-2 cursor-pointer"
-            />
+            <a>
+              <Image
+                alt="michael-todd-beauty-logo"
+                width={222}
+                height={38}
+                src="/images/svg/logo.svg"
+                className="w-[222px] h-[38px] lg:order-1 order-2 cursor-pointer"
+              />
+            </a>
           </Link>
         </div>
         <div

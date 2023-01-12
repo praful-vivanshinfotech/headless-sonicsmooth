@@ -38,10 +38,10 @@ const BrandLogo = ({ brand_Logo_Section, section_id }) => {
     >
       {brand_Logo_Section &&
         brand_Logo_Section.map((brand, index) => (
-          <SwiperSlide key={`logo-${index}`}>
+          <SwiperSlide className="w-full h-full relative" key={`logo-${index}`}>
             <Image
-              width={150}
-              height={100}
+              layout="fill"
+              objectFit="contain"
               alt={
                 brand?.logo_alt_name
                   ? brand?.logo_alt_name

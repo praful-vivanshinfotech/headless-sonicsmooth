@@ -14,9 +14,9 @@ const Banner = (props) => {
                 {props.rating_content}
               </p>
             </div>
-            <h2 className="font-cambon text-primary-100 md:text-[38px] text-[30px] font-400 xl:leading-[58px] lg:text-start text-center lg:leading-[35px] leading-[35px]">
+            <h1 className="font-cambon text-primary-100 md:text-[38px] text-[30px] font-400 xl:leading-[58px] lg:text-start text-center lg:leading-[35px] leading-[35px]">
               {props.banner_title}
-            </h2>
+            </h1>
           </div>
           <div className="lg:hidden block my-6">
             <div className="grid grid-cols-2 gap-2">

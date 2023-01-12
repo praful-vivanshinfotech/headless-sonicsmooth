@@ -48,7 +48,7 @@ export default function Page({ page, products }) {
   const router = useRouter();
   const isPreviewing = useIsPreviewing();
   if (router.isFallback) {
-    return <h1>Loading...</h1>;
+    return <h2>Loading...</h2>;
   }
   if (!page && !isPreviewing) {
     return <DefaultErrorPage statusCode={404} />;

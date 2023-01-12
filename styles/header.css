@@ -27,16 +27,16 @@
 }
 
 #toggle-icon span:nth-child(1) {
-  @apply top-0
+  @apply top-0;
 }
 #toggle-icon span:nth-child(2) {
-  @apply top-[6px]
+  @apply top-[6px];
 }
 #toggle-icon span:nth-child(3) {
-  @apply top-3
+  @apply top-3;
 }
 #toggle-icon.open span:nth-child(1) {
-@apply top-[6px];
+  @apply top-[6px];
   -webkit-transform: rotate(135deg);
   -moz-transform: rotate(135deg);
   -o-transform: rotate(135deg);
@@ -63,8 +63,11 @@
   @apply opacity-100;
 }
 .menu-open {
-  @apply overflow-hidden
+  @apply overflow-hidden;
 }
 .menu-open .navbar-default {
   @apply h-[calc(100vh+70px)] overflow-y-auto;
+}
+.sticky-menu {
+  @apply fixed top-0 right-0 left-0 bg-white w-full z-20;
 }

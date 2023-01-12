@@ -114,7 +114,11 @@ const SalesInstagram = ({
                   <div className="px-3 py-4 children">
                     <div className="flex justify-between items-center">
                       <div className="flex justify-center items-start gap-x-4">
-                        <img alt="" src={insta_post.profile_image} />
+                        <img
+                          className="max-w-[52px] max-h-[52px] w-full h-full"
+                          alt=""
+                          src={insta_post.profile_image}
+                        />
                         <div>
                           <Link href="#">
                             <h5 className="font-400 text-[15px] sm:text-16 leading-5 text-primary-100 font-post-grotesk pb-2">
