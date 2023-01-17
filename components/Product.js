@@ -34,6 +34,9 @@ const Product = ({
   section_id,
 }) => {
   const router = useRouter();
+  useEffect(() => {
+    defaultVariant();
+  }, []);
   const [thumbsSwiper, setThumbsSwiper] = useState();
   const [activeVariants, setActiveVariants] = useState();
   const [variantsError, setVariantsError] = useState();
@@ -49,6 +52,7 @@ const Product = ({
       </h2>
     );
   }
+
   const {
     title,
     descriptionHtml,
@@ -58,14 +62,7 @@ const Product = ({
     media,
     options,
   } = product.product;
-
-  useEffect(() => {
-    //setVariants(variants.edges[0].node.title, variants.edges[0].node.id);
-    //console.log(variants.edges[0].node.title, variants.edges[0].node.id);
-  }, []);
-
   const setVariants = (title, variantsID) => {
-    console.log(title, variantsID);
     setProductGallery(true);
     setVariantsError(false);
     setActiveVariants(title);
@@ -79,6 +76,7 @@ const Product = ({
         activeVariantsID,
         productQuantity
       );
+
       router.push(itemCheckout.checkoutCreate.checkout.webUrl);
     } else {
       setVariantsError(true);
@@ -132,6 +130,11 @@ const Product = ({
       });
     }
   });
+  const defaultVariant = () => {
+    variants
+      ? setVariants(variants?.edges[0].node?.title, variants?.edges[0].node?.id)
+      : "";
+  };
   return (
     <div
       id={section_id && section_id.trim()}
