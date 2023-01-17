@@ -3,9 +3,13 @@ import React from "react";
 const SkinConcern = ({
   video_url,
   title,
-  description_1,
+  description_1_1,
+  description_1_2,
+  description_1_3,
   description_2,
-  description_3,
+  description_3_1,
+  description_3_2,
+  description_3_3,
   description_4,
   description_5,
   section_id,
@@ -34,7 +38,9 @@ const SkinConcern = ({
               {title}
             </h2>
             <p className="text-[15px] sm:text-16  pb-5 font-post-grotesk md:max-w-[86%] leading-7">
-              {description_1}
+              {description_1_1 && description_1_1}
+              {description_1_2 && description_1_2}
+              {description_1_3 && description_1_3}
             </p>
             <div className="font-post-grotesk bg-primary-300 py-2 pr-11 pl-7 w-fit mb-5 relative md:-skew-x-[45deg] -skew-x-[10deg]">
               <p className="italic font-400 text-[15px] sm:text-16  text-primary-100 md:max-w-[100%] md:skew-x-[45deg] skew-x-[10deg] leading-6">
@@ -42,7 +48,9 @@ const SkinConcern = ({
               </p>
             </div>
             <p className="text-[15px] sm:text-16  mb-5 font-post-grotesk md:max-w-[86%] leading-7">
-              {description_3}
+              {description_3_1 && description_3_1}
+              {description_3_2 && description_3_2}
+              {description_3_3 && description_3_3}
             </p>
             <div className="lg:hidden block">
               <div className="relative pt-[56.25%] mt-8 mb-6">

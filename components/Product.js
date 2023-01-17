@@ -2,7 +2,7 @@ import { ProductContext } from "@/context/productContext";
 import { productCheckout } from "@/lib/shopify";
 import Image from "next/image";
 import { useRouter } from "next/router";
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import sanitizeHtml from "sanitize-html";
 import {
   EffectCoverflow,
@@ -59,12 +59,19 @@ const Product = ({
     options,
   } = product.product;
 
+  useEffect(() => {
+    //setVariants(variants.edges[0].node.title, variants.edges[0].node.id);
+    //console.log(variants.edges[0].node.title, variants.edges[0].node.id);
+  }, []);
+
   const setVariants = (title, variantsID) => {
+    console.log(title, variantsID);
     setProductGallery(true);
     setVariantsError(false);
     setActiveVariants(title);
     setActiveVariantsID(variantsID);
   };
+
   const Checkout = async () => {
     if (activeVariants) {
       setShowLoader(true);
@@ -487,7 +494,8 @@ const Product = ({
                     >
                       <img src={item.icon} alt="" />
                       <p className="font-400 text-14 font-post-grotesk underline hover:underline">
-                        {item.description}
+                        <span>{item.description_1}</span>
+                        <span>{item.description_2 && item.description_2}</span>
                       </p>
                     </div>
                   ))}

@@ -5,7 +5,8 @@ import React from "react";
 const GlowingSkin = ({
   title,
   skin_image,
-  description,
+  description_1,
+  description_2,
   button_text,
   guarantee_time,
   section_id,
@@ -24,7 +25,8 @@ const GlowingSkin = ({
       </h5>
       <div className="text-center pb-10 m-auto max-w-[100%] xl:max-w-[75%] md:max-w-[70%] font-post-grotesk">
         <p className="text-[15px] md:text-16 leading-5 text-gray-100">
-          {description}
+          <span>{description_1}</span>
+          <span>{description_2}</span>
         </p>
       </div>
       <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 md:gap-x-5 gap-x-3 gap-y-3">

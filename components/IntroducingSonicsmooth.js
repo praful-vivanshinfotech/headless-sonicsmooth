@@ -6,7 +6,8 @@ import Accordion from "./accrodian/Accordion";
 const IntroducingSonicSmooth = ({
   title,
   description,
-  sub_description,
+  sub_description_1,
+  sub_description_2,
   product_image,
   product_image_alt_name,
   introduction_card_second,
@@ -47,7 +48,8 @@ const IntroducingSonicSmooth = ({
             {description && description}
           </p>
           <p className="text-[15px] sm:text-16 font-post-grotesk max-w-[760px] mx-auto text-center">
-            {sub_description && sub_description}
+            <span> {sub_description_1 && sub_description_1}</span>
+            <span> {sub_description_2 && sub_description_2}</span>
           </p>
           <div className="flex lg:flex-row flex-col gap-x-12 justify-center">
             <div className="flex flex-col justify-center pt-5">

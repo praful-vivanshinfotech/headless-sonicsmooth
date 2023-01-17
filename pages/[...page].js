@@ -292,17 +292,38 @@ Builder.registerComponent(
         required: true,
       },
       {
-        name: "description_1",
+        name: "description_1_1",
         type: "longText",
         required: true,
       },
+      {
+        name: "description_1_2",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "description_1_3",
+        type: "longText",
+        required: true,
+      },
+
       {
         name: "description_2",
         type: "longText",
         required: true,
       },
       {
-        name: "description_3",
+        name: "description_3_1",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "description_3_2",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "description_3_3",
         type: "longText",
         required: true,
       },
@@ -354,7 +375,12 @@ Builder.registerComponent(
         required: true,
       },
       {
-        name: "description",
+        name: "description_1",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "description_2",
         type: "longText",
         required: true,
       },
@@ -782,7 +808,12 @@ Builder.registerComponent(
         required: true,
       },
       {
-        name: "sub_description",
+        name: "sub_description_1",
+        type: "longText",
+        required: true,
+      },
+      {
+        name: "sub_description_2",
         type: "longText",
         required: true,
       },
@@ -1221,9 +1252,13 @@ Builder.registerComponent(
             required: true,
           },
           {
-            name: "description",
+            name: "description_1",
             type: "longText",
             required: true,
+          },
+          {
+            name: "description_2",
+            type: "longText",
           },
         ],
       },
