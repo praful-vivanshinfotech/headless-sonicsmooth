@@ -63,7 +63,7 @@ const BringingTheSpa = ({
                   {review.customer_reviews}
                 </p>
                 <div className="flex justify-center lg:justify-start items-center gap-x-2 mt-auto">
-                  <p className="font-500 sm:text-16 text-[15px] leading-5 font-post-grotesk">
+                  <p className="font-500 sm:text-16 text-[15px] text-primary-100 leading-5 font-post-grotesk">
                     {review.customer_name}
                   </p>
                   <div className="flex justify-center items-center gap-x-1">
@@ -77,7 +77,7 @@ const BringingTheSpa = ({
             ))}
           </div>
           <div className="pt-6 lg:pt-[60px]">
-            <Link href="#">
+            <Link href="https://michaeltoddbeauty.com/products/sonicsmooth/#product_reviews">
               <div className="flex justify-center items-center gap-x-2 underline hover:underline">
                 <p className="text-primary-100 text-18 font-500 leading-6 font-post-grotesk">
                   More Reviews

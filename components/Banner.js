@@ -65,7 +65,7 @@ const Banner = (props) => {
               </div>
             </div>
             <div className="lg:order-2 order-1">
-              <p className="sm:text-18 font-bold font-post-grotesk text-primary-100 pb-5">
+              <p className="sm:text-18 font-500 font-post-grotesk text-primary-100 pb-5">
                 {props.banner_sub_title}
               </p>
 

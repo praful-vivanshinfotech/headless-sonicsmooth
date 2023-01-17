@@ -41,13 +41,15 @@ const Header = ({ header_menu }) => {
           </div>
         </button>
         <div className="mx-auto lg:mx-0">
-          <Image
-            alt="michael-todd-beauty-logo"
-            width={222}
-            height={38}
-            src="/images/svg/logo.svg"
-            className="w-[222px] h-[38px] lg:order-1 order-2 cursor-pointer"
-          />
+          <Link href="/sonicsmooth">
+            <Image
+              alt="michael-todd-beauty-logo"
+              width={222}
+              height={38}
+              src="/images/svg/logo.svg"
+              className="w-[222px] h-[38px] lg:order-1 order-2 cursor-pointer"
+            />
+          </Link>
         </div>
         <div
           className={`navbar-default header hidden w-full lg:block lg:w-auto animate-fade-in-down ${

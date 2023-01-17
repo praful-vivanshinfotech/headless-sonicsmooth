@@ -27,8 +27,8 @@ const SalesInstagram = ({
       id={section_id && section_id.trim()}
       className="bg-primary-300 py-9 lg:py-[70px] mb-[30px] lg:mb-20 mt-[88px] lg:mt-[100px] sales-instagram"
     >
-      <div className="container-sm mx-auto md:px-0 px-4">
-        <div className="pb-10 lg:pb-[70px]">
+      <div className="container-sm mx-auto  ">
+        <div className="pb-10 lg:pb-[70px] px-4">
           <div className="pb-12">
             <p className="font-post-grotesk font-500 text-[15px] sm:text-16 text-gray-100 leading-5 pb-1 text-center">
               {sub_title}
@@ -76,7 +76,9 @@ const SalesInstagram = ({
                           : "Michael Todd Beauty"
                       }
                       src={award.award_image}
-                      className={` mx-auto ${index == 0 ? "w-[225px]" : ""}`}
+                      className={` mx-auto ${index == 0 ? "w-[225px]" : ""} ${
+                        index == 2 ? "w-[160px]" : ""
+                      }`}
                     />
                     <p className="font-post-grotesk font-400 text-16 text-center leading-6 mt-auto">
                       {award.award_description}
@@ -91,12 +93,12 @@ const SalesInstagram = ({
           <p className="font-700 text-[15px] lg:text-18 leading-7 text-center text-primary-100 font-post-grotesk pb-2">
             {sales_insta_subtitle}
           </p>
-          <Link href="#">
-            <p className="md:max-w-[75%] mx-auto font-cambon font-400 lg:text-40 text-30 lg:leading-[51px] leading-9 text-primary-100 pb-5 text-center">
-              {sales_insta_profile}
-            </p>
-          </Link>
-          <div className="pt-7 lg:pt-10 pb-9 lg:pb-12">
+
+          <p className="md:max-w-[75%] mx-auto font-cambon font-400 lg:text-40 text-30 lg:leading-[51px] leading-9 text-primary-100 pb-5 text-center">
+            {sales_insta_profile}
+          </p>
+
+          <div className="pt-7 lg:pt-10 pb-9 lg:pb-12 px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-4 md:gap-x-[26px]">
               {insta_post_card.map((insta_post, index) => (
                 <div key={`insta_post + ${index}`} className="bg-white ">

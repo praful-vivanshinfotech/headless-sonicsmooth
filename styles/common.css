@@ -5,16 +5,16 @@
   @apply before:bg-gray-100 before:opacity-[0.44] before:w-[1px]  before:absolute before:right-0 before:h-5 before:top-1/2 before:-translate-y-1/2 before:content-[""];
 }
 .average-line {
-  @apply after:content-[""] after:bg-[url("/images/line.png")] after:bg-no-repeat after:bg-contain after:absolute after:top-1/2 sm:after:right-0 after:-right-[2px] lg:after:w-2 after:w-[5px] after:min-h-[122px] after:-translate-y-1/2;
+  @apply after:content-[""] after:bg-[url("/images/line.png")] after:bg-no-repeat after:bg-cover after:absolute after:top-1/2 sm:after:right-0 after:-right-[2px] lg:after:w-2 after:w-[5px] after:min-h-[122px] after:-translate-y-1/2;
 }
 .warranty-line {
   @apply before:content-[""] before:bg-[url("/images/warranty-line.png")] before:bg-no-repeat before:bg-contain before:absolute sm:before:top-1/2 lg:before:top-[80%] before:-bottom-6  lg:before:-right-[2px] lg:before:w-2 before:w-[175px] lg:before:min-h-[220px] before:min-h-[175px] lg:before:-translate-y-1/2 lg:before:rotate-0 before:rotate-[270deg] lg:before:my-auto before:my-0 before:mx-auto;
 }
 .guide-arrow-1 {
-  @apply before:content-[""] before:bg-[url("/images/step-aero1.png")] before:bg-no-repeat before:w-[113px] before:h-[61px] before:bg-contain before:absolute 2xl:before:-left-[9rem] xl:before:-left-[7rem] md:before:-left-[4rem] before:-left-[33px] lg:before:top-[40%] md:before:top-[30%] before:-top-[30px] md:before:rotate-0 before:rotate-90 md:before:-translate-y-1/2;
+  @apply before:content-[""] before:bg-[url("/images/step-aero1.png")] before:bg-no-repeat before:w-[113px] before:h-[61px] before:bg-contain before:absolute 2xl:before:-left-[5rem] xl:before:-left-[7rem] md:before:-left-[4rem] before:-left-[33px] lg:before:top-[40%] md:before:top-[30%] before:-top-[30px] md:before:rotate-0 before:rotate-90 md:before:-translate-y-1/2;
 }
 .guide-arrow-2 {
-  @apply after:content-[""] after:bg-[url("/images/step-aero2.png")] after:bg-contain after:bg-no-repeat 2xl:after:left-[24rem] xl:after:left-[21rem] sm:after:left-[32rem] md:after:left-[17rem] after:right-0 md:after:right-[30%] lg:after:-right-0 after:top-auto lg:after:top-[40%] lg:after:-translate-y-1/2 after:z-[1] after:absolute after:w-[113px] after:h-[61px] lg:after:rotate-0 after:rotate-[110deg] lg:after:mt-auto after:mt-[30px];
+  @apply after:content-[""] after:bg-[url("/images/step-aero2.png")] after:bg-contain after:bg-no-repeat 2xl:after:left-[21rem] xl:after:left-[21rem] sm:after:left-[32rem] md:after:left-[16rem] after:right-0 md:after:right-[30%] lg:after:-right-0 after:top-auto lg:after:top-[40%] lg:after:-translate-y-1/2 after:z-[1] after:absolute after:w-[113px] after:h-[61px] lg:after:rotate-0 after:rotate-[110deg] lg:after:mt-auto after:mt-[30px];
 }
 .solution-line {
   @apply before:content-[""] before:bg-[url("/images/warranty-line.png")] before:bg-no-repeat before:bg-contain before:absolute before:-bottom-2 before:right-0 before:w-1 before:min-h-[94px];

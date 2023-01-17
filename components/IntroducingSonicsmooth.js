@@ -48,8 +48,8 @@ const IntroducingSonicSmooth = ({
             {description && description}
           </p>
           <p className="text-[15px] sm:text-16 font-post-grotesk max-w-[760px] mx-auto text-center">
-            <span> {sub_description_1 && sub_description_1}</span>
-            <span> {sub_description_2 && sub_description_2}</span>
+            <span> {sub_description_1}</span>
+            <span className="font-700"> {sub_description_2}</span>
           </p>
           <div className="flex lg:flex-row flex-col gap-x-12 justify-center">
             <div className="flex flex-col justify-center pt-5">

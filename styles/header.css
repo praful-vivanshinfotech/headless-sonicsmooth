@@ -69,5 +69,5 @@
   @apply h-[calc(100vh+70px)] overflow-y-auto;
 }
 .sticky-menu {
-  @apply fixed top-0 right-0 left-0 bg-white w-full z-20;
+  @apply fixed top-0 right-0 left-0 bg-white w-full z-30;
 }

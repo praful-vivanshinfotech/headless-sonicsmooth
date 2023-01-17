@@ -15,7 +15,7 @@ const GlowingSkin = ({
   return (
     <div
       id={section_id && section_id.trim()}
-      className="container-sm mx-auto md:px-0 px-4 xl:mt-[190px] py-10 lg:py-20"
+      className="container-sm mx-auto  px-4 xl:mt-[190px] py-10 lg:py-20"
     >
       <h5 className="uppercase font-post-grotesk text-center font-500 text-[15px] md:text-16 leading-5 text-gray-100 pb-6 mb-1">
         Before & after
@@ -26,10 +26,10 @@ const GlowingSkin = ({
       <div className="text-center pb-10 m-auto max-w-[100%] xl:max-w-[75%] md:max-w-[70%] font-post-grotesk">
         <p className="text-[15px] md:text-16 leading-5 text-gray-100">
           <span>{description_1}</span>
-          <span>{description_2}</span>
+          <span className="font-700">{description_2}</span>
         </p>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 md:gap-x-5 gap-x-3 gap-y-3">
+      <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 md:gap-x-5 gap-x-3 gap-y-3 ">
         {skin_image &&
           skin_image.map((skin, index) => (
             <div className="relative" key={`skin-img-${index}`}>

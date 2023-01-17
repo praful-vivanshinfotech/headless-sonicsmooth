@@ -1,14 +1,32 @@
 @font-face {
   font-family: "Cambon";
-  src: url("/fonts/Cambon-Regular.woff2") format("woff2"),
-    url("/fonts/Cambon-Regular.woff") format("woff");
+  src: url("/fonts/cambon/Cambon-Regular.woff2") format("woff2"),
+    url("/fonts/cambon/Cambon-Regular.woff") format("woff");
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "Post Grotesk";
-  src: url("/fonts/PostGrotesk-Book.woff2") format("woff2"),
-    url("/fonts/PostGrotesk-Book.woff") format("woff");
+  src: url("/fonts/post-grotesk/PostGrotesk-Book.woff2") format("woff2"),
+    url("/fonts/post-grotesk/PostGrotesk-Book.woff") format("woff");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Post Grotesk";
+  src: url("/fonts/post-grotesk/PostGrotesk-Medium.woff2") format("woff2"),
+    url("/fonts/post-grotesk/PostGrotesk-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Post Grotesk";
+  src: url("/fonts/post-grotesk/PostGrotesk-Bold.woff2") format("woff2"),
+    url("/fonts/post-grotesk/PostGrotesk-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }

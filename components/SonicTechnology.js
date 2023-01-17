@@ -38,9 +38,7 @@ const SonicTechnology = ({
         <div className="bg-primary-300">
           <div className="flex justify-center h-full">
             <div className="relative pt-0 sm:pt-20 max-w-[350px] w-full h-auto sm:h-full flex flex-[60%] justify-end !items-end">
-              <Image
-                layout="fill"
-                objectFit="contain"
+              <img
                 alt={
                   sonic_smooth_section_image_alt_name
                     ? sonic_smooth_section_image_alt_name

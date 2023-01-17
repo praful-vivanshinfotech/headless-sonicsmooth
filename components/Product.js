@@ -138,7 +138,7 @@ const Product = ({
   return (
     <div
       id={section_id && section_id.trim()}
-      className="container mx-auto mt-[72px] lg:mt-20 lg:mb-6 lg:px-0 px-4"
+      className="container mx-auto mt-[72px] lg:mt-20 lg:mb-6 px-4"
     >
       <div className="grid grid-cols-12 gap-y-24 sm:gap-y-12 lg:gap-x-[70px]">
         <div className="col-span-12 lg:col-span-6 ">
@@ -408,7 +408,7 @@ const Product = ({
             </div>
             <div className="py-4 border-b border-gray-400 prose-li:pb-3 prose-ul:list-disc prose-ul:pl-5 prose-ul:mt-2 prose-ul:text-gray-100 prose-ul:font-post-grotesk">
               <div
-                className="font-post-grotesk font-500 text-16 leading-5 text-gray-100"
+                className="font-post-grotesk  text-16 leading-5 text-gray-100"
                 dangerouslySetInnerHTML={{
                   __html: sanitizeHtml(descriptionHtml && descriptionHtml),
                 }}
@@ -448,8 +448,8 @@ const Product = ({
                   Please select Color
                 </div>
               )}
-              <div className="flex items-center gap-x-5 py-4">
-                <div className="border border-primary-100 h-12 min-w-[6rem] md:w-[135px] p-3">
+              <div className="flex items-stretch gap-x-5 xl:gap-x-14 py-4 pr-4">
+                <div className="border border-primary-100 h-[52px] min-w-[92px] sm:min-w-[152px] md:w-[135px] py-3 px-3 sm:px-4">
                   <div className="flex justify-between items-center">
                     <div
                       onClick={() => setProductQuantity(productQuantity - 1)}
@@ -473,7 +473,7 @@ const Product = ({
                 <div className="w-full">
                   <button
                     onClick={() => Checkout()}
-                    className="btn-primary leading-5  w-full sm:w-[378px]"
+                    className="btn-primary leading-5 h-full w-full sm:w-[378px] lg:w-full xl:w-[378px]"
                   >
                     {showLoader ? (
                       <IconRoundSpin className="animate-spin m-auto h-5 w-5 hover:text-primary" />
@@ -496,9 +496,13 @@ const Product = ({
                       }`}
                     >
                       <img src={item.icon} alt="" />
-                      <p className="font-400 text-14 font-post-grotesk underline hover:underline">
-                        <span>{item.description_1}</span>
-                        <span>{item.description_2 && item.description_2}</span>
+                      <p className="font-400 text-14 font-post-grotesk ">
+                        <span className="underline hover:underline">
+                          {item.description_1}
+                        </span>
+                        <span className="text-secondary-200">
+                          {item.description_2 && item.description_2}
+                        </span>
                       </p>
                     </div>
                   ))}
