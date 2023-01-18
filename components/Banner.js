@@ -1,8 +1,19 @@
 import { ScrollToDiv } from "@/helper/Scroll";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 const Banner = (props) => {
+  const router = useRouter();
+  const [utmHeadline, setUtmHeadline] = useState();
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const headline = urlParams.get("utm_headline");
+    if (headline) {
+      setUtmHeadline(headline);
+    }
+  }, [router.query]);
+
   return (
     <div id={props?.section_id} className="container mx-auto px-4">
       <div className="grid grid-cols-1 lg:grid-cols-2 xl:mt-9 lg:mt-5 mt-3 md:px-0   gap-x-12 xl:gap-x-24">
@@ -14,9 +25,19 @@ const Banner = (props) => {
                 {props.rating_content}
               </p>
             </div>
-            <h1 className="font-cambon text-primary-100 md:text-[38px] text-[30px] font-400 xl:leading-[58px] lg:text-start text-center lg:leading-[35px] leading-[35px]">
-              {props.banner_title}
-            </h1>
+
+            {utmHeadline ? (
+              <h1
+                id="headline"
+                className="!font-500 text-primary-100 text-28 md:!text-[40px] font-cambon mb-5 text-left"
+              >
+                {utmHeadline}
+              </h1>
+            ) : (
+              <h1 className="font-cambon text-primary-100 md:text-[38px] text-[30px] font-400 xl:leading-[58px] lg:text-start text-center lg:leading-[35px] leading-[35px]">
+                {props.banner_title}
+              </h1>
+            )}
           </div>
           <div className="lg:hidden block my-6">
             <div className="grid grid-cols-2 gap-2">

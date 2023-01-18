@@ -18,15 +18,6 @@ const IntroducingSonicSmooth = ({
   button_link,
   introduction_card_last_client_name,
 }) => {
-  const router = useRouter();
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const utmHeadline = urlParams.get("utm_headline");
-    if (utmHeadline) {
-      document.getElementById("headline").innerHTML = utmHeadline;
-    }
-  }, [router.query]);
-
   return (
     <div
       id={section_id && section_id.trim()}
@@ -34,10 +25,6 @@ const IntroducingSonicSmooth = ({
     >
       <div className="container mx-auto py-8 lg:py-14">
         <div>
-          <h2
-            id="headline"
-            className="!font-500 text-primary-100 text-28 md:!text-[40px] font-cambon mb-5 text-center"
-          ></h2>
           <p className="font-500 text-[15px]  sm:text-16 mb-1 font-post-grotesk text-center">
             INTRODUCING
           </p>
