@@ -44,8 +44,8 @@ const Product = ({
   const [showLoader, setShowLoader] = useState(false);
   const [activeVariantsID, setActiveVariantsID] = useState();
   const [productQuantity, setProductQuantity] = useState(1);
-  const product = useContext(ProductContext);
-  if (product.product == null || product.product == "") {
+  const { products } = useContext(ProductContext);
+  if (products.product == null || products.product == "") {
     return (
       <h2 className="text-center text-white bg-secondary-300 text-22 py-5">
         Invalid product id{" "}
@@ -61,7 +61,7 @@ const Product = ({
     images,
     media,
     options,
-  } = product.product;
+  } = products.product;
   const setVariants = (title, variantsID) => {
     setProductGallery(true);
     setVariantsError(false);

@@ -14,37 +14,61 @@ import Head from "next/head";
 import { useRouter } from "next/router";
 import React from "react";
 builder.init(process.env.NEXT_PUBLIC_BUILDER_KEY);
-export async function getStaticProps({ params }) {
-  const page = await builder
-    .get("page", {
-      userAttributes: {
-        urlPath: "/" + (params?.page?.join("/") || ""),
+// export async function getStaticProps({ params }) {
+//   const page = await builder
+//     .get("page", {
+//       userAttributes: {
+//         urlPath: "/" + (params?.page?.join("/") || ""),
+//       },
+//     })
+//     .toPromise();
+//   const products = page?.data?.sku
+//     ? await getShopifyProducts(page?.data?.sku)
+//     : "";
+//   return {
+//     props: {
+//       page: page || null,
+//       products: products || null,
+//     },
+//     revalidate: 1,
+//   };
+// }
+// export async function getStaticPaths() {
+//   const pages = await builder.getAll("page", {
+//     fields: "data.url",
+//     options: { noTargeting: true },
+//     limit: 0,
+//   });
+//   return {
+//     paths: pages.map((page) => `${page.data?.url}`),
+//     fallback: true,
+//   };
+// }
+
+export async function getServerSideProps(context) {
+  const route = context.params.page.join("/");
+  if (!context.params.page.includes("favicon")) {
+    const page = await builder
+      .get("page", {
+        userAttributes: {
+          urlPath: "/" + route,
+        },
+      })
+      .toPromise();
+    const products = page?.data?.sku
+      ? await getShopifyProducts(page?.data?.sku)
+      : "";
+    return {
+      props: {
+        page: page || null,
+        products: products || null,
+        hasCustomTitle: context.query.utm_headline,
       },
-    })
-    .toPromise();
-  const products = page?.data?.sku
-    ? await getShopifyProducts(page?.data?.sku)
-    : "";
-  return {
-    props: {
-      page: page || null,
-      products: products || null,
-    },
-    revalidate: 1,
-  };
+    };
+  }
 }
-export async function getStaticPaths() {
-  const pages = await builder.getAll("page", {
-    fields: "data.url",
-    options: { noTargeting: true },
-    limit: 0,
-  });
-  return {
-    paths: pages.map((page) => `${page.data?.url}`),
-    fallback: true,
-  };
-}
-export default function Page({ page, products }) {
+export default function Page({ page, products, hasCustomTitle }) {
+  console.log(hasCustomTitle);
   const router = useRouter();
   const isPreviewing = useIsPreviewing();
   if (router.isFallback) {
@@ -65,7 +89,7 @@ export default function Page({ page, products }) {
           defer
         />
       </Head>
-      <ProductContext.Provider value={products}>
+      <ProductContext.Provider value={{ products, hasCustomTitle }}>
         <BuilderComponent model="page" content={page} />
       </ProductContext.Provider>
     </>
