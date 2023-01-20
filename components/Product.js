@@ -138,7 +138,7 @@ const Product = ({
   return (
     <div
       id={section_id && section_id.trim()}
-      className="container mx-auto mt-[72px] lg:mt-20 lg:mb-6 px-4"
+      className="product-section container mx-auto mt-[72px] lg:mt-20 lg:mb-6 px-4"
     >
       <div className="grid grid-cols-12 gap-y-24 sm:gap-y-12 lg:gap-x-[70px]">
         <div className="col-span-12 lg:col-span-6 ">
@@ -254,11 +254,7 @@ const Product = ({
                 navigation={false}
                 pagination={{
                   clickable: true,
-                }}
-                breakpoints={{
-                  768: {
-                    pagination: true,
-                  },
+                  pagination: true,
                 }}
                 thumbs={{
                   swiper:
